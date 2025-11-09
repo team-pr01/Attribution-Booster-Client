@@ -22,6 +22,7 @@ import socialMediaMarketing from "./images/services/social-media-marketing.webp"
 import uiUxDesign from "./images/services/ui-ux-design.webp";
 import videoEditing from "./images/services/video-editing.webp";
 import webDevelopment from "./images/services/web-development.webp";
+import serviceCircle from "./images/service-circle.webp";
 
 
 // Icons
@@ -51,7 +52,8 @@ export const IMAGES = {
   socialMediaMarketing,
   uiUxDesign,
   videoEditing,
-  webDevelopment
+  webDevelopment,
+  serviceCircle
 };
 
 

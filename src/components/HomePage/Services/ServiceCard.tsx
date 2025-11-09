@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { GoArrowUpRight } from "react-icons/go";
 import { motion } from "framer-motion";
 
@@ -10,7 +10,7 @@ const ServiceCard = ({
 }: {
   name: string;
   description: string;
-  icon: string;
+  icon: StaticImageData;
 }) => {
   return (
     <motion.div
