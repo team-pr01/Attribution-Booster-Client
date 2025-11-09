@@ -8,6 +8,21 @@ import circle from "./images/circle.webp";
 import globeCircle from "./images/globe-circle.png";
 import happyClients from "./images/happy-clients.webp";
 import projectCompleted from "./images/project-completed.webp";
+import googlePartner from "./images/google-partner.png";
+// Services
+import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
+import appDevelopment from "./images/services/app-development.webp";
+import cyberSecurity from "./images/services/cyber-security.webp";
+import cmsDevelopment from "./images/services/cms-development.webp";
+import googleAds from "./images/services/google-ads.webp";
+import graphicsDesign from "./images/services/graphics-design.webp";
+import ppcAdvertising from "./images/services/ppc-advertising.webp";
+import seo from "./images/services/seo.webp";
+import socialMediaMarketing from "./images/services/social-media-marketing.webp";
+import uiUxDesign from "./images/services/ui-ux-design.webp";
+import videoEditing from "./images/services/video-editing.webp";
+import webDevelopment from "./images/services/web-development.webp";
+
 
 // Icons
 import topRightArrow from "./icons/top-right-arrow.svg";
@@ -23,6 +38,20 @@ export const IMAGES = {
   globeCircle,
   happyClients,
   projectCompleted,
+  googlePartner,
+  // Services
+  analyticsConversionTracking,
+  appDevelopment,
+  cyberSecurity,
+  cmsDevelopment,
+  googleAds,
+  graphicsDesign,
+  ppcAdvertising,
+  seo,
+  socialMediaMarketing,
+  uiUxDesign,
+  videoEditing,
+  webDevelopment
 };
 
 
