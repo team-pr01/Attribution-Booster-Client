@@ -27,6 +27,7 @@ import serviceCircle from "./images/service-circle.webp";
 
 // Icons
 import topRightArrow from "./icons/top-right-arrow.svg";
+import clientDummyLogo from "./icons/client-dummy-logo.svg";
 
 export const IMAGES = {
   logo,
@@ -59,4 +60,5 @@ export const IMAGES = {
 
 export const ICONS = {
   topRightArrow,
+  clientDummyLogo
 };

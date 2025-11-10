@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="max-w-[1800px] h-[1030px] mx-auto py-10">
       <div className="rounded-[20px]  bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden">
-        <div className="absolute w-full top-[30px]">
+        <div className="absolute w-full top-[30px] z-9999">
           <Navbar />
         </div>
         {/* Top globes */}
@@ -38,6 +38,11 @@ const Hero = () => {
           src={IMAGES.heroLeftGradient}
           alt=""
           className="w-[643px] h-[664px] absolute -top-64 -left-56 z-999"
+        />
+        <Image
+          src={IMAGES.heroMiddleGradient}
+          alt=""
+          className="w-[643px] h-[664px] absolute top-32 left-1/3 z-999 opacity-30"
         />
 
         <div className="absolute top-56 w-full flex flex-col items-center justify-center">

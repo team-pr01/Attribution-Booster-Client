@@ -106,7 +106,7 @@ const ServiceCard = ({
           ease: "easeOut",
         }}
       >
-        <h1 className="font-MartianBThai text-white text-[32px] leading-[35px] font-semibold text-center">
+        <h1 className="font-MartianBThai text-white text-[32px] leading-[35px] font-semibold text-center mt-4">
           {name}
         </h1>
         <p className="text-white text-center mt-2">{description}</p>
