@@ -23,6 +23,7 @@ import uiUxDesign from "./images/services/ui-ux-design.webp";
 import videoEditing from "./images/services/video-editing.webp";
 import webDevelopment from "./images/services/web-development.webp";
 import serviceCircle from "./images/service-circle.webp";
+import dummyProject1 from "./images/projects/dummy-project-1.png";
 
 
 // Icons
@@ -54,7 +55,8 @@ export const IMAGES = {
   uiUxDesign,
   videoEditing,
   webDevelopment,
-  serviceCircle
+  serviceCircle,
+  dummyProject1
 };
 
 
