@@ -9,6 +9,10 @@ import globeCircle from "./images/globe-circle.png";
 import happyClients from "./images/happy-clients.webp";
 import projectCompleted from "./images/project-completed.webp";
 import googlePartner from "./images/google-partner.png";
+import projects from "./images/projects.webp";
+import experience from "./images/experience.webp";
+import awards from "./images/award-wins.webp";
+import services from "./images/services.webp";
 // Services
 import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
 import appDevelopment from "./images/services/app-development.webp";
@@ -42,6 +46,10 @@ export const IMAGES = {
   happyClients,
   projectCompleted,
   googlePartner,
+  projects,
+  experience,
+  awards,
+  services,
   // Services
   analyticsConversionTracking,
   appDevelopment,
