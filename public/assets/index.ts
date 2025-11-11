@@ -19,6 +19,8 @@ import discovery from "./images/discovery.webp";
 import strategicPlanning from "./images/strategic-planning.webp";
 import seamlessExecution from "./images/seamless-execution.webp";
 import continuousOptimization from "./images/continuous-optimization.webp";
+import packageOffer from "./images/package-offer.webp";
+import offerGlobe from "./images/offer-globe.webp";
 // Services
 import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
 import appDevelopment from "./images/services/app-development.webp";
@@ -62,6 +64,8 @@ export const IMAGES = {
   strategicPlanning,
   seamlessExecution,
   continuousOptimization,
+  packageOffer,
+  offerGlobe,
   // Services
   analyticsConversionTracking,
   appDevelopment,

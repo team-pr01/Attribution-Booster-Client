@@ -92,7 +92,7 @@ const Services = () => {
           <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] max-w-[850px]">
             Unleash server-side tracking's potential with us!
           </h1>
-          <p className="text-white text-lg leading-[30px] max-w-[430px]">
+          <p className="text-white text-lg leading-[30px] max-w-[430px] font-Poppins">
             Maximize Your Campaign’s Potential and Boost Your ROI with Our
             Advanced Tracking Tools and Techniques.
           </p>

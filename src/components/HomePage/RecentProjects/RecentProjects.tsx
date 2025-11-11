@@ -20,12 +20,12 @@ const RecentProjects = () => {
         <Image
           src={IMAGES.circle}
           alt=""
-          className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.30] z-999"
+          className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.10] z-999"
         />
         <Image
           src={IMAGES.circle}
           alt=""
-          className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.30] z-999"
+          className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.10] z-999"
         />
         <div className="flex flex-col z-9999 relative">
           <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] text-center">
