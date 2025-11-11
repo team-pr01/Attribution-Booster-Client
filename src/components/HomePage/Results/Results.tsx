@@ -7,8 +7,9 @@ const Results = () => {
       <Image
         src={IMAGES.globeCircle}
         alt="Globe circle"
-        className="size-[114px] blur-[10px] fixed top-1/2 -translate-y-1/2 left-10 z-10 pointer-events-none select-none"
+        className="hidden md:block size-[114px] blur-[10px] absolute top-[500px] -left-60 z-10 pointer-events-none select-none"
       />
+
       <div className="flex flex-col lg:flex-row items-center justify-between">
         <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] max-w-[572px]">
           Real Results. Global Reach. Proven Trust

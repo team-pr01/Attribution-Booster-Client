@@ -26,7 +26,7 @@ const TrustedClients = () => {
           speed={50}
           pauseOnHover={true}
           gradient={false}
-          className="flex gap-[30px]"
+          className="flex gap-[30px] overflow-hidden"
         >
           {logos.map((logo, index) => (
             <motion.div

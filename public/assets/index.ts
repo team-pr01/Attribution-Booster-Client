@@ -13,6 +13,7 @@ import projects from "./images/projects.webp";
 import experience from "./images/experience.webp";
 import awards from "./images/award-wins.webp";
 import services from "./images/services.webp";
+import blueTick from "./images/blue-tick.webp";
 // Services
 import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
 import appDevelopment from "./images/services/app-development.webp";
@@ -50,6 +51,7 @@ export const IMAGES = {
   experience,
   awards,
   services,
+  blueTick,
   // Services
   analyticsConversionTracking,
   appDevelopment,
