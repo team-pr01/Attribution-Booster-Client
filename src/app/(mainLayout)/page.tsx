@@ -1,4 +1,5 @@
 import Challenges from "@/components/HomePage/Challenges/Challenges";
+import CollaborationProcess from "@/components/HomePage/CollaborationProcess/CollaborationProcess";
 import Hero from "@/components/HomePage/Hero/Hero";
 import Partner from "@/components/HomePage/Partner/Partner";
 import RecentProjects from "@/components/HomePage/RecentProjects/RecentProjects";
@@ -15,6 +16,7 @@ export default function Home() {
       <TrustedClients/>
       <RecentProjects/>
       <Results/>
+      <CollaborationProcess/>
       <Challenges/>
     </div>
   );

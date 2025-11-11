@@ -14,6 +14,11 @@ import experience from "./images/experience.webp";
 import awards from "./images/award-wins.webp";
 import services from "./images/services.webp";
 import blueTick from "./images/blue-tick.webp";
+import collaborationProcessBg from "./images/collaboration-process-bg.webp";
+import discovery from "./images/discovery.webp";
+import strategicPlanning from "./images/strategic-planning.webp";
+import seamlessExecution from "./images/seamless-execution.webp";
+import continuousOptimization from "./images/continuous-optimization.webp";
 // Services
 import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
 import appDevelopment from "./images/services/app-development.webp";
@@ -52,6 +57,11 @@ export const IMAGES = {
   awards,
   services,
   blueTick,
+  collaborationProcessBg,
+  discovery,
+  strategicPlanning,
+  seamlessExecution,
+  continuousOptimization,
   // Services
   analyticsConversionTracking,
   appDevelopment,

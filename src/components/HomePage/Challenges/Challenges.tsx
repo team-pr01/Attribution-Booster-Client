@@ -65,7 +65,7 @@ const Challenges = () => {
                 <h1 className="font-MartianBThai text-white text-[32px] leading-9 font-semibold mt-10 text-center">
                   {item.title}
                 </h1>
-                <p className="text-white mt-4 text-center">
+                <p className="text-white mt-4 text-center font-Poppins">
                   {item.description}
                 </p>
               </div>
