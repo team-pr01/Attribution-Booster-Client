@@ -9,7 +9,7 @@ const TrustedClients = () => {
   const logos = Array(8).fill(ICONS.clientDummyLogo);
 
   return (
-    <div>
+    <div className="mt-[130px]">
       <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] text-center">
         Our Trusted Clients and Partners
       </h1>

@@ -21,6 +21,7 @@ import seamlessExecution from "./images/seamless-execution.webp";
 import continuousOptimization from "./images/continuous-optimization.webp";
 import packageOffer from "./images/package-offer.webp";
 import offerGlobe from "./images/offer-globe.webp";
+import dummyAvatar from "./images/dummy-avatar.webp";
 // Services
 import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
 import appDevelopment from "./images/services/app-development.webp";
@@ -66,6 +67,7 @@ export const IMAGES = {
   continuousOptimization,
   packageOffer,
   offerGlobe,
+  dummyAvatar,
   // Services
   analyticsConversionTracking,
   appDevelopment,

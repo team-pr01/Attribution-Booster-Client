@@ -15,7 +15,7 @@ const RecentProjects = () => {
     "SEO",
   ];
   return (
-    <div className="max-w-[1800px] h-[1030px] mx-auto mt-44">
+    <div className="max-w-[1800px] h-[1030px] mx-auto mt-52">
       <div className="rounded-[20px]  bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden p-32">
         <Image
           src={IMAGES.circle}

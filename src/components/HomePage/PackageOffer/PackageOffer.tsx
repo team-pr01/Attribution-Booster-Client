@@ -3,7 +3,7 @@ import { ICONS, IMAGES } from "../../../../public/assets";
 
 const PackageOffer = () => {
   return (
-    <div className="max-w-[1800px] mx-auto rounded-[20px] relative">
+    <div className="max-w-[1800px] mx-auto rounded-[20px] relative mt-44">
       {/* Card container */}
       <div className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] py-20 px-[135px] overflow-hidden">
         {/* Faint background circle */}

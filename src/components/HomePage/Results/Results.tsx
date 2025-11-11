@@ -3,7 +3,7 @@ import { IMAGES } from "../../../../public/assets";
 
 const Results = () => {
   return (
-    <div className="max-w-[1531px] mx-auto mt-[111px] relative">
+    <div className="max-w-[1531px] mx-auto mt-[130px] relative">
       <Image
         src={IMAGES.globeCircle}
         alt="Globe circle"
@@ -14,7 +14,7 @@ const Results = () => {
         <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] max-w-[572px]">
           Real Results. Global Reach. Proven Trust
         </h1>
-        <p className="text-white text-lg leading-[30px] max-w-[651px]">
+        <p className="text-white text-lg leading-[30px] max-w-[651px] font-Poppins">
           Attribution Booster delivers measurable growth through full-stack
           development, performance marketing, and analytics-driven strategies.
           With a global footprint and a client-first mindset
