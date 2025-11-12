@@ -10,7 +10,7 @@ const TrustedClients = () => {
 
   return (
     <div className="mt-[130px]">
-      <h1 className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 2xl:leading-[61px] text-center">
+      <h1 className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] text-center">
         Our Trusted Clients and Partners
       </h1>
 

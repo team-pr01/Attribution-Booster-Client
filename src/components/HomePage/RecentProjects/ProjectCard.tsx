@@ -63,15 +63,15 @@ const ProjectCard = () => {
         className="flex items-center justify-between p-5"
       >
         <div>
-          <h1 className="font-MartianBThai text-white text-[28px] leading-[35px] font-semibold">
+          <h1 className="font-MartianBThai text-white text-xl lg:text-[28px] leading-[35px] font-semibold">
             Travel Website
           </h1>
-          <p className="text-white mt-2">Creative Design</p>
+          <p className="text-neutral-300 text-sm lg:text-base font-Poppins mt-2">Creative Design</p>
         </div>
 
         {/* Animated Arrow Icon */}
         <motion.div
-          className="size-[60px] rounded-full flex items-center justify-center border overflow-hidden"
+          className="size-12 md:size-[60px] rounded-full flex items-center justify-center border overflow-hidden"
           variants={{
             initial: {
               backgroundColor: "rgba(255, 255, 255, 0.1)",

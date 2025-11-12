@@ -18,10 +18,10 @@ export default function Home() {
       <PackageOffer />
       <TrustedClients />
       <RecentProjects />
-      {/* <Results/>
+      <Results/>
       <Testimonial/>
       <CollaborationProcess/>
-      <Challenges/> */}
+      <Challenges/>
     </div>
   );
 }

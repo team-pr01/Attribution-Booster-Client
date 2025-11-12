@@ -22,7 +22,7 @@ const Challenges = () => {
   ];
 
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden relative px-5 2xl:px-0">
       {/* Decorative circle */}
       <Image
         src={IMAGES.circle}
@@ -31,11 +31,11 @@ const Challenges = () => {
       />
 
       <div className="max-w-[1531px] mx-auto mt-[111px]">
-        <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] max-w-[850px] mx-auto text-center mb-12">
+        <h1 className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-8 xl:leading-[61px] max-w-[850px] mx-auto text-center mb-12">
           Yes, we know your challenges as a Digital agency
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px] mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-[30px] mt-16 lg:mt-24">
           {challengeData.map((item, index) => (
             <div key={index} className="relative h-full">
               {/* SVG background */}
@@ -62,10 +62,10 @@ const Challenges = () => {
                   alt="Tick icon"
                   className="size-[110px] mx-auto"
                 />
-                <h1 className="font-MartianBThai text-white text-[32px] leading-9 font-semibold mt-10 text-center">
+                <h1 className="font-MartianBThai text-white text-2xl 2xl:text-[32px] leading-9 font-semibold mt-10 text-center">
                   {item.title}
                 </h1>
-                <p className="text-white mt-4 text-center font-Poppins">
+                <p className="text-neutral-300 mt-4 text-sm lg:text-base text-center font-Poppins">
                   {item.description}
                 </p>
               </div>

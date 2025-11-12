@@ -109,7 +109,7 @@ const ServiceCard = ({
         <h1 className="font-MartianBThai text-white text-xl lg:text-[28px] leading-[35px] font-semibold text-center mt-4">
           {name}
         </h1>
-        <p className="text-neutral-300 text-sm lg:text-base text-center mt-2">{description}</p>
+        <p className="text-neutral-300 text-sm lg:text-base font-Poppins text-center mt-2">{description}</p>
       </motion.div>
     </motion.div>
   );

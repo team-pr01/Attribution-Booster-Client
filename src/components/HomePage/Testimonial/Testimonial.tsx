@@ -36,12 +36,12 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <div className="max-w-[1800px] mx-auto rounded-[20px] relative mt-44">
+    <div className="max-w-[1800px] mx-auto rounded-[20px] relative mt-28 2xl:mt-44">
       {/* Wrapper with relative positioning */}
-      <div className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] py-20 px-[135px] overflow-hidden">
+      <div className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] py-5 lg:py-10 2xl:py-20 px-5 lg:px-10 2xl:px-[135px] overflow-hidden">
         {/* Globe placed behind everything */}
         <div
-          className="absolute bottom-28 left-1/2 transform -translate-x-1/2 pointer-events-none"
+          className="absolute bottom-10 2xl:bottom-28 left-1/2 transform -translate-x-1/2 pointer-events-none"
           style={{ zIndex: 0 }}
         >
           <Image
@@ -55,7 +55,7 @@ const Testimonial = () => {
         <Image
           src={IMAGES.circle}
           alt="circle background"
-          className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.06] z-1"
+          className="w-[643px] h-[664px] hidden 2xl:block absolute -top-64 -left-56 opacity-[0.06] z-1"
         />
         <Image
           src={IMAGES.circle}
@@ -65,10 +65,10 @@ const Testimonial = () => {
 
         {/* Header section */}
         <div className="relative z-5 flex flex-col lg:flex-row items-center justify-between mb-16">
-          <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] max-w-[727px]">
+          <h1 className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[727px]">
             Trusted by Clients Around the World
           </h1>
-          <p className="text-white text-lg leading-[30px] max-w-[520px] font-Poppins mt-6 lg:mt-0">
+          <p className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[520px]">
             Hear from real clients who rely on our digital solutions,
             development expertise, and marketing strategies to grow and protect
             their businesses.
@@ -94,6 +94,12 @@ const Testimonial = () => {
             {testimonials.map((item, index) => (
               <SwiperSlide key={index}>
                 <div className="bg-neutral-10/60 backdrop-blur-[20px] rounded-[10px] px-5 py-[30px] flex flex-col relative border border-gray-600 cursor-pointer h-full">
+                 {/* Ratings */}
+                    <div className="lg:hidden flex items-center gap-1 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <FaStar key={i} className="text-yellow-500 size-5" />
+                      ))}
+                    </div>
                   <p className="text-white text-lg leading-[30px] font-Poppins">
                     {item.feedback}
                   </p>
@@ -101,7 +107,7 @@ const Testimonial = () => {
                   <div className="flex items-center justify-between mt-12">
                     {/* Reviewer */}
                     <div className="flex items-center gap-4">
-                      <div className="size-20 rounded-full bg-neutral-10 backdrop-blur-[15px] p-3 flex items-center justify-center">
+                      <div className="size-14 lg:size-20 rounded-full bg-neutral-10 backdrop-blur-[15px] p-2 flex items-center justify-center">
                         <Image
                           src={IMAGES.dummyAvatar}
                           alt={item.name}
@@ -109,17 +115,17 @@ const Testimonial = () => {
                         />
                       </div>
                       <div>
-                        <h1 className="font-MartianBThai text-white text-2xl font-semibold">
+                        <h1 className="font-MartianBThai text-white text-xl lg:text-2xl font-semibold">
                           {item.name}
                         </h1>
-                        <p className="text-neutral-20 font-Poppins">
+                        <p className="text-neutral-20 text-sm lg:text-base font-Poppins">
                           {item.title}
                         </p>
                       </div>
                     </div>
 
                     {/* Ratings */}
-                    <div className="flex items-center gap-1">
+                    <div className="hidden lg:flex items-center gap-1">
                       {[...Array(5)].map((_, i) => (
                         <FaStar key={i} className="text-yellow-500 size-5" />
                       ))}

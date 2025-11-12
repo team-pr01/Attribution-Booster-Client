@@ -29,7 +29,7 @@ const CollaborationProcess = () => {
     },
   ];
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden relative px-5 2xl:px-0">
       {/* Decorative circle */}
       <Image
         src={IMAGES.collaborationProcessBg}
@@ -39,17 +39,17 @@ const CollaborationProcess = () => {
 
       <div className="max-w-[1531px] mx-auto mt-[111px]">
         <div className="flex flex-col lg:flex-row items-center justify-between">
-          <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] max-w-[619px]">
+          <h1 className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[619px]">
             Our Collaboration Process
           </h1>
-          <p className="text-white text-lg leading-[30px] max-w-[707px]">
+          <p className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins text-center max-w-[707px]">
             We prioritize open communication, transparency, and strategy from
             day one, ensuring every project starts with clarity and ends with
             measurable success.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-[30px] mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] mt-16 lg:mt-24">
           {collaborationProcess?.map((item, index) => (
             <div key={index} className="relative h-full">
               {/* SVG background */}
@@ -83,7 +83,7 @@ const CollaborationProcess = () => {
                 <h1 className="font-MartianBThai text-white text-2xl font-semibold mt-[30px]">
                   {item.title}
                 </h1>
-                <p className="text-white mt-4 font-Poppins">
+                <p className="text-neutral-300 text-sm lg:text-base mt-4 font-Poppins">
                   {item.description}
                 </p>
               </div>
