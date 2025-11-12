@@ -1,5 +1,6 @@
 import Challenges from "@/components/HomePage/Challenges/Challenges";
 import CollaborationProcess from "@/components/HomePage/CollaborationProcess/CollaborationProcess";
+import ContactUs from "@/components/HomePage/ContactUs/ContactUs";
 import Hero from "@/components/HomePage/Hero/Hero";
 import PackageOffer from "@/components/HomePage/PackageOffer/PackageOffer";
 import Partner from "@/components/HomePage/Partner/Partner";
@@ -23,6 +24,7 @@ export default function Home() {
       <VideoIntro/>
       <Testimonial/>
       <CollaborationProcess/>
+      <ContactUs/>
       <Challenges/>
     </div>
   );
