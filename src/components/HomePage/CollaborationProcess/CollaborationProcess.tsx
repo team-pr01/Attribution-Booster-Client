@@ -1,7 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+
 import Image from "next/image";
 import { IMAGES } from "../../../../public/assets";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const CollaborationProcess = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+
   const collaborationProcess = [
     {
       icon: IMAGES.discovery,
@@ -28,32 +37,197 @@ const CollaborationProcess = () => {
         "We monitor, analyze, and refine, ensuring performance improves over time and your digital presence ",
     },
   ];
+
+  // Animation variants
+  const containerVariants: any = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        duration: 0.8
+      }
+    }
+  };
+
+  const headerVariants: any = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        duration: 0.8
+      }
+    }
+  };
+
+  const cardContainerVariants: any = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const cardVariants: any = {
+    hidden: { 
+      opacity: 0, 
+      y: 100,
+      scale: 0.8 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+        duration: 0.8
+      }
+    }
+  };
+
+  const svgWaveVariants: any = {
+    hidden: { 
+      scale: 0,
+      opacity: 0 
+    },
+    visible: { 
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        duration: 0.6
+      }
+    }
+  };
+
+  const iconVariants: any = {
+    hidden: { 
+      scale: 0,
+      rotate: -180 
+    },
+    visible: { 
+      scale: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        stiffness: 150,
+        damping: 10,
+        duration: 0.8
+      }
+    },
+    hover: {
+      scale: 1.2,
+      rotate: 360,
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut"
+      }
+    }
+  };
+
+  const textVariants: any = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const floatingAnimation: any = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: {
+      opacity: 0.05,
+      scale: 1,
+      transition: {
+        duration: 1.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <div className="overflow-hidden relative px-5 2xl:px-0">
-      {/* Decorative circle */}
-      <Image
-        src={IMAGES.collaborationProcessBg}
-        alt="Globe circle"
-        className="opacity-[0.05] blur-[10px] absolute left-1/5 -top-[200px]"
-      />
+    <motion.div 
+      ref={containerRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      className="overflow-hidden relative px-5 2xl:px-0"
+    >
+      {/* Animated Decorative circle */}
+      <motion.div
+        variants={floatingAnimation}
+        initial="hidden"
+        animate="visible"
+      >
+        <Image
+          src={IMAGES.collaborationProcessBg}
+          alt="Globe circle"
+          className="opacity-[0.05] blur-[10px] absolute left-1/5 -top-[200px]"
+        />
+      </motion.div>
 
       <div className="max-w-[1531px] mx-auto mt-[111px]">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
-          <h1 className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[619px]">
+        {/* Header Section */}
+        <motion.div 
+          variants={containerVariants}
+          className="flex flex-col lg:flex-row items-center justify-between"
+        >
+          <motion.h1 
+            variants={headerVariants}
+            className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[619px]"
+          >
             Our Collaboration Process
-          </h1>
-          <p className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins text-center max-w-[707px]">
+          </motion.h1>
+          
+          <motion.p 
+            variants={headerVariants}
+            transition={{ delay: 0.1 }}
+            className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins text-center max-w-[707px] mt-4 lg:mt-0"
+          >
             We prioritize open communication, transparency, and strategy from
             day one, ensuring every project starts with clarity and ends with
             measurable success.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] mt-16 lg:mt-24">
+        {/* Process Cards Grid */}
+        <motion.div 
+          variants={cardContainerVariants}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] mt-16 lg:mt-24"
+        >
           {collaborationProcess?.map((item, index) => (
-            <div key={index} className="relative h-full">
-              {/* SVG background */}
-              <div className="absolute -top-5 inset-x-0 flex justify-center -z-10">
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              whileHover={{ 
+                y: -10,
+                transition: { duration: 0.3 }
+              }}
+              className="relative h-full"
+            >
+              {/* Animated SVG Wave Background */}
+              <motion.div 
+                className="absolute -top-5 inset-x-0 flex justify-center -z-10"
+                variants={svgWaveVariants}
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.3 }
+                }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="274"
@@ -67,31 +241,70 @@ const CollaborationProcess = () => {
                     fillOpacity="0.3"
                   />
                 </svg>
-              </div>
+              </motion.div>
 
-              {/* Card content */}
-              <div className="bg-neutral-10 rounded-[10px] backdrop-blur-[15px] p-5 flex flex-col relative z-10 h-full">
-                <h1 className="font-MartianBThai text-white text-[32px] leading-9 font-semibold text-center">
+              {/* Card Content */}
+              <motion.div 
+                className="bg-neutral-10 rounded-[10px] backdrop-blur-[15px] p-5 flex flex-col relative z-10 h-full"
+                whileHover={{
+                  boxShadow: "0 20px 40px rgba(7, 244, 250, 0.2)",
+                  transition: { duration: 0.3 }
+                }}
+              >
+                {/* Step Number */}
+                <motion.h1 
+                  className="font-MartianBThai text-white text-[32px] leading-9 font-semibold text-center"
+                  variants={textVariants}
+                >
                   Step {index + 1}
-                </h1>
+                </motion.h1>
 
-                <Image
-                  src={item?.icon}
-                  alt="Tick icon"
-                  className="size-20 mt-[60px]"
-                />
-                <h1 className="font-MartianBThai text-white text-2xl font-semibold mt-[30px]">
+                {/* Animated Icon */}
+                <motion.div
+                  variants={iconVariants}
+                  whileHover="hover"
+                  className=""
+                >
+                  <Image
+                    src={item?.icon}
+                    alt="Process icon"
+                    className="size-20 mt-[60px]"
+                  />
+                </motion.div>
+
+                {/* Title */}
+                <motion.h1 
+                  className="font-MartianBThai text-white text-2xl font-semibold mt-[30px]"
+                  variants={textVariants}
+                  transition={{ delay: 0.1 }}
+                >
                   {item.title}
-                </h1>
-                <p className="text-neutral-300 text-sm lg:text-base mt-4 font-Poppins">
+                </motion.h1>
+
+                {/* Description */}
+                <motion.p 
+                  className="text-neutral-300 text-sm lg:text-base mt-4 font-Poppins"
+                  variants={textVariants}
+                  transition={{ delay: 0.2 }}
+                >
                   {item.description}
-                </p>
-              </div>
-            </div>
+                </motion.p>
+
+                {/* Connection Line (for visual flow) */}
+                {index < collaborationProcess.length - 1 && (
+                  <motion.div
+                    className="hidden xl:block absolute -right-4 top-1/2 w-4 h-0.5 bg-primary-5/50 z-20"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: 0.8 + index * 0.2 }}
+                  />
+                )}
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
