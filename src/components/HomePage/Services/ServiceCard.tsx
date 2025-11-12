@@ -14,7 +14,7 @@ const ServiceCard = ({
 }) => {
   return (
     <motion.div
-      className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] px-5 py-[30px] flex flex-col items-center justify-center w-[360px] relative border border-transparent cursor-pointer"
+      className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] px-5 py-[30px] flex flex-col items-center justify-center w-full max-w-[360px] relative border border-transparent cursor-pointer"
       whileHover="hover"
       initial="initial"
       variants={{
@@ -106,10 +106,10 @@ const ServiceCard = ({
           ease: "easeOut",
         }}
       >
-        <h1 className="font-MartianBThai text-white text-[32px] leading-[35px] font-semibold text-center mt-4">
+        <h1 className="font-MartianBThai text-white text-xl lg:text-[28px] leading-[35px] font-semibold text-center mt-4">
           {name}
         </h1>
-        <p className="text-white text-center mt-2">{description}</p>
+        <p className="text-neutral-300 text-sm lg:text-base text-center mt-2">{description}</p>
       </motion.div>
     </motion.div>
   );

@@ -1,10 +1,109 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/no-unescaped-entities */
+"use client";
 
 import Image from "next/image";
 import { IMAGES } from "../../../../public/assets";
 import ServiceCard from "./ServiceCard";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Services = () => {
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, amount: 0.1 });
+
+  // Animation variants
+  const containerVariants: any = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const slideInLeft: any = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const slideInRight: any = {
+    hidden: {
+      opacity: 0,
+      x: 100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const floatAnimation: any = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 0.3,
+      scale: 1,
+      transition: {
+        duration: 1.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const staggerCards: any = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const cardItem: any = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.9,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        duration: 0.6,
+      },
+    },
+  };
+
   const servicesData = [
     {
       name: "PPC Advertising",
@@ -13,7 +112,7 @@ const Services = () => {
       icon: IMAGES.ppcAdvertising,
     },
     {
-      name: "Analytics and Conversion Tracking",
+      name: "Analytics",
       description:
         "Our expert team manages all aspects of your email campaigns, from creating engaging content to analyzing campaign performance.",
       icon: IMAGES.analyticsConversionTracking,
@@ -79,32 +178,85 @@ const Services = () => {
       icon: IMAGES.graphicsDesign,
     },
   ];
-  return (
-    <div className="relative overflow-hidden">
-      <Image
-        src={IMAGES.serviceCircle}
-        alt=""
-        className="w-[523px] h-[652px] absolute top-32 -right-56 opacity-[0.10] z-999"
-      />
-      <Image src={IMAGES.globeCircle} alt="" className="size-[114px] blur-[10px] absolute top-[500px] -left-10" />
-      <div className="max-w-[1531px] mx-auto mt-[111px]">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
-          <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] max-w-[850px]">
-            Unleash server-side tracking's potential with us!
-          </h1>
-          <p className="text-white text-lg leading-[30px] max-w-[430px] font-Poppins">
-            Maximize Your Campaign’s Potential and Boost Your ROI with Our
-            Advanced Tracking Tools and Techniques.
-          </p>
-        </div>
 
-        <div className="mt-[70px] grid grid-cols-4 gap-5">
-          {servicesData?.map((service) => (
-            <ServiceCard key={service?.name} {...service} />
+  return (
+    <motion.div
+      ref={containerRef}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
+      className="relative overflow-hidden px-5 2xl:px-0"
+    >
+      {/* Animated Background Elements */}
+      <motion.div variants={floatAnimation} initial="hidden" animate="visible">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="size-[300px] 2xl:size-[523px] absolute top-10 2xl:top-32 -right-28 2xl:-right-56 opacity-[0.40] z-999"
+        >
+          <Image src={IMAGES.serviceCircle} alt="" className="w-full h-full" />
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        variants={floatAnimation}
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: 0.3 }}
+      >
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 0.5,
+          }}
+          className="size-[114px] blur-[10px] absolute top-[500px] -left-10"
+        >
+          <Image src={IMAGES.globeCircle} alt="" className="w-full h-full" />
+        </motion.div>
+      </motion.div>
+
+      <div className="max-w-[1531px] mx-auto mt-[111px]">
+        {/* Header Section */}
+        <motion.div
+          className="flex flex-col lg:flex-row items-center justify-between"
+          variants={containerVariants}
+        >
+          <motion.h1
+            variants={slideInLeft}
+            className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 2xl:leading-[61px] max-w-[850px]"
+          >
+            Unleash server-side tracking's potential with us!
+          </motion.h1>
+
+          <motion.p
+            variants={slideInRight}
+            className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[430px] font-Poppins mt-4 lg:mt-0"
+          >
+            Maximize Your Campaign's Potential and Boost Your ROI with Our
+            Advanced Tracking Tools and Techniques.
+          </motion.p>
+        </motion.div>
+
+        {/* Services Grid */}
+        <motion.div
+          className="mt-[70px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+          variants={staggerCards}
+        >
+          {servicesData?.map((service, index) => (
+            <motion.div key={service?.name} variants={cardItem} custom={index}>
+              <ServiceCard {...service} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

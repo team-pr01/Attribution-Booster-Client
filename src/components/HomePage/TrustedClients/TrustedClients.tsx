@@ -10,11 +10,11 @@ const TrustedClients = () => {
 
   return (
     <div className="mt-[130px]">
-      <h1 className="font-MartianBThai text-white text-[56px] font-semibold leading-[61px] text-center">
+      <h1 className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 2xl:leading-[61px] text-center">
         Our Trusted Clients and Partners
       </h1>
 
-      <p className="text-white text-lg text-center leading-[30px] max-w-[937px] mx-auto mt-5">
+      <p className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] text-center max-w-[937px] mx-auto mt-5">
         After our services section there will be a section to showcase the logo
         of the brands, company or partner program that we have worked with and
         get partner certificates. Example:
