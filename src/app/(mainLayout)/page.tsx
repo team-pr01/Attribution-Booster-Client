@@ -7,6 +7,7 @@ import Partner from "@/components/HomePage/Partner/Partner";
 import RecentProjects from "@/components/HomePage/RecentProjects/RecentProjects";
 import Results from "@/components/HomePage/Results/Results";
 import Services from "@/components/HomePage/Services/Services";
+import Team from "@/components/HomePage/Team/Team";
 import Testimonial from "@/components/HomePage/Testimonial/Testimonial";
 import TrustedClients from "@/components/HomePage/TrustedClients/TrustedClients";
 import VideoIntro from "@/components/HomePage/VideoIntro/VideoIntro";
@@ -22,6 +23,7 @@ export default function Home() {
       <RecentProjects />
       <Results/>
       <VideoIntro/>
+      <Team/>
       <Testimonial/>
       <CollaborationProcess/>
       <ContactUs/>

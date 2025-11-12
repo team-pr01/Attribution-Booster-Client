@@ -23,6 +23,11 @@ import packageOffer from "./images/package-offer.webp";
 import offerGlobe from "./images/offer-globe.webp";
 import dummyAvatar from "./images/dummy-avatar.webp";
 import videoDummyImage from "./images/videoDummyImage.webp";
+import fullStackInnovators from "./images/full-stack-innovators.webp";
+import dataExperts from "./images/data-experts.webp";
+import projectManagers from "./images/project-managers.webp";
+import strategicCreatives from "./images/strategic-creatives.webp";
+import ceo from "./images/CEO.jpg";
 // Services
 import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
 import appDevelopment from "./images/services/app-development.webp";
@@ -70,6 +75,11 @@ export const IMAGES = {
   offerGlobe,
   dummyAvatar,
   videoDummyImage,
+  fullStackInnovators,
+  dataExperts,
+  projectManagers,
+  strategicCreatives,
+  ceo,
   // Services
   analyticsConversionTracking,
   appDevelopment,
