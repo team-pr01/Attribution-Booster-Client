@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-
 import Image from "next/image";
 import { IMAGES } from "../../../../public/assets";
 
