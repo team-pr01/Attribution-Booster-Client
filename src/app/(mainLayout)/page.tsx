@@ -8,6 +8,7 @@ import Results from "@/components/HomePage/Results/Results";
 import Services from "@/components/HomePage/Services/Services";
 import Testimonial from "@/components/HomePage/Testimonial/Testimonial";
 import TrustedClients from "@/components/HomePage/TrustedClients/TrustedClients";
+import VideoIntro from "@/components/HomePage/VideoIntro/VideoIntro";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <TrustedClients />
       <RecentProjects />
       <Results/>
+      <VideoIntro/>
       <Testimonial/>
       <CollaborationProcess/>
       <Challenges/>

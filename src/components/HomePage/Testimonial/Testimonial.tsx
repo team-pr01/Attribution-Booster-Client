@@ -176,7 +176,7 @@ const Testimonial = () => {
           <Image
             src={IMAGES.offerGlobe}
             alt="Decorative Globe"
-            className="w-[114px] opacity-80 blur-[2px]"
+            className="w-[114px] opacity-80 blur-[2px] animate-spin"
           />
         </motion.div>
 

@@ -22,6 +22,7 @@ import continuousOptimization from "./images/continuous-optimization.webp";
 import packageOffer from "./images/package-offer.webp";
 import offerGlobe from "./images/offer-globe.webp";
 import dummyAvatar from "./images/dummy-avatar.webp";
+import videoDummyImage from "./images/videoDummyImage.webp";
 // Services
 import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
 import appDevelopment from "./images/services/app-development.webp";
@@ -68,6 +69,7 @@ export const IMAGES = {
   packageOffer,
   offerGlobe,
   dummyAvatar,
+  videoDummyImage,
   // Services
   analyticsConversionTracking,
   appDevelopment,

@@ -1,0 +1,24 @@
+/* From Uiverse.io by Carlos-vargs */ 
+.video-button {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    border-radius: 100%;
+    background: linear-gradient(30deg, rgb(3, 215, 243) 10%, rgb(0, 136, 255) 80%);
+    transition: all 0.3s ease-in-out 0s;
+    box-shadow: rgba(193, 244, 246, 0.698) 0px 0px 0px 0px;
+    animation: 1.2s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal none running pulse;
+  }
+  
+  .video-button:is(:hover, :focus) {
+    transform: scale(1.2);
+  }
+  
+  @keyframes pulse {
+    100% {
+      box-shadow: 0 0 0 45px rgba(193,244,246,0);
+    }
+  }
+  
+  
+  
