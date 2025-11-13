@@ -461,7 +461,7 @@ const Hero = () => {
             }}
             src={IMAGES.heroImg}
             alt=""
-            className="absolute bottom-0 w-full lg:w-1/2 2xl:w-4/7 mx-auto justify-self-center z-50 flex"
+            className="absolute bottom-0 w-full lg:w-1/2 2xl:w-4/7 mx-auto justify-self-center z-50 flex "
           />
         </motion.div>
       </motion.div>
