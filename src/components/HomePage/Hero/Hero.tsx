@@ -173,6 +173,10 @@ const Hero = () => {
             className="size-[200px] 2xl:size-[643px] absolute -top-10 2xl:-top-64 -right-10 2xl:-right-56 opacity-[0.30] z-999"
           >
             <Image
+              style={{
+                mixBlendMode: "hard-light",
+                filter: "saturate(200%)",
+              }}
               src={IMAGES.circle}
               alt=""
               className="w-full h-full mix-blend-color-dodge"
@@ -204,6 +208,10 @@ const Hero = () => {
             className="size-[150px] 2xl:size-[643px] absolute -top-10 2xl:-top-64 -left-10 2xl:-left-56 opacity-[0.30] z-999"
           >
             <Image
+              style={{
+                mixBlendMode: "hard-light",
+                filter: "saturate(200%)",
+              }}
               src={IMAGES.circle}
               alt=""
               className="w-full h-full mix-blend-color-dodge"
@@ -212,17 +220,39 @@ const Hero = () => {
         </motion.div>
 
         {/* Left gradient */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
           <Image
+          style={{
+              mixBlendMode: "hard-light",
+              filter: "saturate(180%)",
+            }}
             src={IMAGES.heroLeftGradient}
             alt=""
             className="w-[643px] h-[664px] absolute -top-64 -left-56 z-999"
           />
-        </motion.div>
+        </motion.div> */}
+
+        {/* Right gradient */}
+        {/* <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <Image
+          style={{
+              mixBlendMode: "hard-light",
+              filter: "saturate(200%)",
+            }}
+            src={IMAGES.heroRightGradient}
+            alt=""
+            className="w-[643px] h-[664px] absolute -top-64 -right-56 z-999"
+          />
+        </motion.div> */}
+
         {/* Middle gradient */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -425,9 +455,13 @@ const Hero = () => {
           animate="visible"
         >
           <Image
+            style={{
+              mixBlendMode: "hard-light",
+              filter: "saturate(160%)",
+            }}
             src={IMAGES.heroImg}
             alt=""
-            className="absolute bottom-0 w-full lg:w-1/2 2xl:w-4/7 mx-auto justify-self-center z-50 flex mix-blend-hard-light"
+            className="absolute bottom-0 w-full lg:w-1/2 2xl:w-4/7 mx-auto justify-self-center z-50 flex"
           />
         </motion.div>
       </motion.div>

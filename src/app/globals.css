@@ -189,48 +189,12 @@
   scrollbar-color: gray transparent;
 }
 
-
-.mix-blend-color-dodge {
-  mix-blend-mode: color-burn;
-}
-
-
-
-/* In your CSS file (e.g., globals.css) */
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animated-border-wrapper {
-  /* This is crucial: makes the wrapper a reference point for the absolute border */
-  position: relative; 
-  /* Hides the border when it's outside the button's rounded corners */
-  overflow: hidden; 
-  /* Optional: Ensures the wrapper takes only the space needed for the button */
-  display: inline-block;
-  /* Match the button's border radius so the overflow clipping looks smooth */
-  border-radius: 28px; 
-}
-
-.animated-border-wrapper::before {
-  content: "";
-  /* Make the pseudo-element bigger than the button to create space for the border */
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  right: -50px;
-  bottom: -50px;
-  z-index: -1; /* Place it behind the button content */
-  
-  /* The border effect is created by a white background on this rotating element */
-  background: conic-gradient(transparent 0deg, transparent 200deg, white 220deg, white 360deg);
-  
-  /* Apply the animation */
-  animation: spin 4s linear infinite; /* 4 seconds for a full rotation, constant speed, loops forever */
+.my-image {
+  /* Example values — replace with your own slider settings */
+  filter: 
+    brightness(1.10)      /* Exposure approx */
+    contrast(1.20)        /* Contrast */
+    saturate(1.50)        /* Saturation */
+    hue-rotate(10deg)     /* Tint approx */
+    sepia(0.10);          /* Temperature approx */
 }
