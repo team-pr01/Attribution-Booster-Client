@@ -115,7 +115,7 @@ const PackageOffer = () => {
           <Image
             src={IMAGES.circle}
             alt=""
-            className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.06] z-0"
+            className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.03] z-0"
           />
         </motion.div>
 

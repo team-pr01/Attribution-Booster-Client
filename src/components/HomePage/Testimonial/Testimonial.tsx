@@ -49,105 +49,105 @@ const Testimonial = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const fadeInUp: any = {
-    hidden: { 
-      opacity: 0, 
-      y: 60 
+    hidden: {
+      opacity: 0,
+      y: 60,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 20,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const slideInLeft: any = {
-    hidden: { 
-      opacity: 0, 
-      x: -100 
+    hidden: {
+      opacity: 0,
+      x: -100,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 20,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const slideInRight: any = {
-    hidden: { 
-      opacity: 0, 
-      x: 100 
+    hidden: {
+      opacity: 0,
+      x: 100,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 20,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const floatAnimation: any = {
-    hidden: { 
-      opacity: 0, 
-      scale: 0.8 
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
     },
-    visible: { 
-      opacity: 0.8, 
+    visible: {
+      opacity: 0.8,
       scale: 1,
       transition: {
         duration: 1.5,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const cardAnimation: any = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
-      scale: 0.95 
+      scale: 0.95,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       scale: 1,
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 15,
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   return (
-    <motion.div 
+    <motion.div
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       className="max-w-[1800px] mx-auto rounded-[20px] relative mt-28 2xl:mt-44"
     >
       {/* Wrapper with relative positioning */}
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] py-5 lg:py-10 2xl:py-20 px-5 lg:px-10 2xl:px-[135px] overflow-hidden"
       >
@@ -164,13 +164,13 @@ const Testimonial = () => {
             rotate: {
               duration: 20,
               repeat: Infinity,
-              ease: "linear"
+              ease: "linear",
             },
             y: {
               duration: 3,
               repeat: Infinity,
-              ease: "easeInOut"
-            }
+              ease: "easeInOut",
+            },
           }}
         >
           <Image
@@ -181,18 +181,14 @@ const Testimonial = () => {
         </motion.div>
 
         {/* Background circles */}
-        <motion.div
-          variants={slideInLeft}
-          initial="hidden"
-          animate="visible"
-        >
+        <motion.div variants={slideInLeft} initial="hidden" animate="visible">
           <Image
             src={IMAGES.circle}
             alt="circle background"
-            className="w-[643px] h-[664px] hidden 2xl:block absolute -top-64 -left-56 opacity-[0.06] z-1"
+            className="w-[643px] h-[664px] hidden 2xl:block absolute -top-64 -left-56 opacity-[0.03] z-1"
           />
         </motion.div>
-        
+
         <motion.div
           variants={slideInRight}
           initial="hidden"
@@ -202,20 +198,20 @@ const Testimonial = () => {
           <Image
             src={IMAGES.circle}
             alt="circle background"
-            className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.06] z-1"
+            className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.03] z-1"
           />
         </motion.div>
 
         {/* Header section */}
         <div className="relative z-5 flex flex-col lg:flex-row items-center justify-between mb-16">
-          <motion.h1 
+          <motion.h1
             variants={fadeInUp}
             className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[727px]"
           >
             Trusted by Clients Around the World
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             variants={fadeInUp}
             transition={{ delay: 0.1 }}
             className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[520px]"
@@ -227,7 +223,7 @@ const Testimonial = () => {
         </div>
 
         {/* Swiper for testimonial cards */}
-        <motion.div 
+        <motion.div
           variants={fadeInUp}
           transition={{ delay: 0.3 }}
           className="relative z-10"
@@ -256,12 +252,12 @@ const Testimonial = () => {
                   whileHover={{
                     y: -5,
                     scale: 1.02,
-                    transition: { duration: 0.3 }
+                    transition: { duration: 0.3 },
                   }}
                   className="bg-neutral-10/60 backdrop-blur-[20px] rounded-[10px] px-5 py-[30px] flex flex-col relative border border-gray-600 cursor-pointer h-full"
                 >
                   {/* Ratings */}
-                  <motion.div 
+                  <motion.div
                     className="lg:hidden flex items-center gap-1 mb-2"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -278,8 +274,8 @@ const Testimonial = () => {
                       </motion.div>
                     ))}
                   </motion.div>
-                  
-                  <motion.p 
+
+                  <motion.p
                     className="text-white text-lg leading-[30px] font-Poppins"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -290,13 +286,13 @@ const Testimonial = () => {
 
                   <div className="flex items-center justify-between mt-12">
                     {/* Reviewer */}
-                    <motion.div 
+                    <motion.div
                       className="flex items-center gap-4"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <motion.div 
+                      <motion.div
                         className="size-14 lg:size-20 rounded-full bg-neutral-10 backdrop-blur-[15px] p-2 flex items-center justify-center"
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.2 }}
@@ -318,7 +314,7 @@ const Testimonial = () => {
                     </motion.div>
 
                     {/* Ratings */}
-                    <motion.div 
+                    <motion.div
                       className="hidden lg:flex items-center gap-1"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}

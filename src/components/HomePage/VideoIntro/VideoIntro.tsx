@@ -148,7 +148,7 @@ const VideoIntro = () => {
           <Image
             src={IMAGES.videoDummyImage}
             alt=""
-            className="w-full max-h-[700px] object-cover rounded-2xl z-10 opacity-70"
+            className="w-full max-h-[700px] object-cover rounded-2xl z-10"
           />
           {/* video play btn */}
           <div className="absolute top-0 bottom-0 right-0 left-0 z-20 flex items-center justify-center">
@@ -194,7 +194,7 @@ const VideoIntro = () => {
           <Image
             src={IMAGES.circle}
             alt=""
-            className="size-[400px] absolute -bottom-40 -left-32 opacity-[0.30] z-0"
+            className="size-[400px] absolute -bottom-40 -left-32 opacity-[0.05] z-0"
           />
 
           {/* Main content */}

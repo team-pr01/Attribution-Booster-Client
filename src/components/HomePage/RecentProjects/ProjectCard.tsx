@@ -7,7 +7,7 @@ import { IMAGES } from "../../../../public/assets";
 const ProjectCard = () => {
   return (
     <motion.div
-      className="bg-neutral-10 backdrop-blur-[15px] rounded-[7px] flex flex-col relative border border-transparent cursor-pointer"
+      className="bg-neutral-10 backdrop-blur-[15px] rounded-[7px] flex flex-col group relative border border-transparent cursor-pointer"
       whileHover="hover"
       initial="initial"
       variants={{
@@ -25,6 +25,8 @@ const ProjectCard = () => {
         ease: "easeOut",
       }}
     >
+      {/* Shine Border Effect - Only visible on hover */}
+                <div className="shine-border absolute inset-0 rounded-[10px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
       {/* Animated Border Glow Effect */}
       <motion.div
         className="absolute inset-0 rounded-[7px] border-2 pointer-events-none"

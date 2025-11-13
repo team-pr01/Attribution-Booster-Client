@@ -118,7 +118,7 @@ const Hero = () => {
       className="max-w-[1800px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px] bg-black/40 border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
+        className="rounded-[20px]  border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -132,14 +132,36 @@ const Hero = () => {
           className="flex items-center justify-between max-w-[320px] 2xl:max-w-[1000px] absolute left-4 lgl:left-[300px] 2xl:left-[450px] top-48 w-full"
           variants={staggerContainer}
         >
-          <motion.div variants={globeAnimation}>
+          <motion.div
+            variants={globeAnimation}
+            animate={{
+              y: [0, -12, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
             <Image
               src={IMAGES.globeCircle}
               alt=""
               className="size-9 md:size-12"
             />
           </motion.div>
-          <motion.div variants={globeAnimation}>
+
+          <motion.div
+            variants={globeAnimation}
+            animate={{
+              y: [0, -12, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.4,
+            }}
+          >
             <Image
               src={IMAGES.globeCircle}
               alt=""
@@ -149,12 +171,12 @@ const Hero = () => {
         </motion.div>
 
         {/* Hero bg */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.04 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-        >
-          <Image src={IMAGES.heroBg} alt="" className="w-full max-h-[1125px]" />
+        <motion.div transition={{ duration: 1.5, delay: 0.5 }}>
+          <Image
+            src={IMAGES.heroBg}
+            alt=""
+            className="w-full h-[1125px] opacity-[0.6]"
+          />
         </motion.div>
 
         {/* Right circle */}
@@ -184,13 +206,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* <Image
-  src={IMAGES.heroRightGradient}
-  alt=""
-  className="size-[100px] 2xl:size-[643px] absolute -top-64 -right-56 z-999"
-
-  /> */}
-
         {/* Left circle */}
         <motion.div
           variants={floatAnimation}
@@ -218,40 +233,6 @@ const Hero = () => {
             />
           </motion.div>
         </motion.div>
-
-        {/* Left gradient */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <Image
-          style={{
-              mixBlendMode: "hard-light",
-              filter: "saturate(180%)",
-            }}
-            src={IMAGES.heroLeftGradient}
-            alt=""
-            className="w-[643px] h-[664px] absolute -top-64 -left-56 z-999"
-          />
-        </motion.div> */}
-
-        {/* Right gradient */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <Image
-          style={{
-              mixBlendMode: "hard-light",
-              filter: "saturate(200%)",
-            }}
-            src={IMAGES.heroRightGradient}
-            alt=""
-            className="w-[643px] h-[664px] absolute -top-64 -right-56 z-999"
-          />
-        </motion.div> */}
 
         {/* Middle gradient */}
         <motion.div
@@ -287,18 +268,6 @@ const Hero = () => {
             conversion-first design.
           </motion.p>
 
-          {/* <motion.button
-            variants={buttonAnimation}
-            whileHover="hover"
-            whileTap="tap"
-            className="pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative flex items-center gap-2.5 mt-11 "
-          >
-            Explore Our Services
-            <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center">
-              <Image src={ICONS.topRightArrow} alt="" className="size-6" />
-            </div>
-          </motion.button> */}
-
           <div className="flex items-center justify-center font-sans mt-11">
             <style>{customCss}</style>
             <button className="relative inline-flex items-center justify-center p-[3px] bg-primary-5 dark:bg-black rounded-full overflow-hidden group hover:scale-105 transition-transform duration-300">
@@ -330,12 +299,6 @@ const Hero = () => {
             >
               <motion.div
                 className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
               >
                 <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
                   <motion.div
@@ -381,13 +344,6 @@ const Hero = () => {
             >
               <motion.div
                 className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
               >
                 <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
                   <motion.div
@@ -432,14 +388,36 @@ const Hero = () => {
             className="hidden 2xl:flex items-center justify-between max-w-[1100px] 2xl:max-w-[1300px] absolute top-[500px] 2xl:top-[600px] w-full"
             variants={staggerContainer}
           >
-            <motion.div variants={globeAnimation}>
+            <motion.div
+              variants={globeAnimation}
+              animate={{
+                y: [0, -15, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
               <Image
                 src={IMAGES.globeCircle}
                 alt=""
                 className="size-16 blur-[10px]"
               />
             </motion.div>
-            <motion.div variants={globeAnimation}>
+
+            <motion.div
+              variants={globeAnimation}
+              animate={{
+                y: [0, -15, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5, // small delay for alternating bounce
+              }}
+            >
               <Image
                 src={IMAGES.globeCircle}
                 alt=""

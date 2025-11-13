@@ -222,7 +222,7 @@ const Services = () => {
         </motion.div>
       </motion.div>
 
-      <div className="max-w-[1531px] mx-auto mt-[111px]">
+      <div className="max-w-[1531px] mx-auto mt-20 xl:mt-48">
         {/* Header Section */}
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between"
@@ -230,7 +230,7 @@ const Services = () => {
         >
           <motion.h1
             variants={slideInLeft}
-            className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[850px]"
+            className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[780px]"
           >
             Unleash server-side tracking's potential with us!
           </motion.h1>

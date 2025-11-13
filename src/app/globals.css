@@ -189,12 +189,110 @@
   scrollbar-color: gray transparent;
 }
 
-.my-image {
-  /* Example values — replace with your own slider settings */
-  filter: 
-    brightness(1.10)      /* Exposure approx */
-    contrast(1.20)        /* Contrast */
-    saturate(1.50)        /* Saturation */
-    hue-rotate(10deg)     /* Tint approx */
-    sepia(0.10);          /* Temperature approx */
+
+
+
+/* Shine Border Animation */
+@keyframes shine {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes process-shine {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.shine-border {
+  --border-width: 3px;
+  --duration: 14s;
+  background-image: radial-gradient(
+    transparent,
+    transparent,
+    #09E3E9,
+    #07f4fa,
+    #09E3E9,
+    transparent,
+    transparent
+  );
+  background-size: 300% 300%;
+  animation: shine var(--duration) linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: var(--border-width);
+}
+.group:hover .shine-border {
+  --duration: 8s;
+  background-image: radial-gradient(
+    transparent,
+    transparent,
+    #09E3E9,
+    #07f4fa,
+    #09E3E9,
+    transparent,
+    transparent
+  );
+}
+
+/* Process Card Shine Border */
+.process-shine-border {
+  --border-width: 2px;
+  --duration: 12s;
+  --shine-color: #06b6d4;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    transparent 30%,
+    var(--shine-color),
+    var(--shine-color),
+    transparent 70%
+  );
+  background-size: 400% 400%;
+  animation: process-shine var(--duration) linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: var(--border-width);
+  opacity: 0.8;
+}
+
+/* Enhanced hover effect for process cards */
+.group:hover .process-shine-border {
+  --duration: 6s;
+  opacity: 1;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    transparent 20%,
+    var(--shine-color),
+    var(--shine-color),
+    transparent 80%
+  );
+}
+
+/* Hover effect for shine border */
+.group:hover .shine-border {
+  --duration: 8s;
+  background-image: radial-gradient(transparent, transparent, #06b6d4, #3b82f6, #8b5cf6, transparent, transparent);
 }

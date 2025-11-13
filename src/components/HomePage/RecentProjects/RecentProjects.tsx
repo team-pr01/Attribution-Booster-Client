@@ -145,7 +145,7 @@ const RecentProjects = () => {
           <Image
             src={IMAGES.circle}
             alt=""
-            className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.10] z-999"
+            className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.03] z-999"
           />
         </motion.div>
 
@@ -158,7 +158,7 @@ const RecentProjects = () => {
           <Image
             src={IMAGES.circle}
             alt=""
-            className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.10] z-999"
+            className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.03] z-999"
           />
         </motion.div>
 

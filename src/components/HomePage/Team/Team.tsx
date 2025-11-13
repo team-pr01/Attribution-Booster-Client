@@ -158,44 +158,44 @@ const Team = () => {
         </motion.p>
       </motion.div>
 
-{/* Team Overview */}
-<motion.div
-  variants={containerVariants}
-  className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mt-14 lg:mt-20"
->
-  {teamOverview?.map((item, index) => (
-    <motion.div
-      key={index}
-      variants={cardVariants}
-      whileHover={{
-        y: -5,
-        scale: 1.02,
-        transition: { duration: 0.3 },
-      }}
-      className="relative rounded-[10px] p-0.5 bg-linear-to-r from-transparent to-transparent hover:from-primary-500 hover:to-primary-300 transition-all duration-300"
-    >
-      {/* Inner card with blur and backdrop */}
-      <div className="rounded-[10px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] p-5 lg:p-7 flex flex-col md:flex-row items-center justify-center gap-5 lg:gap-7 hover:shadow-[0_0_25px_rgba(32,180,134,0.5)] transition-all duration-300 h-full">
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Image src={item?.icon} alt="" className="w-[110px] h-20" />
-        </motion.div>
+      {/* Team Overview */}
+      <motion.div
+        variants={containerVariants}
+        className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mt-14 lg:mt-20"
+      >
+        {teamOverview?.map((item, index) => (
+          <motion.div
+            key={index}
+            variants={cardVariants}
+            whileHover={{
+              y: -5,
+              scale: 1.02,
+              transition: { duration: 0.3 },
+            }}
+            className="group relative rounded-[10px] p-0.5 bg-linear-to-r from-transparent to-transparent hover:from-primary-500 hover:to-primary-300 transition-all duration-300"
+          >
+            {/* Shine Border Effect - Always visible */}
+            <div className="shine-border absolute inset-0 rounded-[10px] pointer-events-none"></div>
+            <div className="rounded-[10px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] p-5 lg:p-7 flex flex-col md:flex-row items-center justify-center gap-5 lg:gap-7 transition-all duration-300 h-full">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image src={item?.icon} alt="" className="w-[110px] h-20" />
+              </motion.div>
 
-        <div>
-          <h2 className="font-MartianBThai text-white text-2xl 2xl:text-[32px] leading-9 font-semibold">
-            {item?.title}
-          </h2>
-          <p className="text-neutral-300 font-Poppins mt-3">
-            {item?.description}
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  ))}
-</motion.div>
-
+              <div>
+                <h2 className="font-MartianBThai text-white text-2xl 2xl:text-[32px] leading-9 font-semibold">
+                  {item?.title}
+                </h2>
+                <p className="text-neutral-300 font-Poppins mt-3">
+                  {item?.description}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
 
       {/* Swiper Section */}
       <motion.div variants={headerVariants} className="mt-20 relative">
@@ -237,7 +237,7 @@ const Team = () => {
         <div className="flex flex-col items-center gap-6 mt-8">
           {/* Pagination Dots */}
           <div className="custom-pagination flex justify-center gap-2" />
-          
+
           {/* Navigation Buttons */}
           <div className="flex justify-center gap-4">
             <button
