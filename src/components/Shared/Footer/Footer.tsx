@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { ICONS, IMAGES } from "../../../../public/assets";
@@ -10,23 +11,24 @@ import {
   IoLogoYoutube,
   IoLogoPinterest,
 } from "react-icons/io";
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const contactInfo = [
     {
-      icon: <MdPhone className="text-green-500" />,
+      icon: IMAGES.phone,
       title: "Phone Number",
       description: "+8801812526073",
       link: "tel:+8801812526073",
     },
     {
-      icon: <MdEmail className="text-blue-500" />,
+      icon: IMAGES.email,
       title: "Email Address",
       description: "info@attributionbooster.com",
       link: "mailto:info@attributionbooster.com",
     },
     {
-      icon: <IoLocationSharp className="text-red-500" />,
+      icon: IMAGES.location,
       title: "Location",
       description: "1901 Thornridge Cir. Shiloh, Hawaii 81063",
       link: "#",
@@ -142,7 +144,7 @@ const Footer = () => {
                   className="flex items-center gap-3.5 cursor-pointer"
                 >
                   <div className="size-10 rounded-full bg-neutral-10 backdrop-blur-[15px] p-2 flex items-center justify-center text-white text-2xl">
-                    {item.icon}
+                    <Image src={item.icon} alt={item.title} className="w-8" />
                   </div>
                   {item.link && item.link !== "#" ? (
                     <a
@@ -227,7 +229,26 @@ const Footer = () => {
             </div>
           </div>
 
-          <Image src={ICONS.googlePartner2} alt="" className="" />
+          {/* Google Partner Badge */}
+          <motion.a
+            className="border-l-4 border-cyan-400 rounded-lg px-5"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            href={'https://www.google.com/partners/agency?id=6137804524'}
+            target="_blank"
+          >
+            <div className="flex items-center space-x-2 rounded-lg w-fit mt-3 cursor-pointer">
+              <div className="text-sm font-bold">
+                <span className="text-blue-500">G</span>
+                <span className="text-red-500">o</span>
+                <span className="text-yellow-500">o</span>
+                <span className="text-blue-500">g</span>
+                <span className="text-green-500">l</span>
+                <span className="text-red-500">e</span>
+              </div>
+            </div>
+            <div className="text-white text-2xl font-medium mt-1">Partner</div>
+          </motion.a>
 
           <Image src={ICONS.glassdoorReview} alt="" className="" />
         </div>

@@ -104,7 +104,7 @@ const Partner = () => {
                 variants={slideInRight}
                 transition={{ delay: 0.1 }}
               >
-                As a certified <strong>Google Partner</strong>, our strategies are
+                As a certified <a href="https://www.google.com/partners/agency?id=6137804524" target="_blank" className="text-primary-5 font-semibold">Google Partner</a>, our strategies are
                 not just creative—they're conversion-proven.
               </motion.p>
             </motion.div>

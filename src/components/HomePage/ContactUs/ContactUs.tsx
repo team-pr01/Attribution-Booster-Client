@@ -1,11 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-
 import Image from "next/image";
-import { IoLocationSharp } from "react-icons/io5";
-import { MdEmail, MdPhone, MdAccessTime } from "react-icons/md";
-import { ICONS } from "../../../../public/assets";
+import { ICONS, IMAGES } from "../../../../public/assets";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -59,25 +56,25 @@ const ContactUs = () => {
 
 const contactInfo = [
   {
-    icon: <IoLocationSharp className="text-red-500" />,
+    icon: IMAGES.location,
     title: "Location",
     description: "1901 Thornridge Cir. Shiloh, Hawaii 81063",
     link: "#",
   },
   {
-    icon: <MdEmail className="text-blue-500" />,
+    icon: IMAGES.email,
     title: "Email Address",
     description: "info@attributionbooster.com",
     link: "mailto:info@attributionbooster.com",
   },
   {
-    icon: <MdPhone className="text-green-500" />,
+    icon: IMAGES.phone,
     title: "Phone Number",
     description: "+8801725896489 , 01866545648",
     link: "tel:+8801725896489",
   },
   {
-    icon: <MdAccessTime className="text-yellow-500" />,
+    icon: IMAGES.workingHours,
     title: "Working Hours",
     description: "Sunday - Monday (10 am - 05 pm)",
     link: "#",
@@ -188,7 +185,7 @@ const contactInfo = [
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   >
-                    {item.icon}
+                    <Image src={item.icon} alt={item.title} className="w-8" />
                   </motion.div>
                   <div>
                     <h2 className="text-white text-xl font-semibold font-MartianBThai">

@@ -28,6 +28,10 @@ import dataExperts from "./images/data-experts.webp";
 import projectManagers from "./images/project-managers.webp";
 import strategicCreatives from "./images/strategic-creatives.webp";
 import ceo from "./images/CEO.jpg";
+import email from "./icons/email.svg";
+import workingHours from "./icons/working-hours.webp";
+import phone from "./icons/phone.webp";
+import location from "./icons/location.webp";
 // Services
 import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
 import appDevelopment from "./images/services/app-development.webp";
@@ -82,6 +86,10 @@ export const IMAGES = {
   projectManagers,
   strategicCreatives,
   ceo,
+  email,
+  workingHours,
+  phone,
+  location,
   // Services
   analyticsConversionTracking,
   appDevelopment,
