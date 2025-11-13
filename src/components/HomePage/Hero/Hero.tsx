@@ -7,6 +7,7 @@ import Navbar from "@/components/Shared/Navbar/Navbar";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Counter from "@/components/Reusable/Counter/Counter";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -69,20 +70,6 @@ const Hero = () => {
     },
   };
 
-  const buttonAnimation: any = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 },
-    },
-    tap: { scale: 0.95 },
-  };
-
   const globeAnimation: any = {
     hidden: { opacity: 0, scale: 0 },
     visible: {
@@ -101,6 +88,28 @@ const Hero = () => {
     },
   };
 
+  const customCss = `
+    /* This is the key to the seamless animation.
+      The @property rule tells the browser that '--angle' is a custom property
+      of type <angle>. This allows the browser to smoothly interpolate it
+      during animations, preventing the "jump" at the end of the loop.
+    */
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    /* The keyframe animation simply transitions the --angle property
+      from its start (0deg) to its end (360deg).
+    */
+    @keyframes shimmer-spin {
+      to {
+        --angle: 360deg;
+      }
+    }
+  `;
+
   return (
     <motion.div
       ref={containerRef}
@@ -109,7 +118,7 @@ const Hero = () => {
       className="max-w-[1800px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
+        className="rounded-[20px] bg-neutral-5 border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -163,7 +172,11 @@ const Hero = () => {
             }}
             className="size-[200px] 2xl:size-[643px] absolute -top-10 2xl:-top-64 -right-10 2xl:-right-56 opacity-[0.30] z-999"
           >
-            <Image src={IMAGES.circle} alt="" className="w-full h-full" />
+            <Image
+              src={IMAGES.circle}
+              alt=""
+              className="w-full h-full mix-blend-color-dodge"
+            />
           </motion.div>
         </motion.div>
 
@@ -190,7 +203,11 @@ const Hero = () => {
             }}
             className="size-[150px] 2xl:size-[643px] absolute -top-10 2xl:-top-64 -left-10 2xl:-left-56 opacity-[0.30] z-999"
           >
-            <Image src={IMAGES.circle} alt="" className="w-full h-full" />
+            <Image
+              src={IMAGES.circle}
+              alt=""
+              className="w-full h-full mix-blend-color-dodge"
+            />
           </motion.div>
         </motion.div>
 
@@ -240,125 +257,145 @@ const Hero = () => {
             conversion-first design.
           </motion.p>
 
-          <motion.button
+          {/* <motion.button
             variants={buttonAnimation}
             whileHover="hover"
             whileTap="tap"
-            className="pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative flex items-center gap-2.5 mt-11"
+            className="pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative flex items-center gap-2.5 mt-11 "
           >
             Explore Our Services
             <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center">
               <Image src={ICONS.topRightArrow} alt="" className="size-6" />
             </div>
-          </motion.button>
+          </motion.button> */}
 
-          {/* Rotate cards */}
-          <div className="flex justify-between w-full max-w-[1300px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[300px] px-2 sm:px-5">
-            {/* Happy Clients Card */}
-            <motion.div
-              variants={rotateCardLeft}
-              whileHover="hover"
-              animate="visible"
-              className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
-            >
-              <motion.div
-                className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
+          <div className="flex items-center justify-center font-sans mt-11">
+            <style>{customCss}</style>
+            <button className="relative inline-flex items-center justify-center p-[3px] bg-primary-5 dark:bg-black rounded-full overflow-hidden group hover:scale-105 transition-transform duration-300">
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "conic-gradient(from var(--angle), transparent 70%, #ffffff, transparent 100%)",
+                  animation: "shimmer-spin 2s linear infinite",
                 }}
-              >
-                <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
-                  <motion.div
-                    animate={{ rotate: [0, 5, 0, -5, 0] }}
-                    transition={{
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <Image
-                      src={IMAGES.happyClients}
-                      alt="Happy Clients"
-                      className="w-9 md:w-[77px] h-12 sm:h-[65px] md:h-[82px]"
-                    />
-                  </motion.div>
-                  <div>
-                    <motion.h1
-                      className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      200+
-                    </motion.h1>
-                    <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
-                      Happy Clients
-                    </p>
-                  </div>
+              />
+              <span className="pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative flex items-center gap-2.5 group-hover:bg-primary-6 transition-colors duration-300">
+                Explore Our Services
+                <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center group-hover:bg-neutral-4 transition-colors duration-300">
+                  <Image src={ICONS.topRightArrow} alt="" className="size-6" />
                 </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Projects Completed Card */}
-            <motion.div
-              variants={rotateCardRight}
-              whileHover="hover"
-              animate="visible"
-              className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
-            >
-              <motion.div
-                className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-              >
-                <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
-                  <motion.div
-                    animate={{ rotate: [0, -5, 0, 5, 0] }}
-                    transition={{
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0.5,
-                    }}
-                  >
-                    <Image
-                      src={IMAGES.projectCompleted}
-                      alt="Project Completed"
-                      className="w-9 md:w-[77px] h-10 sm:h-[55px] md:h-[82px]"
-                    />
-                  </motion.div>
-                  <div>
-                    <motion.h1
-                      className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 1,
-                      }}
-                    >
-                      1500+
-                    </motion.h1>
-                    <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
-                      Project Completed
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
+              </span>
+            </button>
           </div>
+
+         {/* Rotate cards */}
+<div className="flex justify-between w-full max-w-[1300px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[300px] px-2 sm:px-5">
+  {/* Happy Clients Card */}
+  <motion.div
+    variants={rotateCardLeft}
+    whileHover="hover"
+    animate="visible"
+    className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
+  >
+    <motion.div
+      className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
+      animate={{ y: [0, -10, 0] }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    >
+      <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
+        <motion.div
+          animate={{ rotate: [0, 5, 0, -5, 0] }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Image
+            src={IMAGES.happyClients}
+            alt="Happy Clients"
+            className="w-9 md:w-[77px] h-12 sm:h-[65px] md:h-[82px]"
+          />
+        </motion.div>
+        <div>
+          <motion.h1
+            className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+          >
+            <Counter from={0} to={200} duration={2} />+
+          </motion.h1>
+          <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
+            Happy Clients
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </motion.div>
+
+  {/* Projects Completed Card */}
+  <motion.div
+    variants={rotateCardRight}
+    whileHover="hover"
+    animate="visible"
+    className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
+  >
+    <motion.div
+      className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
+      animate={{ y: [0, -10, 0] }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 1,
+      }}
+    >
+      <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
+        <motion.div
+          animate={{ rotate: [0, -5, 0, 5, 0] }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
+        >
+          <Image
+            src={IMAGES.projectCompleted}
+            alt="Project Completed"
+            className="w-9 md:w-[77px] h-10 sm:h-[55px] md:h-[82px]"
+          />
+        </motion.div>
+        <div>
+          <motion.h1
+            className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+              delay: 0.3,
+            }}
+          >
+            <Counter from={0} to={1500} duration={2.5} />+
+          </motion.h1>
+          <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
+            Project Completed
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </motion.div>
+</div>
 
           {/* Bottom globes */}
           <motion.div
@@ -390,7 +427,7 @@ const Hero = () => {
           <Image
             src={IMAGES.heroImg}
             alt=""
-            className="absolute bottom-0 w-full lg:w-1/2 2xl:w-4/7 mx-auto justify-self-center z-50 flex"
+            className="absolute bottom-0 w-full lg:w-1/2 2xl:w-4/7 mx-auto justify-self-center z-50 flex mix-blend-hard-light"
           />
         </motion.div>
       </motion.div>

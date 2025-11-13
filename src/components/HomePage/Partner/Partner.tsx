@@ -61,37 +61,18 @@ const Partner = () => {
     },
   };
 
-  const gradientBorder: any = {
-    hidden: {
-      background:
-        "linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%)",
-    },
-    visible: {
-      background: [
-        "linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%)",
-        "linear-gradient(to right, rgba(209,213,219,0.5) 0%, rgba(255,255,255,0) 50%, rgba(107,114,128,0.5) 100%)",
-      ],
-      transition: {
-        duration: 1.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="max-w-[95%] sm:max-w-[90%] md:max-w-[1100px] lg:max-w-[1300px] xl:max-w-[1500px] mx-auto mt-20 md:mt-32 lg:mt-48 px-3 sm:px-5"
+      className="max-w-[1531px] mx-auto mt-20 md:mt-32 lg:mt-48 px-3 sm:px-5"
     >
-      <motion.div
-        variants={gradientBorder}
-        className="rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
-      >
+      {/* Moving Border Container */}
+      <div className="moving-border-container rounded-[10px] p-px">
         <motion.div
-          className="rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
+          className="rounded-[10px] bg-neutral-5 backdrop-blur-[15px] relative z-10"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{
@@ -103,7 +84,7 @@ const Partner = () => {
           }}
         >
           {/* Responsive layout */}
-          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-6 sm:gap-8 lg:gap-12 px-4 sm:px-6 md:px-10 py-5 sm:py-7 md:py-9">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12 px-4 sm:px-6 md:px-10 py-5 sm:py-7 md:py-9">
             {/* Left image */}
             <motion.div
               variants={slideInLeft}
@@ -124,7 +105,7 @@ const Partner = () => {
             {/* Right text content */}
             <motion.div
               variants={slideInRight}
-              className="text-center sm:text-left max-w-[700px]"
+              className="text-center sm:text-left"
             >
               <motion.h1
                 className="font-MartianBThai text-white text-2xl sm:text-3xl md:text-[32px] lg:text-[36px] font-semibold leading-tight"
@@ -153,7 +134,85 @@ const Partner = () => {
             </motion.div>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
+
+      {/* Add CSS for moving border */}
+      <style jsx>{`
+        .moving-border-container {
+          position: relative;
+          background: linear-gradient(
+            90deg,
+            #ff6b6b,
+            #4ecdc4,
+            #45b7d1,
+            #96ceb4,
+            #ffeaa7,
+            #ff6b6b
+          );
+          background-size: 400% 400%;
+          animation: gradientMove 3s ease infinite;
+          border-radius: 10px;
+        }
+
+        .moving-border-container::before {
+          content: '';
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          right: -2px;
+          bottom: -2px;
+          background: linear-gradient(
+            90deg,
+            #ff6b6b,
+            #4ecdc4,
+            #45b7d1,
+            #96ceb4,
+            #ffeaa7,
+            #ff6b6b
+          );
+          background-size: 400% 400%;
+          border-radius: 12px;
+          z-index: -1;
+          animation: gradientMove 3s ease infinite;
+          filter: blur(8px);
+          opacity: 0.7;
+        }
+
+        @keyframes gradientMove {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        /* Alternative simpler border animation */
+        .moving-border-container.alternative {
+          background: conic-gradient(
+            from 0deg at 50% 50%,
+            #ff6b6b,
+            #4ecdc4,
+            #45b7d1,
+            #96ceb4,
+            #ffeaa7,
+            #ff6b6b
+          );
+          animation: rotateBorder 2s linear infinite;
+        }
+
+        @keyframes rotateBorder {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
     </motion.div>
   );
 };

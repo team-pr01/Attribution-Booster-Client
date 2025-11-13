@@ -134,7 +134,7 @@ const Team = () => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="max-w-[95%] sm:max-w-[90%] md:max-w-[1100px] lg:max-w-[1300px] xl:max-w-[1500px] mx-auto mt-20 md:mt-32 lg:mt-48 px-3 sm:px-5"
+      className="max-w-[95%] sm:max-w-[90%] md:max-w-[1100px] lg:max-w-[1300px] xl:max-w-[1500px] mx-auto mt-20 md:mt-48 lg:mt-72 px-3 sm:px-5"
     >
       {/* Header */}
       <motion.div
@@ -158,39 +158,44 @@ const Team = () => {
         </motion.p>
       </motion.div>
 
-      {/* Team Overview */}
-      <motion.div
-        variants={containerVariants}
-        className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mt-14 lg:mt-20"
-      >
-        {teamOverview?.map((item, index) => (
-          <motion.div
-            key={index}
-            variants={cardVariants}
-            whileHover={{
-              y: -5,
-              scale: 1.02,
-              transition: { duration: 0.3 },
-            }}
-            className="rounded-[10px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] p-5 lg:p-7 flex flex-col md:flex-row gap-5 lg:gap-7"
-          >
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image src={item?.icon} alt="" className="size-[110px]" />
-            </motion.div>
-            <div>
-              <h2 className="font-MartianBThai text-white text-2xl 2xl:text-[32px] leading-9 font-semibold">
-                {item?.title}
-              </h2>
-              <p className="text-neutral-300 font-Poppins mt-3">
-                {item?.description}
-              </p>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+{/* Team Overview */}
+<motion.div
+  variants={containerVariants}
+  className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mt-14 lg:mt-20"
+>
+  {teamOverview?.map((item, index) => (
+    <motion.div
+      key={index}
+      variants={cardVariants}
+      whileHover={{
+        y: -5,
+        scale: 1.02,
+        transition: { duration: 0.3 },
+      }}
+      className="relative rounded-[10px] p-0.5 bg-linear-to-r from-transparent to-transparent hover:from-primary-500 hover:to-primary-300 transition-all duration-300"
+    >
+      {/* Inner card with blur and backdrop */}
+      <div className="rounded-[10px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] p-5 lg:p-7 flex flex-col md:flex-row items-center justify-center gap-5 lg:gap-7 hover:shadow-[0_0_25px_rgba(32,180,134,0.5)] transition-all duration-300 h-full">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Image src={item?.icon} alt="" className="w-[110px] h-20" />
+        </motion.div>
+
+        <div>
+          <h2 className="font-MartianBThai text-white text-2xl 2xl:text-[32px] leading-9 font-semibold">
+            {item?.title}
+          </h2>
+          <p className="text-neutral-300 font-Poppins mt-3">
+            {item?.description}
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
+
 
       {/* Swiper Section */}
       <motion.div variants={headerVariants} className="mt-20 relative">

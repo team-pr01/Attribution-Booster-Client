@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { IMAGES } from "../../../../public/assets";
+import Counter from "@/components/Reusable/Counter/Counter";
 
 const Results = () => {
   return (
@@ -31,7 +32,7 @@ const Results = () => {
           />
           <div className="absolute bottom-4 left-[30px]">
             <h1 className="font-Poppins text-white text-[64px] font-semibold leading-[70px]">
-              1,500+
+              <Counter from={0} to={1500} duration={3} />+
             </h1>
             <p className="text-white text-xl">Project Complete</p>
           </div>
@@ -40,7 +41,9 @@ const Results = () => {
         <div className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] p-5 md:p-[30px] flex flex-col items-center justify-between border border-transparent cursor-pointer h-[302px] md:h-[440px] w-full md:w-[40%]">
           <div className="flex flex-col lg:flex-row justify-between w-full font-Poppins">
             <div>
-              <h1 className=" text-white text-[64px] font-semibold">25+</h1>
+              <h1 className=" text-white text-[64px] font-semibold">
+                <Counter from={0} to={25} duration={3} />+
+              </h1>
               <p className="text-white text-xl">Years Of Experience</p>
             </div>
             <Image
@@ -71,7 +74,7 @@ const Results = () => {
           />
           <div className="absolute bottom-4 left-[30px]">
             <h1 className="font-Poppins text-white text-[64px] font-semibold leading-[70px]">
-              24+
+              <Counter from={0} to={24} duration={3} />+
             </h1>
             <p className="text-white text-xl font-Poppins">Award Wining</p>
           </div>

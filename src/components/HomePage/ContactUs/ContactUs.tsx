@@ -49,7 +49,6 @@ const ContactUs = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -58,32 +57,32 @@ const ContactUs = () => {
     // Handle form submission here
   };
 
-  const contactInfo = [
-    {
-      icon: <IoLocationSharp />,
-      title: "Location",
-      description: "1901 Thornridge Cir. Shiloh, Hawaii 81063",
-      link: "#",
-    },
-    {
-      icon: <MdEmail />,
-      title: "Email Address",
-      description: "info@attributionbooster.com",
-      link: "mailto:info@attributionbooster.com",
-    },
-    {
-      icon: <MdPhone />,
-      title: "Phone Number",
-      description: "+8801725896489 , 01866545648",
-      link: "tel:+8801725896489",
-    },
-    {
-      icon: <MdAccessTime />,
-      title: "Working Hours",
-      description: "Sunday - Monday (10 am - 05 pm)",
-      link: "#",
-    },
-  ];
+const contactInfo = [
+  {
+    icon: <IoLocationSharp className="text-red-500" />,
+    title: "Location",
+    description: "1901 Thornridge Cir. Shiloh, Hawaii 81063",
+    link: "#",
+  },
+  {
+    icon: <MdEmail className="text-blue-500" />,
+    title: "Email Address",
+    description: "info@attributionbooster.com",
+    link: "mailto:info@attributionbooster.com",
+  },
+  {
+    icon: <MdPhone className="text-green-500" />,
+    title: "Phone Number",
+    description: "+8801725896489 , 01866545648",
+    link: "tel:+8801725896489",
+  },
+  {
+    icon: <MdAccessTime className="text-yellow-500" />,
+    title: "Working Hours",
+    description: "Sunday - Monday (10 am - 05 pm)",
+    link: "#",
+  },
+];
 
   const services = [
     "PPC Advertising",

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Image from "next/image";
@@ -163,25 +162,27 @@ const RecentProjects = () => {
           />
         </motion.div>
 
-        <div className="flex flex-col z-9999 relative">
-          {/* Header Section */}
-          <motion.h1
-            variants={fadeInUp}
-            className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] text-center"
-          >
-            Recent Projects
-          </motion.h1>
+        <div className="flex flex-col z-9999 relative w-full">
+          <div className="flex flex-col lg:flex-row items-center justify-between w-full">
+            {/* Header Section */}
+            <motion.h1
+              variants={fadeInUp}
+              className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px]"
+            >
+              Recent Projects
+            </motion.h1>
 
-          <motion.p
-            variants={fadeInUp}
-            className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins mt-3 text-center mx-auto"
-          >
-            Maximize Your Campaign's Potential and Boost Your ROI with Our
-            Advanced Tracking Tools and Techniques.
-          </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[749px]"
+            >
+              Discover our most successful projects showcasing every service we
+              offer. Use the filter buttons above to select a specific service.
+            </motion.p>
+          </div>
 
           {/* Animated Tabs */}
-          <motion.div className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] p-3 flex items-center gap-6 border border-transparent cursor-pointer w-full lg:w-fit overflow-x-auto mx-auto mt-7 relative">
+          <motion.div className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] p-3 flex items-center gap-6 border border-transparent cursor-pointer w-full lg:w-fit overflow-x-auto mt-7 lg:mt-14 2xl:mt-16 relative">
             {/* Animated sliding background */}
             <motion.div
               className="absolute bg-primary-5 rounded-md z-0"
