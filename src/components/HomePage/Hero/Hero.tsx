@@ -118,7 +118,7 @@ const Hero = () => {
       className="max-w-[1800px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px] bg-neutral-5 border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
+        className="rounded-[20px] bg-black/40 border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -151,7 +151,7 @@ const Hero = () => {
         {/* Hero bg */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.02 }}
+          animate={{ opacity: 0.04 }}
           transition={{ duration: 1.5, delay: 0.5 }}
         >
           <Image src={IMAGES.heroBg} alt="" className="w-full max-h-[1125px]" />
@@ -289,113 +289,113 @@ const Hero = () => {
             </button>
           </div>
 
-         {/* Rotate cards */}
-<div className="flex justify-between w-full max-w-[1300px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[300px] px-2 sm:px-5">
-  {/* Happy Clients Card */}
-  <motion.div
-    variants={rotateCardLeft}
-    whileHover="hover"
-    animate="visible"
-    className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
-  >
-    <motion.div
-      className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
-      animate={{ y: [0, -10, 0] }}
-      transition={{
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    >
-      <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
-        <motion.div
-          animate={{ rotate: [0, 5, 0, -5, 0] }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <Image
-            src={IMAGES.happyClients}
-            alt="Happy Clients"
-            className="w-9 md:w-[77px] h-12 sm:h-[65px] md:h-[82px]"
-          />
-        </motion.div>
-        <div>
-          <motion.h1
-            className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              duration: 0.8,
-              ease: "easeOut",
-            }}
-          >
-            <Counter from={0} to={200} duration={2} />+
-          </motion.h1>
-          <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
-            Happy Clients
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  </motion.div>
+          {/* Rotate cards */}
+          <div className="flex justify-between w-full max-w-[1300px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[300px] px-2 sm:px-5">
+            {/* Happy Clients Card */}
+            <motion.div
+              variants={rotateCardLeft}
+              whileHover="hover"
+              animate="visible"
+              className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
+            >
+              <motion.div
+                className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
+                animate={{ y: [0, -10, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
+                  <motion.div
+                    animate={{ rotate: [0, 5, 0, -5, 0] }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <Image
+                      src={IMAGES.happyClients}
+                      alt="Happy Clients"
+                      className="w-9 md:w-[77px] h-12 sm:h-[65px] md:h-[82px]"
+                    />
+                  </motion.div>
+                  <div>
+                    <motion.h1
+                      className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
+                      initial={{ scale: 0.5, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{
+                        duration: 0.8,
+                        ease: "easeOut",
+                      }}
+                    >
+                      <Counter from={0} to={200} duration={2} />+
+                    </motion.h1>
+                    <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
+                      Happy Clients
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
 
-  {/* Projects Completed Card */}
-  <motion.div
-    variants={rotateCardRight}
-    whileHover="hover"
-    animate="visible"
-    className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
-  >
-    <motion.div
-      className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
-      animate={{ y: [0, -10, 0] }}
-      transition={{
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 1,
-      }}
-    >
-      <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
-        <motion.div
-          animate={{ rotate: [0, -5, 0, 5, 0] }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.5,
-          }}
-        >
-          <Image
-            src={IMAGES.projectCompleted}
-            alt="Project Completed"
-            className="w-9 md:w-[77px] h-10 sm:h-[55px] md:h-[82px]"
-          />
-        </motion.div>
-        <div>
-          <motion.h1
-            className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              duration: 0.8,
-              ease: "easeOut",
-              delay: 0.3,
-            }}
-          >
-            <Counter from={0} to={1500} duration={2.5} />+
-          </motion.h1>
-          <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
-            Project Completed
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  </motion.div>
-</div>
+            {/* Projects Completed Card */}
+            <motion.div
+              variants={rotateCardRight}
+              whileHover="hover"
+              animate="visible"
+              className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
+            >
+              <motion.div
+                className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
+                animate={{ y: [0, -10, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1,
+                }}
+              >
+                <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
+                  <motion.div
+                    animate={{ rotate: [0, -5, 0, 5, 0] }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5,
+                    }}
+                  >
+                    <Image
+                      src={IMAGES.projectCompleted}
+                      alt="Project Completed"
+                      className="w-9 md:w-[77px] h-10 sm:h-[55px] md:h-[82px]"
+                    />
+                  </motion.div>
+                  <div>
+                    <motion.h1
+                      className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
+                      initial={{ scale: 0.5, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{
+                        duration: 0.8,
+                        ease: "easeOut",
+                        delay: 0.3,
+                      }}
+                    >
+                      <Counter from={0} to={1500} duration={2.5} />+
+                    </motion.h1>
+                    <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
+                      Project Completed
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
 
           {/* Bottom globes */}
           <motion.div

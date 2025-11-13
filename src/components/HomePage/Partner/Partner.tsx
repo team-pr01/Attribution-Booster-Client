@@ -16,7 +16,7 @@ const Partner = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
         duration: 0.8,
       },
     },
@@ -25,13 +25,11 @@ const Partner = () => {
   const slideInLeft: any = {
     hidden: {
       opacity: 0,
-      x: -100,
-      scale: 0.8,
+      x: -80,
     },
     visible: {
       opacity: 1,
       x: 0,
-      scale: 1,
       transition: {
         type: "spring",
         stiffness: 100,
@@ -44,13 +42,11 @@ const Partner = () => {
   const slideInRight: any = {
     hidden: {
       opacity: 0,
-      x: 100,
-      scale: 0.8,
+      x: 80,
     },
     visible: {
       opacity: 1,
       x: 0,
-      scale: 1,
       transition: {
         type: "spring",
         stiffness: 100,
@@ -69,23 +65,12 @@ const Partner = () => {
       variants={containerVariants}
       className="max-w-[1531px] mx-auto mt-20 md:mt-32 lg:mt-48 px-3 sm:px-5"
     >
-      {/* Moving Border Container */}
+      {/* Moving Border Container - No animation on the card itself */}
       <div className="moving-border-container rounded-[10px] p-px">
-        <motion.div
-          className="rounded-[10px] bg-neutral-5 backdrop-blur-[15px] relative z-10"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            duration: 0.8,
-            delay: 0.3,
-          }}
-        >
+        <div className="rounded-[10px] bg-neutral-5 backdrop-blur-[15px] relative z-10">
           {/* Responsive layout */}
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12 px-4 sm:px-6 md:px-10 py-5 sm:py-7 md:py-9">
-            {/* Left image */}
+            {/* Left image - slides from left */}
             <motion.div
               variants={slideInLeft}
               whileHover={{
@@ -102,38 +87,29 @@ const Partner = () => {
               />
             </motion.div>
 
-            {/* Right text content */}
+            {/* Right text content - slides from right */}
             <motion.div
               variants={slideInRight}
               className="text-center sm:text-left"
             >
               <motion.h1
                 className="font-MartianBThai text-white text-2xl sm:text-3xl md:text-[32px] lg:text-[36px] font-semibold leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.5,
-                }}
+                variants={slideInRight}
               >
                 Trusted by Google to deliver top-tier advertising performance
               </motion.h1>
 
               <motion.p
                 className="text-neutral-300 text-base sm:text-lg md:text-xl mt-3 leading-relaxed"
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.7,
-                }}
+                variants={slideInRight}
+                transition={{ delay: 0.1 }}
               >
                 As a certified <strong>Google Partner</strong>, our strategies are
                 not just creative—they're conversion-proven.
               </motion.p>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Add CSS for moving border */}
@@ -187,29 +163,6 @@ const Partner = () => {
           }
           100% {
             background-position: 0% 50%;
-          }
-        }
-
-        /* Alternative simpler border animation */
-        .moving-border-container.alternative {
-          background: conic-gradient(
-            from 0deg at 50% 50%,
-            #ff6b6b,
-            #4ecdc4,
-            #45b7d1,
-            #96ceb4,
-            #ffeaa7,
-            #ff6b6b
-          );
-          animation: rotateBorder 2s linear infinite;
-        }
-
-        @keyframes rotateBorder {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
           }
         }
       `}</style>

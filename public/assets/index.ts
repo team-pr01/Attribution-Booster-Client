@@ -48,6 +48,8 @@ import dummyProject1 from "./images/projects/dummy-project-1.png";
 // Icons
 import topRightArrow from "./icons/top-right-arrow.svg";
 import clientDummyLogo from "./icons/client-dummy-logo.svg";
+import googlePartner2 from "./icons/google-partner.svg";
+import glassdoorReview from "./icons/glassdoor-review.svg";
 
 export const IMAGES = {
   logo,
@@ -100,5 +102,7 @@ export const IMAGES = {
 
 export const ICONS = {
   topRightArrow,
-  clientDummyLogo
+  clientDummyLogo,
+  googlePartner2,
+  glassdoorReview
 };
