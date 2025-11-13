@@ -40,21 +40,20 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600 max-w-[1420px] mx-auto">
-      <div className="rounded-[10px] bg-neutral-5 backdrop-blur-[15px]">
-        <div className="flex items-center justify-between px-3 lg:px-[29px] py-0 lg:py-3">
+      <div className="rounded-[10px] bg-neutral-10 border border-neutral-20/10 backdrop-blur-[15px] w-full max-w-[320px] md:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto">
+        <div className="flex items-center justify-between px-3 lg:px-[29px] py-3">
           <Link href={"/"}>
             <Image
               src={IMAGES.logo}
               alt="Logo"
-              className="w-fit lg:w-[219px] h-[70px] relative"
+              className="w-[200px] lg:w-[219px] h-[50px] 2xl:h-[70px]"
             />
           </Link>
 
           <nav className="hidden lg:flex space-x-[30px] font-Poppins">
             {navLinks.map((link, index) => (
               <motion.div
-                key={link.label}
+                key={index}
                 className="relative"
                 initial="initial"
                 whileHover="hover"
@@ -86,7 +85,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-    </div>
   );
 };
 

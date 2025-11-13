@@ -63,7 +63,7 @@ const Partner = () => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="max-w-[1400px] mx-auto mt-20 lg:mt-10 px-3 sm:px-5"
+      className="max-w-[1200px] 2xl:max-w-[1400px] mx-auto mt-20 lg:mt-10 px-3 sm:px-5"
     >
       {/* Moving Border Container - No animation on the card itself */}
       <div className="moving-border-container rounded-[10px] p-px">

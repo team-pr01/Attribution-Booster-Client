@@ -118,14 +118,11 @@ const Hero = () => {
       className="max-w-[1800px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px]  border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
+        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <div className="absolute w-full top-[30px] z-9999 px-3 lg:px-0">
-          <Navbar />
-        </div>
 
         {/* Top globes */}
         <motion.div

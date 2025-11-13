@@ -146,7 +146,7 @@ const contactInfo = [
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="max-w-[1531px] mx-auto mt-[130px] px-5 lg:px-0"
+      className="max-w-[1200px] 2xl:max-w-[1531px] mx-auto mt-[130px] px-5 lg:px-0"
     >
       <div>
         <div className="flex flex-col lg:flex-row gap-10 w-full">
