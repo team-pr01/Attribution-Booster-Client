@@ -2,8 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ICONS, IMAGES } from "../../../../public/assets";
-import { MdEmail, MdPhone } from "react-icons/md";
-import { IoLocationSharp } from "react-icons/io5";
 import {
   IoLogoLinkedin,
   IoLogoFacebook,
