@@ -12,11 +12,10 @@ const VideoIntro = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const videoSectionRef = useRef(null);
-const cardSectionRef = useRef(null);
+  const cardSectionRef = useRef(null);
 
   const containerRef = useRef(null);
   const isVideoInView = useInView(videoSectionRef, { once: true, amount: 0.3 });
-const isCardInView = useInView(cardSectionRef, { once: true, amount: 0.2 });
 
   const isContainerInView = useInView(containerRef, {
     once: true,
