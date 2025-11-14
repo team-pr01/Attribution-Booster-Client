@@ -249,7 +249,8 @@ const Footer = () => {
       <hr className="border border-neutral-10 h-px mt-[60px]" />
 
       {/* Copyright */}
-      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-7 lg:gap-0 mt-10 max-w-[1531px] mx-auto px-5 2xl:px-0">
+      <Container>
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-7 lg:gap-0 mt-10">
         <p className="text-sm lg:text-base text-neutral-300 font-Poppins">
           © 2025 Attribution Booster | All Rights Reserved | Serving clients
           since 2017
@@ -268,6 +269,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
+      </Container>
     </div>
   );
 };

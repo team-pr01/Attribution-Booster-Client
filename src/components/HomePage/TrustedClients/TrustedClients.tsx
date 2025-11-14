@@ -62,7 +62,7 @@ const TrustedClients = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
-      className="mt-[130px] overflow-hidden px-5 2xl:px-0"
+      className="mt-20 overflow-hidden px-5 2xl:px-0"
     >
       {/* Header Section */}
       <motion.h1 
@@ -86,9 +86,6 @@ const TrustedClients = () => {
         variants={itemVariants}
         className="mt-10 overflow-hidden relative"
       >
-        {/* Gradient overlays for smooth edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-[#0A0A0A] to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-[#0A0A0A] to-transparent z-10" />
         
         <Marquee
           speed={40}

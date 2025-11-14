@@ -15,21 +15,21 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-      <div className="relative">
-        {/* Sticky Navbar with scroll animation */}
-        <div
-          className={`fixed w-full z-9999 px-3 lg:px-0 transition-all duration-300 ${
-            isScrolled ? "top-5" : "top-10 lg:top-20"
-          }`}
-        >
-          <Navbar />
-        </div>
-
-        {/* Page Content */}
-        {children}
-
-        <Footer />
+    <div className="relative overflow-hidden">
+      {/* Sticky Navbar with scroll animation */}
+      <div
+        className={`fixed w-full z-9999 px-3 lg:px-0 transition-all duration-300 ${
+          isScrolled ? "top-5" : "top-10 lg:top-20"
+        }`}
+      >
+        <Navbar />
       </div>
+
+      {/* Page Content */}
+      {children}
+
+      <Footer />
+    </div>
   );
 };
 

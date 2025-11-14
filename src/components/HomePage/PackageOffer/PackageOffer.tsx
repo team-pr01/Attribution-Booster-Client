@@ -95,7 +95,7 @@ const PackageOffer = () => {
   };
 
   return (
-    <div className="relative overflow-hidden h-[1000px] md:h-[800px]">
+    <div className="relative overflow-hidden h-[1000px] md:h-[700px] 2xl:h-[800px]">
       <Image
         src={IMAGES.offerGlobe}
         alt="Decorative Globe"

@@ -166,7 +166,7 @@ const CollaborationProcess = () => {
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="overflow-visible relative px-5 2xl:px-0"
+      className="overflow-visible relative"
     >
       {/* Animated Decorative circle */}
       <motion.div
@@ -198,7 +198,7 @@ const CollaborationProcess = () => {
             <motion.p
               variants={headerVariants}
               transition={{ delay: 0.1 }}
-              className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins text-center max-w-[707px] mt-4 lg:mt-0"
+              className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-4 lg:mt-0"
             >
               We prioritize open communication, transparency, and strategy from
               day one, ensuring every project starts with clarity and ends with

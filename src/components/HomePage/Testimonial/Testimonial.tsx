@@ -251,12 +251,7 @@ const Testimonial = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
-                    whileHover={{
-                      y: -5,
-                      scale: 1.02,
-                      transition: { duration: 0.3 },
-                    }}
-                    className="bg-neutral-10/60 backdrop-blur-[20px] rounded-[10px] px-5 py-[30px] flex flex-col relative border border-gray-600 cursor-pointer h-full"
+                    className="bg-neutral-10/60 backdrop-blur-[20px] rounded-[10px] px-5 py-[30px] flex flex-col justify-between relative border border-gray-600 cursor-pointer h-full min-h-[280px]"
                   >
                     {/* Ratings */}
                     <motion.div
