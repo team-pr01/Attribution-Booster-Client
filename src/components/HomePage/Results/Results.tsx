@@ -3,10 +3,12 @@ import Image from "next/image";
 import { IMAGES } from "../../../../public/assets";
 import Counter from "@/components/Reusable/Counter/Counter";
 import { motion } from "framer-motion";
+import Container from "@/components/Shared/Container/Container";
 
 const Results = () => {
   return (
-    <div className="max-w-[1531px] mx-auto mt-20 2xl:mt-[130px] relative px-5 2xl:px-0">
+    <Container>
+      <div className="mt-20 2xl:mt-[130px] relative">
       <Image
         src={IMAGES.globeCircle}
         alt="Globe circle"
@@ -130,6 +132,7 @@ const Results = () => {
         </motion.div>
       </div>
     </div>
+    </Container>
   );
 };
 

@@ -2,14 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ICONS, IMAGES } from "../../../../public/assets";
-import {
-  IoLogoLinkedin,
-  IoLogoFacebook,
-  IoLogoInstagram,
-  IoLogoYoutube,
-  IoLogoPinterest,
-} from "react-icons/io";
 import { motion } from "framer-motion";
+import Container from "../Container/Container";
 
 const Footer = () => {
   const contactInfo = [
@@ -118,7 +112,7 @@ const Footer = () => {
   ];
   return (
     <div className="bg-neutral-15 py-5 lg:py-10 2xl:py-16 mt-32">
-      <div className="max-w-[1531px] mx-auto px-5 2xl:px-0">
+      <Container>
         <div className="flex flex-col lg:flex-row justify-between gap-10 2xl:gap-0">
           {/* Company info + Contact details */}
           <div>
@@ -126,7 +120,7 @@ const Footer = () => {
               <Image
                 src={IMAGES.logo}
                 alt="Logo"
-                className="w-fit lg:w-[219px] h-[70px] relative"
+                className="w-fit lg:w-[219px] relative"
               />
             </Link>
             <p className="text-neutral-300 mt-4 text-sm lg:text-base font-Poppins max-w-[436px]">
@@ -250,7 +244,7 @@ const Footer = () => {
 
           <Image src={ICONS.glassdoorReview} alt="" className="" />
         </div>
-      </div>
+      </Container>
 
       <hr className="border border-neutral-10 h-px mt-[60px]" />
 

@@ -46,11 +46,11 @@ const ProjectCard = () => {
         }}
       />
 
-      <div className="relative h-[376px] rounded-t-[7px]">
+      <div className="relative h-[300px] 2xl:h-[376px] rounded-t-[7px]">
         <Image
           src={IMAGES.dummyProject1}
           alt=""
-          className="h-[376px] rounded-t-[7px]"
+          className="h-full rounded-t-[7px]"
         />
         {/* Dark Overlay */}
         <div className="bg-neutral-5 opacity-30 w-full h-full rounded-[7px] absolute top-0 left-0 pointer-events-none"></div>

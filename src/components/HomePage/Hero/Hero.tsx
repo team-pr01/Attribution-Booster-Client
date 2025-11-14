@@ -114,7 +114,7 @@ const Hero = () => {
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="max-w-[1800px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
+      className="max-w-[1300px] 2xl:max-w-[1800px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
         className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
@@ -139,7 +139,7 @@ const Hero = () => {
 
         {/* Top globes */}
         <motion.div
-          className="flex items-center justify-between max-w-[320px] 2xl:max-w-[1000px] absolute left-4 lgl:left-[300px] 2xl:left-[450px] top-48 w-full"
+          className="flex items-center justify-between max-w-[320px] lg:max-w-[1000px] absolute left-4 lg:left-[300px] 2xl:left-[450px] top-48 w-full"
           variants={staggerContainer}
         >
           <motion.div
@@ -202,7 +202,7 @@ const Hero = () => {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="size-[200px] 2xl:size-[643px] absolute -top-10 2xl:-top-64 -right-10 2xl:-right-56 opacity-[0.30] z-999"
+            className="size-[150px] lg:size-[400px] 2xl:size-[643px] absolute -top-10 lg:-top-28 2xl:-top-64 -right-10 lg:-right-28 2xl:-right-56 opacity-[0.30] z-999"
           >
             <Image
               style={{
@@ -230,7 +230,7 @@ const Hero = () => {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="size-[150px] 2xl:size-[643px] absolute -top-10 2xl:-top-64 -left-10 2xl:-left-56 opacity-[0.30] z-999"
+            className="size-[150px] lg:size-[400px] 2xl:size-[643px] absolute -top-10 lg:-top-28 2xl:-top-64 -left-10 lg:-left-28 2xl:-left-56 opacity-[0.30] z-999"
           >
             <Image
               style={{
@@ -399,7 +399,7 @@ const Hero = () => {
 
           {/* Bottom globes */}
           <motion.div
-            className="hidden 2xl:flex items-center justify-between max-w-[1100px] 2xl:max-w-[1300px] absolute top-[500px] 2xl:top-[600px] w-full"
+            className="hidden xl:flex items-center justify-between max-w-[1100px] 2xl:max-w-[1300px] absolute top-[500px] 2xl:top-[600px] w-full"
             variants={staggerContainer}
           >
             <motion.div

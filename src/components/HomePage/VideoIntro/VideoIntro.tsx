@@ -6,6 +6,7 @@ import { motion, useInView, easeOut } from "framer-motion";
 import { useRef, useState } from "react";
 import Modal from "@/components/Reusable/Modal/Modal";
 import "./VideoIntro.css";
+import Container from "@/components/Shared/Container/Container";
 
 const VideoIntro = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -104,116 +105,118 @@ const VideoIntro = () => {
   };
 
   return (
-    <motion.div
-      ref={containerRef}
-      initial="hidden"
-      animate={isContainerInView ? "visible" : "hidden"}
-      className="max-w-[1800px] mx-auto mt-20 2xl:mt-[130px] relative px-5 2xl:px-0"
-    >
-      <div className="max-w-[1531px] mx-auto">
-        {/* Header */}
-        <motion.div
-          variants={containerVariants}
-          className="flex flex-col lg:flex-row items-center justify-between"
-        >
-          <motion.h1
-            variants={headerVariants}
-            className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[643px]"
+    <Container>
+      <motion.div
+        ref={containerRef}
+        initial="hidden"
+        animate={isContainerInView ? "visible" : "hidden"}
+        className="mt-20 2xl:mt-[130px] relative"
+      >
+        <div className="max-w-[1531px] mx-auto">
+          {/* Header */}
+          <motion.div
+            variants={containerVariants}
+            className="flex flex-col lg:flex-row items-center justify-between"
           >
-            Attribution Booster In a Minute
-          </motion.h1>
-          <motion.p
-            variants={textVariants}
-            className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[750px] mt-4 lg:mt-0"
-          >
-            In this section, we would love to integrate a short video about
-            Attribution Booster, which will cover our unique services, why you
-            should work with Attribution Booster, how we work, and our core
-            values that we provide to our clients.
-          </motion.p>
-        </motion.div>
+            <motion.h1
+              variants={headerVariants}
+              className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[643px]"
+            >
+              Attribution Booster In a Minute
+            </motion.h1>
+            <motion.p
+              variants={textVariants}
+              className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[750px] mt-4 lg:mt-0"
+            >
+              In this section, we would love to integrate a short video about
+              Attribution Booster, which will cover our unique services, why you
+              should work with Attribution Booster, how we work, and our core
+              values that we provide to our clients.
+            </motion.p>
+          </motion.div>
 
+          <motion.div
+            ref={videoRef}
+            variants={scaleUpVariants}
+            initial="hidden"
+            animate={isVideoInView ? "visible" : "hidden"}
+            transition={{ ...transition, delay: 0.2 }}
+            className="relative flex flex-col items-center justify-center w-full h-full mt-14 z-50"
+            whileHover={{
+              scale: 1.02,
+              transition: { duration: 0.3 },
+            }}
+          >
+            <Image
+              src={IMAGES.videoDummyImage}
+              alt=""
+              className="w-full max-h-[700px] object-cover rounded-2xl z-10"
+            />
+            {/* video play btn */}
+            <div className="absolute top-0 bottom-0 right-0 left-0 z-20 flex items-center justify-center">
+              {" "}
+              {/* Increased z-index */}
+              <motion.button
+                onClick={() => setIsModalOpen(true)}
+                className="video-button cursor-pointer size-10 md:size-20 flex items-center justify-center"
+                aria-label="Play video"
+                variants={playButtonVariants}
+                whileHover="hover"
+                whileTap="tap"
+                animate="visible"
+              >
+                <svg
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  className="size-5 md:size-6"
+                >
+                  <path
+                    d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Card container */}
         <motion.div
           ref={videoRef}
-          variants={scaleUpVariants}
+          variants={cardContainerVariants}
           initial="hidden"
           animate={isVideoInView ? "visible" : "hidden"}
-          transition={{ ...transition, delay: 0.2 }}
-          className="relative flex flex-col items-center justify-center w-full h-full mt-14 z-50"
-          whileHover={{
-            scale: 1.02,
-            transition: { duration: 0.3 },
-          }}
+          className="absolute -bottom-40 w-full -z-10 hidden xl:block"
         >
-          <Image
-            src={IMAGES.videoDummyImage}
-            alt=""
-            className="w-full max-h-[700px] object-cover rounded-2xl z-10"
-          />
-          {/* video play btn */}
-          <div className="absolute top-0 bottom-0 right-0 left-0 z-20 flex items-center justify-center">
-            {" "}
-            {/* Increased z-index */}
-            <motion.button
-              onClick={() => setIsModalOpen(true)}
-              className="video-button cursor-pointer size-10 md:size-20 flex items-center justify-center"
-              aria-label="Play video"
-              variants={playButtonVariants}
-              whileHover="hover"
-              whileTap="tap"
-              animate="visible"
-            >
-              <svg
-                viewBox="0 0 448 512"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                className="size-5 md:size-6"
-              >
-                <path
-                  d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
-                  fill="currentColor"
-                ></path>
-              </svg>
-            </motion.button>
-          </div>
+          <motion.div
+            variants={containerVariants}
+            className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] min-h-[573px] overflow-hidden"
+          >
+            <Image
+              src={IMAGES.circle}
+              alt=""
+              className="size-[400px] absolute -bottom-40 -left-32 opacity-[0.05] z-0"
+            />
+
+            {/* Main content */}
+            <div className="flex flex-col lg:flex-row gap-16 lg:gap-10 xl:gap-0 items-center justify-between relative z-10 w-full"></div>
+          </motion.div>
         </motion.div>
-      </div>
 
-      {/* Card container */}
-      <motion.div
-        ref={videoRef}
-        variants={cardContainerVariants}
-        initial="hidden"
-        animate={isVideoInView ? "visible" : "hidden"}
-        className="absolute -bottom-40 w-full -z-10 hidden xl:block"
-      >
-        <motion.div
-          variants={containerVariants}
-          className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] min-h-[573px] overflow-hidden"
-        >
-          <Image
-            src={IMAGES.circle}
-            alt=""
-            className="size-[400px] absolute -bottom-40 -left-32 opacity-[0.05] z-0"
-          />
-
-          {/* Main content */}
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-10 xl:gap-0 items-center justify-between relative z-10 w-full"></div>
-        </motion.div>
-      </motion.div>
-
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <div className="w-full aspect-video mx-auto">
-          {/* <iframe
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <div className="w-full aspect-video mx-auto">
+            {/* <iframe
             src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
             title="YouTube video"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             className="w-full h-full rounded"
           /> */}
-        </div>
-      </Modal>
-    </motion.div>
+          </div>
+        </Modal>
+      </motion.div>
+    </Container>
   );
 };
 

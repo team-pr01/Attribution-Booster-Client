@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import CustomDropdown from "@/components/Reusable/CustomDropdown/CustomDropdown";
+import Container from "@/components/Shared/Container/Container";
 
 // Reusable TextInput Component
 const TextInput = ({
@@ -138,12 +139,13 @@ const contactInfo = [
   };
 
   return (
-    <motion.div
+    <Container>
+      <motion.div
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="max-w-[1200px] 2xl:max-w-[1531px] mx-auto mt-[130px] px-5 lg:px-0"
+      className="mt-[130px]"
     >
       <div>
         <div className="flex flex-col lg:flex-row gap-10 w-full">
@@ -300,6 +302,7 @@ const contactInfo = [
         </div>
       </div>
     </motion.div>
+    </Container>
   );
 };
 

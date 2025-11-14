@@ -7,6 +7,7 @@ import ProjectCard from "./ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Container from "@/components/Shared/Container/Container";
 
 const RecentProjects = () => {
   const [activeTab, setActiveTab] = useState("See All");
@@ -130,11 +131,12 @@ const RecentProjects = () => {
   const projects = Array(6).fill(null);
 
   return (
-    <motion.div
+    <Container>
+      <motion.div
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="max-w-[1800px] h-fit mx-auto mt-32 2xl:mt-52 relative"
+      className="h-fit mx-auto mt-32 2xl:mt-52 relative"
     >
       {/* Shine Border Effect for full section */}
         <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none z-50 m-0"></div>
@@ -244,6 +246,7 @@ const RecentProjects = () => {
         </div>
       </motion.div>
     </motion.div>
+    </Container>
   );
 };
 
