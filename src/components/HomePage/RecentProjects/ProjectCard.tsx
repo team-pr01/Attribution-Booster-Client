@@ -3,9 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import Image from "next/image";
-import { IMAGES } from "../../../../public/assets";
 
-const ProjectCard = () => {
+const ProjectCard = ({image, name, category} : any) => {
   const itemVariants: any = {
     hidden: { opacity: 0, y: 40, scale: 0.9 },
     visible: {
@@ -48,7 +47,7 @@ const ProjectCard = () => {
 
       <div className="relative h-[300px] 2xl:h-[376px] rounded-t-[7px]">
         <Image
-          src={IMAGES.dummyProject1}
+          src={image}
           alt=""
           className="h-full rounded-t-[7px]"
         />
@@ -69,11 +68,11 @@ const ProjectCard = () => {
         className="flex items-center justify-between p-5"
       >
         <div>
-          <h1 className="font-MartianBThai text-white text-xl lg:text-[28px] leading-[35px] font-semibold">
-            Travel Website
+          <h1 className="font-MartianBThai text-white text-xl lg:text-2xl leading-[35px] font-semibold">
+            {name}
           </h1>
           <p className="text-neutral-300 text-sm lg:text-base font-Poppins mt-2">
-            Creative Design
+            {category}
           </p>
         </div>
 

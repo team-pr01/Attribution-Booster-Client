@@ -47,7 +47,13 @@ import uiUxDesign from "./images/services/ui-ux-design.webp";
 import videoEditing from "./images/services/video-editing.webp";
 import webDevelopment from "./images/services/web-development.webp";
 import serviceCircle from "./images/service-circle.webp";
-import dummyProject1 from "./images/projects/dummy-project-1.png";
+// Projects
+import development from "./images/projects/development-project.webp";
+import development2 from "./images/projects/development-project-2.webp";
+import uiUx from "./images/projects/ui-ux-project.webp";
+import uiUx2 from "./images/projects/ui-ux-project-2.webp";
+import seoProject from "./images/projects/seo-project.webp";
+import marketing from "./images/projects/marketing.webp";
 
 
 // Icons
@@ -111,7 +117,13 @@ export const IMAGES = {
   videoEditing,
   webDevelopment,
   serviceCircle,
-  dummyProject1
+  // Projects
+  development,
+  development2,
+  uiUx,
+  uiUx2,
+  seoProject,
+  marketing
 };
 
 
