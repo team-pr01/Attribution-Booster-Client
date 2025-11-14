@@ -142,7 +142,7 @@ const RecentProjects = () => {
         <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none z-50 m-0"></div>
       <motion.div
         variants={containerVariants}
-        className="rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden p-3 md:p-5 lg:p-10 2xl:p-32"
+        className="rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden p-3 md:p-5 lg:p-10"
       >
         {/* Animated Background Circles */}
         <motion.div variants={slideInRight} initial="hidden" animate="visible">

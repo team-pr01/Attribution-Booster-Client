@@ -139,7 +139,7 @@ const Hero = () => {
 
         {/* Top globes */}
         <motion.div
-          className="flex items-center justify-between max-w-[320px] lg:max-w-[1000px] absolute left-4 lg:left-[300px] 2xl:left-[450px] top-48 w-full"
+          className="flex items-center justify-between max-w-[320px] lg:max-w-[1000px] absolute left-4 lg:left-[250px] 2xl:left-[380px] top-48 w-full"
           variants={staggerContainer}
         >
           <motion.div
