@@ -14,31 +14,21 @@ const ServiceCard = ({
 }) => {
   return (
     <motion.div
-      className="bg-neutral-10 group backdrop-blur-[15px] rounded-[10px] px-5 py-[30px] flex flex-col items-center justify-center w-full max-w-[360px] relative border border-transparent cursor-pointer"
+      className="bg-neutral-10 group backdrop-blur-[15px] rounded-[10px] px-5 py-[30px] flex flex-col items-center justify-center w-full max-w-[360px] relative border border-transparent cursor-pointer shadow-[inset_0_0_20px_rgba(7,244,250,0.5)]"
       whileHover="hover"
       initial="initial"
-      variants={{
-        initial: {
-          borderColor: "transparent",
-          scale: 1,
-        },
-        hover: {
-          borderColor: "#07f4fa",
-          scale: 1,
-        },
-      }}
       transition={{
         duration: 0.3,
         ease: "easeOut",
       }}
     >
       {/* Shine Border Effect */}
-      <div className="shine-border absolute inset-0 rounded-xl pointer-events-none"></div>
+      <div className="shine-border absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100"></div>
 
       <div>
         {/* Animated Arrow Icon */}
         <motion.div
-          className="size-9 rounded-full flex items-center justify-center border absolute top-3 right-3 overflow-hidden"
+          className="size-9 rounded-full flex items-center justify-center border absolute top-4 right-4 overflow-hidden"
           variants={{
             initial: {
               backgroundColor: "rgba(255, 255, 255, 0.1)",

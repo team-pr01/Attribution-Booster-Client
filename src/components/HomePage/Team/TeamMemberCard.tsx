@@ -30,16 +30,18 @@ const TeamMemberCard = () => {
 
   return (
     <motion.div
-      className="relative rounded-[10px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] flex flex-col overflow-hidden group cursor-pointer"
+      className="group relative rounded-[10px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] flex flex-col overflow-hidden group cursor-pointer"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
+      {/* Shine Border Effect */}
+      <div className="shine-border absolute inset-0 rounded-[10px] pointer-events-none opacity-0 group-hover:opacity-100 transition duration-300"></div>
       {/* Image Container */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden p-1">
         <Image
           src={IMAGES.ceo}
           alt="Muhammad Nurullah - CEO"
-          className="h-[310px] xl:h-[425px] rounded-t-[10px] object-cover w-full group-hover:scale-105 transition-transform duration-300"
+          className="h-[310px] xl:h-[425px] rounded-lg object-cover w-full transition-transform duration-300"
         />
 
         {/* Social Icons Overlay */}
@@ -66,7 +68,7 @@ const TeamMemberCard = () => {
 
       {/* Content */}
       <div className="p-5 xl:p-[30px]">
-        <h2 className="font-MartianBThai text-white text-2xl 2xl:text-[32px] leading-9 font-semibold text-center">
+        <h2 className="font-MartianBThai text-white group-hover:text-primary-5 text-2xl 2xl:text-[28px] leading-9 font-semibold text-center">
           Muhammad Nurullah
         </h2>
         <p className="text-neutral-300 font-Poppins text-center mt-1">CEO</p>
