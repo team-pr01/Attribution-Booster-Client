@@ -114,7 +114,7 @@ const Hero = () => {
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="max-w-[1300px] 2xl:max-w-[1400px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
+      className="max-w-[1300px] 2xl:max-w-[1470px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
         className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
