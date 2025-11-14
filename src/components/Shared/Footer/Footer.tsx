@@ -120,7 +120,7 @@ const Footer = () => {
               <Image
                 src={IMAGES.logo}
                 alt="Logo"
-                className="w-fit lg:w-[219px] relative"
+                className="w-[219px] relative"
               />
             </Link>
             <p className="text-neutral-300 mt-4 text-sm lg:text-base font-Poppins max-w-[436px]">
