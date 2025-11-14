@@ -134,8 +134,10 @@ const RecentProjects = () => {
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="max-w-[1800px] h-fit mx-auto mt-32 2xl:mt-52"
+      className="max-w-[1800px] h-fit mx-auto mt-32 2xl:mt-52 relative"
     >
+      {/* Shine Border Effect for full section */}
+        <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none z-50 m-0"></div>
       <motion.div
         variants={containerVariants}
         className="rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden p-3 md:p-5 lg:p-10 2xl:p-32"
@@ -183,6 +185,8 @@ const RecentProjects = () => {
 
           {/* Animated Tabs */}
           <motion.div className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] p-3 flex items-center gap-6 border border-transparent cursor-pointer w-full lg:w-fit overflow-x-auto mt-7 lg:mt-14 2xl:mt-16 relative">
+            {/* Shiny Border Effect for Entire Tab Container */}
+            <div className="shine-border absolute inset-0 rounded-xl pointer-events-none"></div>
             {/* Animated sliding background */}
             <motion.div
               className="absolute bg-primary-5 rounded-md z-0"
