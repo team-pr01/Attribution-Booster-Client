@@ -121,7 +121,7 @@ const Services = () => {
     {
       name: "Social Media Marketing",
       description:
-        "Our expert team manages all aspects of your email campaigns, from creating engaging content to analyzing campaign performance.",
+        "Our expert team handles everything—from crafting engaging emails to analyzing campaign performance.",
       icon: IMAGES.socialMediaMarketing,
     },
     {
@@ -186,7 +186,7 @@ const Services = () => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="relative overflow-hidden px-5 2xl:px-0"
+      className="relative overflow-hidden"
     >
       {/* Animated Background Elements */}
       <motion.div variants={floatAnimation} initial="hidden" animate="visible">
@@ -225,39 +225,43 @@ const Services = () => {
 
       <Container>
         <div className="mt-20 xl:mt-48">
-        {/* Header Section */}
-        <motion.div
-          className="flex flex-col lg:flex-row items-center justify-between"
-          variants={containerVariants}
-        >
-          <motion.h1
-            variants={slideInLeft}
-            className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[780px]"
+          {/* Header Section */}
+          <motion.div
+            className="flex flex-col lg:flex-row items-center justify-between"
+            variants={containerVariants}
           >
-            Unleash server-side tracking's potential with us!
-          </motion.h1>
+            <motion.h1
+              variants={slideInLeft}
+              className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[780px]"
+            >
+              Unleash server-side tracking's potential with us!
+            </motion.h1>
 
-          <motion.p
-            variants={slideInRight}
-            className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[430px] font-Poppins mt-4 lg:mt-0"
+            <motion.p
+              variants={slideInRight}
+              className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[430px] font-Poppins mt-4 lg:mt-0"
+            >
+              Maximize Your Campaign's Potential and Boost Your ROI with Our
+              Advanced Tracking Tools and Techniques.
+            </motion.p>
+          </motion.div>
+
+          {/* Services Grid */}
+          <motion.div
+            className="mt-[70px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+            variants={staggerCards}
           >
-            Maximize Your Campaign's Potential and Boost Your ROI with Our
-            Advanced Tracking Tools and Techniques.
-          </motion.p>
-        </motion.div>
-
-        {/* Services Grid */}
-        <motion.div
-          className="mt-[70px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
-          variants={staggerCards}
-        >
-          {servicesData?.map((service, index) => (
-            <motion.div key={service?.name} variants={cardItem} custom={index}>
-              <ServiceCard {...service} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+            {servicesData?.map((service, index) => (
+              <motion.div
+                key={service?.name}
+                variants={cardItem}
+                custom={index}
+              >
+                <ServiceCard {...service} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </Container>
     </motion.div>
   );

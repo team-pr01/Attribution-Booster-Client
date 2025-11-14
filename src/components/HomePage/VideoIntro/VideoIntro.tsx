@@ -11,9 +11,13 @@ import Container from "@/components/Shared/Container/Container";
 const VideoIntro = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const videoRef = useRef(null);
+  const videoSectionRef = useRef(null);
+const cardSectionRef = useRef(null);
+
   const containerRef = useRef(null);
-  const isVideoInView = useInView(videoRef, { once: true, amount: 0.3 });
+  const isVideoInView = useInView(videoSectionRef, { once: true, amount: 0.3 });
+const isCardInView = useInView(cardSectionRef, { once: true, amount: 0.2 });
+
   const isContainerInView = useInView(containerRef, {
     once: true,
     amount: 0.2,
@@ -135,8 +139,9 @@ const VideoIntro = () => {
             </motion.p>
           </motion.div>
 
+          {/* Video */}
           <motion.div
-            ref={videoRef}
+            ref={videoSectionRef}
             variants={scaleUpVariants}
             initial="hidden"
             animate={isVideoInView ? "visible" : "hidden"}
@@ -183,7 +188,7 @@ const VideoIntro = () => {
 
         {/* Card container */}
         <motion.div
-          ref={videoRef}
+          ref={cardSectionRef}
           variants={cardContainerVariants}
           initial="hidden"
           animate={isVideoInView ? "visible" : "hidden"}
