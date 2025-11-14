@@ -8,6 +8,7 @@ import ServiceCard from "./ServiceCard";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Container from "@/components/Shared/Container/Container";
 
 const Services = () => {
   const containerRef = useRef(null);
@@ -222,7 +223,8 @@ const Services = () => {
         </motion.div>
       </motion.div>
 
-      <div className="max-w-[1531px] mx-auto mt-20 xl:mt-48">
+      <Container>
+        <div className="mt-20 xl:mt-48">
         {/* Header Section */}
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-between"
@@ -256,6 +258,7 @@ const Services = () => {
           ))}
         </motion.div>
       </div>
+      </Container>
     </motion.div>
   );
 };
