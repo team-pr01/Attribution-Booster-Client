@@ -3,7 +3,6 @@
 
 import Image from "next/image";
 import { ICONS, IMAGES } from "../../../../public/assets";
-import Navbar from "@/components/Shared/Navbar/Navbar";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -123,6 +122,20 @@ const Hero = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
+        <motion.div
+          // variants={globeAnimation}
+          animate={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/2 -translate-y-1/2 right-0 z-0 lg:z-9999"
+        >
+          <Image src={IMAGES.halfGlobeCircle} alt="" className="" />
+        </motion.div>
 
         {/* Top globes */}
         <motion.div
@@ -294,9 +307,7 @@ const Hero = () => {
               animate="visible"
               className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
             >
-              <motion.div
-                className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
-              >
+              <motion.div className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]">
                 <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
                   <motion.div
                     animate={{ rotate: [0, 5, 0, -5, 0] }}
@@ -307,6 +318,10 @@ const Hero = () => {
                     }}
                   >
                     <Image
+                      style={{
+                        mixBlendMode: "hard-light",
+                        filter: "saturate(160%)",
+                      }}
                       src={IMAGES.happyClients}
                       alt="Happy Clients"
                       className="w-9 md:w-[77px] h-12 sm:h-[65px] md:h-[82px]"
@@ -339,9 +354,7 @@ const Hero = () => {
               animate="visible"
               className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
             >
-              <motion.div
-                className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]"
-              >
+              <motion.div className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]">
                 <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
                   <motion.div
                     animate={{ rotate: [0, -5, 0, 5, 0] }}
@@ -353,6 +366,10 @@ const Hero = () => {
                     }}
                   >
                     <Image
+                      style={{
+                        mixBlendMode: "hard-light",
+                        filter: "saturate(160%)",
+                      }}
                       src={IMAGES.projectCompleted}
                       alt="Project Completed"
                       className="w-9 md:w-[77px] h-10 sm:h-[55px] md:h-[82px]"

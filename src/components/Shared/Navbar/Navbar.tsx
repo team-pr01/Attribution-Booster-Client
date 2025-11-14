@@ -46,7 +46,7 @@ const Navbar = () => {
             <Image
               src={IMAGES.logo}
               alt="Logo"
-              className="w-[200px] lg:w-[219px] h-[50px] 2xl:h-[70px]"
+              className="w-[200px] md:w-[290px]"
             />
           </Link>
 

@@ -95,12 +95,26 @@ const PackageOffer = () => {
   };
 
   return (
-    <motion.div
+    <div className="relative overflow-hidden h-[1000px] md:h-[800px]">
+      <Image
+        src={IMAGES.offerGlobe}
+        alt="Decorative Globe"
+        className="
+    w-[114px] lg:w-[230px] 
+    opacity-80 blur-[2px] animate-spin
+    absolute bottom-0 right-0
+    translate-x-1/3 translate-y-0
+    z-[-1]
+  "
+      />
+      <motion.div
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="max-w-[1800px] mx-auto rounded-[20px] relative mt-28 2xl:mt-44 px-5 2xl:px-0"
+      className="max-w-[1800px] mx-auto rounded-[20px] relative mt-28 2xl:mt-44 px-5 2xl:px-0 overflow-hidden"
     >
+      
+
       {/* Card container */}
       <motion.div
         variants={containerVariants}
@@ -116,6 +130,14 @@ const PackageOffer = () => {
             src={IMAGES.circle}
             alt=""
             className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.03] z-0"
+          />
+        </motion.div>
+
+        <motion.div variants={slideInRight} initial="hidden" animate="visible">
+          <Image
+            src={IMAGES.circle}
+            alt=""
+            className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.03] z-999"
           />
         </motion.div>
 
@@ -215,6 +237,7 @@ const PackageOffer = () => {
         </div>
       </motion.div>
     </motion.div>
+    </div>
   );
 };
 

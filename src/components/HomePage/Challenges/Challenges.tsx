@@ -159,10 +159,10 @@ const Challenges = () => {
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="overflow-hidden relative px-5 2xl:px-0"
+      className="overflow-visible relative px-5 2xl:px-0"
     >
       {/* Animated Decorative circle */}
-      <motion.div
+      {/* <motion.div
         variants={circleAnimation}
         initial="hidden"
         animate={{
@@ -182,9 +182,9 @@ const Challenges = () => {
           alt="Globe circle"
           className="w-[543px] h-[500px] opacity-[0.10] hidden md:block blur-[10px] absolute top-[50px] -right-72 z-10 pointer-events-none select-none"
         />
-      </motion.div>
+      </motion.div> */}
 
-      <div className="max-w-[1531px] mx-auto mt-[111px]">
+      <div className="max-w-[1531px] mx-auto mt-[111px] overflow-visible">
         {/* Main Title */}
         <motion.h1
           variants={titleVariants}
@@ -196,7 +196,7 @@ const Challenges = () => {
         {/* Cards Grid */}
         <motion.div
           variants={cardsContainerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-[30px] mt-16 lg:mt-24"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-[30px] mt-16 lg:mt-24 overflow-visible"
         >
           {challengeData.map((item, index) => (
             <motion.div
@@ -242,7 +242,7 @@ const Challenges = () => {
               <motion.div
                 className="bg-neutral-10 rounded-[10px] backdrop-blur-[15px] p-[30px] flex flex-col items-center justify-center relative z-10 h-full"
                 whileHover={{
-                  boxShadow: "0 25px 50px rgba(7, 244, 250, 0.25)",
+                  boxShadow: "0 15px 50px rgba(7, 244, 250, 0.25)",
                   background: "rgba(255,255,255,0.05)",
                   transition: { duration: 0.4 },
                 }}

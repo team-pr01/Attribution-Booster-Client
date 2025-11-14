@@ -99,7 +99,7 @@ const TrustedClients = () => {
           {logos.map((logo, index) => (
             <motion.div
               key={index}
-              className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] flex flex-col items-center justify-center w-[230px] h-[101px] relative border border-transparent cursor-pointer mx-[15px] group"
+              className="bg-neutral-10 rounded-[10px] flex flex-col items-center justify-center w-[230px] h-[101px] relative border border-transparent cursor-pointer mx-[15px] group"
               variants={floatingAnimation}
               initial="initial"
               whileHover="hover"
@@ -112,7 +112,7 @@ const TrustedClients = () => {
 
               {/* Main Card Content */}
               <motion.div
-                className="absolute inset-0.5 bg-neutral-10 backdrop-blur-[15px] rounded-lg flex items-center justify-center"
+                className="absolute inset-0.5 bg-neutral-10 rounded-lg flex items-center justify-center"
                 whileHover={{
                   scale: 0.98,
                   transition: { duration: 0.2 }
@@ -192,12 +192,12 @@ const TrustedClients = () => {
               </motion.div>
 
               {/* Shine Effect */}
-              <motion.div
+              {/* <motion.div
                 className="absolute inset-0 rounded-[10px] bg-linear-to-r from-transparent via-white/10 to-transparent"
                 initial={{ x: "-100%" }}
                 whileHover={{ x: "100%" }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
-              />
+              /> */}
             </motion.div>
           ))}
         </Marquee>

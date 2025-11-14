@@ -69,7 +69,7 @@ const Partner = () => {
       <div className="moving-border-container rounded-[10px] p-px">
         <div className="rounded-[10px] bg-neutral-5 backdrop-blur-[15px] relative z-10">
           {/* Responsive layout */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12 px-4 sm:px-6 md:px-10 py-5 sm:py-7 md:py-9">
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12 p-4">
             {/* Left image - slides from left */}
             <motion.div
               variants={slideInLeft}

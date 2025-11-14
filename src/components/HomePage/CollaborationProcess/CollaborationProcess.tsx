@@ -45,9 +45,9 @@ const CollaborationProcess = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.3,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const headerVariants: any = {
@@ -59,9 +59,9 @@ const CollaborationProcess = () => {
         type: "spring",
         stiffness: 100,
         damping: 15,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const cardContainerVariants: any = {
@@ -70,70 +70,70 @@ const CollaborationProcess = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
   const cardVariants: any = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 100,
-      scale: 0.8 
+      scale: 0.8,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       scale: 1,
       transition: {
         type: "spring",
         stiffness: 80,
         damping: 15,
-        duration: 0.8
-      }
-    }
+        duration: 0.8,
+      },
+    },
   };
 
   const svgWaveVariants: any = {
-    hidden: { 
+    hidden: {
       scale: 0,
-      opacity: 0 
+      opacity: 0,
     },
-    visible: { 
+    visible: {
       scale: 1,
       opacity: 1,
       transition: {
         type: "spring",
         stiffness: 100,
         damping: 15,
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   const iconVariants: any = {
-    hidden: { 
+    hidden: {
       scale: 0,
-      rotate: -180 
+      rotate: -180,
     },
-    visible: { 
+    visible: {
       scale: 1,
       rotate: 0,
       transition: {
         type: "spring",
         stiffness: 150,
         damping: 10,
-        duration: 0.8
-      }
+        duration: 0.8,
+      },
     },
     hover: {
       scale: 1.2,
       rotate: 360,
       transition: {
         duration: 0.6,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   const textVariants: any = {
@@ -143,9 +143,9 @@ const CollaborationProcess = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const floatingAnimation: any = {
@@ -155,17 +155,17 @@ const CollaborationProcess = () => {
       scale: 1,
       transition: {
         duration: 1.5,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
-    <motion.div 
+    <motion.div
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="overflow-hidden relative px-5 2xl:px-0"
+      className="overflow-visible relative px-5 2xl:px-0"
     >
       {/* Animated Decorative circle */}
       <motion.div
@@ -182,18 +182,18 @@ const CollaborationProcess = () => {
 
       <div className="max-w-[1531px] mx-auto mt-[111px]">
         {/* Header Section */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           className="flex flex-col lg:flex-row items-center justify-between"
         >
-          <motion.h1 
+          <motion.h1
             variants={headerVariants}
             className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[619px]"
           >
             Our Collaboration Process
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             variants={headerVariants}
             transition={{ delay: 0.1 }}
             className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins text-center max-w-[707px] mt-4 lg:mt-0"
@@ -205,27 +205,27 @@ const CollaborationProcess = () => {
         </motion.div>
 
         {/* Process Cards Grid */}
-        <motion.div 
+        <motion.div
           variants={cardContainerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] mt-16 lg:mt-24"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] mt-16 lg:mt-24 overflow-visible"
         >
           {collaborationProcess?.map((item, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              whileHover={{ 
+              whileHover={{
                 y: -10,
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
-              className="relative h-full"
+              className="relative h-full overflow-visible"
             >
               {/* Animated SVG Wave Background */}
-              <motion.div 
+              <motion.div
                 className="absolute -top-5 inset-x-0 flex justify-center -z-10"
                 variants={svgWaveVariants}
                 whileHover={{
                   scale: 1.1,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
               >
                 <svg
@@ -244,15 +244,15 @@ const CollaborationProcess = () => {
               </motion.div>
 
               {/* Card Content */}
-              <motion.div 
+              <motion.div
                 className="bg-neutral-10 rounded-[10px] backdrop-blur-[15px] p-5 flex flex-col relative z-10 h-full"
                 whileHover={{
                   boxShadow: "0 20px 40px rgba(7, 244, 250, 0.2)",
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
               >
                 {/* Step Number */}
-                <motion.h1 
+                <motion.h1
                   className="font-MartianBThai text-white text-[32px] leading-9 font-semibold text-center"
                   variants={textVariants}
                 >
@@ -273,7 +273,7 @@ const CollaborationProcess = () => {
                 </motion.div>
 
                 {/* Title */}
-                <motion.h1 
+                <motion.h1
                   className="font-MartianBThai text-white text-2xl font-semibold mt-[30px]"
                   variants={textVariants}
                   transition={{ delay: 0.1 }}
@@ -282,7 +282,7 @@ const CollaborationProcess = () => {
                 </motion.h1>
 
                 {/* Description */}
-                <motion.p 
+                <motion.p
                   className="text-neutral-300 text-sm lg:text-base mt-4 font-Poppins"
                   variants={textVariants}
                   transition={{ delay: 0.2 }}

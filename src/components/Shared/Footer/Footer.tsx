@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { ICONS, IMAGES } from "../../../../public/assets";
@@ -9,7 +9,7 @@ import {
   IoLogoYoutube,
   IoLogoPinterest,
 } from "react-icons/io";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const contactInfo = [
@@ -93,27 +93,27 @@ const Footer = () => {
     {
       title: "LinkedIn",
       link: "https://www.linkedin.com",
-      icon: <IoLogoLinkedin className="text-[#368dff]" />,
+      icon: ICONS.linkedin,
     },
     {
       title: "Facebook",
       link: "https://www.facebook.com",
-      icon: <IoLogoFacebook className="text-[#368dff]" />,
-    },
-    {
-      title: "Instagram",
-      link: "https://www.instagram.com",
-      icon: <IoLogoInstagram className="text-[#f95c90]" />,
+      icon: ICONS.facebook,
     },
     {
       title: "YouTube",
       link: "https://www.youtube.com",
-      icon: <IoLogoYoutube className="text-[#ff3232]" />,
+      icon: ICONS.youtube,
     },
     {
       title: "Pinterest",
       link: "https://www.pinterest.com",
-      icon: <IoLogoPinterest className="text-[#ff2b4a]" />,
+      icon: ICONS.pinterest,
+    },
+    {
+      title: "Instagram",
+      link: "https://www.instagram.com",
+      icon: ICONS.instagram,
     },
   ];
   return (
@@ -221,7 +221,7 @@ const Footer = () => {
                   href={item.link}
                   className="size-10 rounded-full bg-neutral-10 backdrop-blur-[15px] p-2 flex items-center justify-center text-white text-xl"
                 >
-                  {item.icon}
+                  <Image src={item?.icon} alt={item?.title} className="size-6" />
                 </a>
               ))}
             </div>
@@ -232,7 +232,7 @@ const Footer = () => {
             className="border-l-4 border-cyan-400 rounded-lg px-5"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            href={'https://www.google.com/partners/agency?id=6137804524'}
+            href={"https://www.google.com/partners/agency?id=6137804524"}
             target="_blank"
           >
             <div className="flex items-center space-x-2 rounded-lg w-fit mt-3 cursor-pointer">

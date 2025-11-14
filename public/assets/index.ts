@@ -6,6 +6,7 @@ import heroLeftGradient from "./images/hero-left-gradient.png";
 import heroMiddleGradient from "./images/hero-middle-gradient.png";
 import circle from "./images/circle.webp";
 import globeCircle from "./images/globe-circle.png";
+import halfGlobeCircle from "./images/hero-half-globe.webp";
 import happyClients from "./images/happy-clients.webp";
 import projectCompleted from "./images/project-completed.webp";
 import googlePartner from "./images/google-partner.png";
@@ -27,7 +28,7 @@ import fullStackInnovators from "./images/full-stack-innovators.webp";
 import dataExperts from "./images/data-experts.webp";
 import projectManagers from "./images/project-managers.webp";
 import strategicCreatives from "./images/strategic-creatives.webp";
-import ceo from "./images/CEO.jpg";
+import ceo from "./images/CEO.webp";
 import email from "./icons/email.svg";
 import workingHours from "./icons/working-hours.webp";
 import phone from "./icons/phone.webp";
@@ -54,6 +55,11 @@ import topRightArrow from "./icons/top-right-arrow.svg";
 import clientDummyLogo from "./icons/client-dummy-logo.svg";
 import googlePartner2 from "./icons/google-partner.svg";
 import glassdoorReview from "./icons/glassdoor-review.svg";
+import linkedin from "./icons/linkedin.webp";
+import facebook from "./icons/facebook.webp";
+import youtube from "./icons/youtube.webp";
+import pinterest from "./icons/pinterest.webp";
+import instagram from "./icons/instagram.webp";
 
 export const IMAGES = {
   logo,
@@ -64,6 +70,7 @@ export const IMAGES = {
   heroMiddleGradient,
   circle,
   globeCircle,
+  halfGlobeCircle,
   happyClients,
   projectCompleted,
   googlePartner,
@@ -112,5 +119,10 @@ export const ICONS = {
   topRightArrow,
   clientDummyLogo,
   googlePartner2,
-  glassdoorReview
+  glassdoorReview,
+  linkedin,
+  facebook,
+  youtube,
+  pinterest,
+  instagram,
 };

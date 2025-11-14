@@ -1,7 +1,6 @@
 "use client";
 import Footer from "@/components/Shared/Footer/Footer";
 import Navbar from "@/components/Shared/Navbar/Navbar";
-import SmoothScroll from "@/components/SmoothScroll";
 import { ReactNode, useEffect, useState } from "react";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
@@ -16,7 +15,6 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <SmoothScroll>
       <div className="relative">
         {/* Sticky Navbar with scroll animation */}
         <div
@@ -32,7 +30,6 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 
         <Footer />
       </div>
-    </SmoothScroll>
   );
 };
 
