@@ -114,10 +114,10 @@ const Hero = () => {
       ref={containerRef}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="max-w-[1300px] 2xl:max-w-[1470px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
+      className="max-w-[1300px] 2xl:max-w-[1800px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[850px] 2xl:h-[1080px]"
+        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[730px] 2xl:h-[1080px]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -299,7 +299,7 @@ const Hero = () => {
           </div>
 
           {/* Rotate cards */}
-          <div className="flex justify-between w-full max-w-[1300px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[300px] px-2 sm:px-5">
+          <div className="hidden xl:flex justify-between w-full max-w-[1300px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[300px] px-2 sm:px-5">
             {/* Happy Clients Card */}
             <motion.div
               variants={rotateCardLeft}
@@ -399,7 +399,7 @@ const Hero = () => {
 
           {/* Bottom globes */}
           <motion.div
-            className="hidden xl:flex items-center justify-between max-w-[1100px] 2xl:max-w-[1300px] absolute top-[500px] 2xl:top-[600px] w-full"
+            className="flex items-center justify-between max-w-[300px] lg:max-w-[1100px] 2xl:max-w-[1300px] absolute left-5 lg:left-auto top-[350px] xl:top-[500px] 2xl:top-[600px] mx-auto w-full"
             variants={staggerContainer}
           >
             <motion.div
@@ -416,7 +416,7 @@ const Hero = () => {
               <Image
                 src={IMAGES.globeCircle}
                 alt=""
-                className="size-16 blur-[10px]"
+                className="size-10 xl:size-16"
               />
             </motion.div>
 
@@ -435,7 +435,7 @@ const Hero = () => {
               <Image
                 src={IMAGES.globeCircle}
                 alt=""
-                className="size-16 blur-[10px]"
+                className="size-10 xl:size-16 blur-[10px]"
               />
             </motion.div>
           </motion.div>

@@ -63,10 +63,10 @@ const Partner = () => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="max-w-[1200px] 2xl:max-w-[1400px] mx-auto mt-20 lg:mt-10 px-3 sm:px-5"
+      className="max-w-[1200px] 2xl:max-w-[1400px] mx-auto mt-20 lg:mt-10 px-3 sm:px-5 relative"
     >
-      {/* Moving Border Container - No animation on the card itself */}
-      <div className="moving-border-container rounded-[10px] p-px">
+      {/* Shine Border Effect for full section */}
+        <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none z-50 m-0"></div>
         <div className="rounded-[10px] bg-neutral-5 backdrop-blur-[15px] relative z-10">
           {/* Responsive layout */}
           <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12 p-4">
@@ -110,62 +110,7 @@ const Partner = () => {
             </motion.div>
           </div>
         </div>
-      </div>
 
-      {/* Add CSS for moving border */}
-      <style jsx>{`
-        .moving-border-container {
-          position: relative;
-          background: linear-gradient(
-            90deg,
-            #ff6b6b,
-            #4ecdc4,
-            #45b7d1,
-            #96ceb4,
-            #ffeaa7,
-            #ff6b6b
-          );
-          background-size: 400% 400%;
-          animation: gradientMove 3s ease infinite;
-          border-radius: 10px;
-        }
-
-        .moving-border-container::before {
-          content: '';
-          position: absolute;
-          top: -2px;
-          left: -2px;
-          right: -2px;
-          bottom: -2px;
-          background: linear-gradient(
-            90deg,
-            #ff6b6b,
-            #4ecdc4,
-            #45b7d1,
-            #96ceb4,
-            #ffeaa7,
-            #ff6b6b
-          );
-          background-size: 400% 400%;
-          border-radius: 12px;
-          z-index: -1;
-          animation: gradientMove 3s ease infinite;
-          filter: blur(8px);
-          opacity: 0.7;
-        }
-
-        @keyframes gradientMove {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-      `}</style>
     </motion.div>
   );
 };
