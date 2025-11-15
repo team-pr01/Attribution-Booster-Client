@@ -162,18 +162,15 @@ const Team = () => {
 
         {/* Team Overview */}
         <motion.div
-          variants={containerVariants}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mt-14 lg:mt-20"
         >
           {teamOverview?.map((item, index) => (
             <motion.div
               key={index}
-              variants={cardVariants}
-              whileHover={{
-                y: -5,
-                scale: 1.02,
-                transition: { duration: 0.3 },
-              }}
               className="group relative rounded-[10px] p-0.5 bg-linear-to-r from-transparent to-transparent hover:from-primary-500 hover:to-primary-300 transition-all duration-300"
             >
               {/* Shine Border Effect - Always visible */}
