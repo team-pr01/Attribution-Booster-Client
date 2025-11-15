@@ -146,30 +146,8 @@ const Challenges = () => {
         animate={isInView ? "visible" : "hidden"}
         className="overflow-visible relative"
       >
-        {/* Animated Decorative circle */}
-        {/* <motion.div
-        variants={circleAnimation}
-        initial="hidden"
-        animate={{
-          ...circleAnimation.visible,
-          rotate: 360,
-        }}
-        transition={{
-          rotate: {
-            duration: 40,
-            repeat: Infinity,
-            ease: "linear",
-          },
-        }}
-      >
-        <Image
-          src={IMAGES.circle}
-          alt="Globe circle"
-          className="w-[543px] h-[500px] opacity-[0.10] hidden md:block blur-[10px] absolute top-[50px] -right-72 z-10 pointer-events-none select-none"
-        />
-      </motion.div> */}
 
-        <div className="mt-[111px] overflow-visible">
+        <div className="mt-20 xl:mt-40 overflow-visible">
           {/* Main Title */}
           <motion.h1
             variants={titleVariants}

@@ -163,7 +163,7 @@ const RecentProjects = () => {
         ref={containerRef}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="h-fit mx-auto mt-32 2xl:mt-52 relative"
+        className="h-fit mx-auto mt-20 xl:mt-40 relative"
       >
         {/* Shine Border Effect for full section */}
         <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none z-50 m-0"></div>
@@ -209,7 +209,7 @@ const RecentProjects = () => {
 
               <motion.p
                 variants={fadeInUp}
-                className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[749px]"
+                className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[749px]"
               >
                 Discover our most successful projects showcasing every service
                 we offer. Use the filter buttons above to select a specific
@@ -220,7 +220,7 @@ const RecentProjects = () => {
             {/* Animated Tabs */}
             <motion.div className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] p-3 flex items-center gap-6 xl:gap-8 border border-transparent cursor-pointer w-full lg:w-fit overflow-x-auto mt-7 lg:mt-14 2xl:mt-16 relative">
               {/* Shiny Border Effect for Entire Tab Container */}
-              <div className="shine-border absolute inset-0 rounded-xl pointer-events-none"></div>
+              <div className="shine-border absolute inset-0 rounded-xl pointer-events-none opacity-0 md:opacity-100"></div>
               {/* Animated sliding background */}
               <motion.div
                 className="absolute bg-primary-5 rounded-md z-0"
@@ -256,7 +256,7 @@ const RecentProjects = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="grid grid-cols-1 md:grid-cols-2 lg::grid-cols-3 gap-9 mt-12"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 mt-12"
               >
                 {filteredProjects?.map((project, index) => (
                   <motion.div

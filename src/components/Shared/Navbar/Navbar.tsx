@@ -40,17 +40,17 @@ const Navbar = () => {
   };
 
   return (
-      <div className="rounded-[10px] bg-neutral-10 border border-neutral-20/10 backdrop-blur-[15px] w-full max-w-[320px] md:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto">
+      <div className="rounded-[10px] bg-neutral-10 border border-neutral-20/10 backdrop-blur-[15px] w-full max-w-[320px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto">
         <div className="flex items-center justify-between px-3 lg:px-[29px] py-3">
           <Link href={"/"}>
             <Image
               src={IMAGES.logo}
               alt="Logo"
-              className="w-[200px] md:w-[290px]"
+              className="w-40 md:w-[200px] 2xl:w-[290px]"
             />
           </Link>
 
-          <nav className="hidden lg:flex space-x-[30px] font-Poppins">
+          <nav className="hidden xl:flex space-x-[30px] font-Poppins">
             {navLinks.map((link, index) => (
               <motion.div
                 key={index}

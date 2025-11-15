@@ -62,7 +62,7 @@ const TrustedClients = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
-      className="mt-20 overflow-hidden px-5 2xl:px-0"
+      className="mt-20 xl:mt-32 overflow-hidden px-5 2xl:px-0"
     >
       {/* Header Section */}
       <motion.h1 

@@ -117,7 +117,7 @@ const Hero = () => {
       className="max-w-[1300px] 2xl:max-w-[1800px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[730px] 2xl:h-[1080px]"
+        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[730px] md:h-[1000px] 2xl:h-[1080px]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -139,7 +139,7 @@ const Hero = () => {
 
         {/* Top globes */}
         <motion.div
-          className="flex items-center justify-between max-w-[320px] lg:max-w-[1000px] absolute left-4 lg:left-[250px] 2xl:left-[380px] top-48 w-full"
+          className="flex items-center justify-between max-w-[320px] md:max-w-[500px] xl:max-w-[1000px] mx-auto absolute left-4 md:left-20 lg:left-[250px] 2xl:left-[380px] top-48 w-full"
           variants={staggerContainer}
         >
           <motion.div
@@ -264,7 +264,7 @@ const Hero = () => {
         >
           <motion.h1
             variants={fadeInUp}
-            className="font-MartianBThai text-white text-[32px] lg:text-[61px] 2xl:text-[90px] font-semibold leading-10 lg:leading-[70px] 2xl:leading-[99px] max-w-full lg:max-w-[700px] 2xl:max-w-[984px] text-center"
+            className="font-MartianBThai text-white text-[32px] md:text-[40px] lg:text-[61px] 2xl:text-[90px] font-semibold leading-10 md:leading-12 lg:leading-[70px] 2xl:leading-[99px] max-w-full md:max-w-[450px] lg:max-w-[700px] 2xl:max-w-[984px] text-center"
           >
             Built to Scale. Optimized for Growth.
           </motion.h1>
@@ -299,7 +299,7 @@ const Hero = () => {
           </div>
 
           {/* Rotate cards */}
-          <div className="hidden xl:flex justify-between w-full max-w-[1300px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[300px] px-2 sm:px-5">
+          <div className="hidden md:flex justify-between w-full max-w-[900px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[370px] lg:top-[400px] px-2 sm:px-5">
             {/* Happy Clients Card */}
             <motion.div
               variants={rotateCardLeft}
@@ -399,7 +399,7 @@ const Hero = () => {
 
           {/* Bottom globes */}
           <motion.div
-            className="flex items-center justify-between max-w-[300px] lg:max-w-[1100px] 2xl:max-w-[1300px] absolute left-5 lg:left-auto top-[350px] xl:top-[500px] 2xl:top-[600px] mx-auto w-full"
+            className="flex items-center justify-between max-w-[300px] md:max-w-[500px] xl:max-w-[1100px] 2xl:max-w-[1300px] absolute left-5 md:left-20 lg:left-auto top-[350px] md:top-[550px] xl:top-[500px] 2xl:top-[600px] mx-auto w-full"
             variants={staggerContainer}
           >
             <motion.div

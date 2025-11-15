@@ -136,7 +136,7 @@ const Team = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={containerVariants}
-        className="mt-20 md:mt-48 lg:mt-72"
+        className="mt-20 xl:mt-72"
       >
         {/* Header */}
         <motion.div

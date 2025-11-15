@@ -250,8 +250,8 @@ const Footer = () => {
 
       {/* Copyright */}
       <Container>
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-7 lg:gap-0 mt-10">
-        <p className="text-sm lg:text-base text-neutral-300 font-Poppins">
+        <div className="flex flex-col lg:flex-row items-start md:items-center lg:items-start justify-between gap-7 lg:gap-0 mt-10">
+        <p className="text-sm lg:text-base text-neutral-300 font-Poppins text-start md:text-center lg:text-start">
           © 2025 Attribution Booster | All Rights Reserved | Serving clients
           since 2017
         </p>

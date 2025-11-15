@@ -182,7 +182,7 @@ const CollaborationProcess = () => {
       </motion.div>
 
       <Container>
-        <div className="mt-[111px]">
+        <div className="mt-20 xl:mt-40">
           {/* Header Section */}
           <motion.div
             variants={containerVariants}
@@ -209,7 +209,7 @@ const CollaborationProcess = () => {
           {/* Process Cards Grid */}
           <motion.div
             variants={cardContainerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] mt-16 lg:mt-24 overflow-visible"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] gap-y-10 mt-16 lg:mt-24 overflow-visible"
           >
             {collaborationProcess?.map((item, index) => (
               <motion.div

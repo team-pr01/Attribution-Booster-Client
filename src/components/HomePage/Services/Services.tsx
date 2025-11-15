@@ -224,7 +224,7 @@ const Services = () => {
       </motion.div>
 
       <Container>
-        <div className="mt-20 xl:mt-48">
+        <div className="mt-20 xl:mt-40">
           {/* Header Section */}
           <motion.div
             className="flex flex-col lg:flex-row items-center justify-between"
@@ -248,7 +248,7 @@ const Services = () => {
 
           {/* Services Grid */}
           <motion.div
-            className="mt-[70px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-5"
+            className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-5"
             variants={staggerCards}
           >
             {servicesData?.map((service, index) => (

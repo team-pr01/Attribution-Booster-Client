@@ -146,7 +146,7 @@ const Testimonial = () => {
         ref={containerRef}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="rounded-[20px] relative mt-28 2xl:mt-44"
+        className="rounded-[20px] relative mt-20 xl:mt-40"
       >
         {/* Wrapper with relative positioning */}
         <motion.div

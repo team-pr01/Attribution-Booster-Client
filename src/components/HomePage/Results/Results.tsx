@@ -8,7 +8,7 @@ import Container from "@/components/Shared/Container/Container";
 const Results = () => {
   return (
     <Container>
-      <div className="mt-20 2xl:mt-[130px] relative">
+      <div className="mt-20 xl:mt-40 relative">
       <Image
         src={IMAGES.globeCircle}
         alt="Globe circle"
@@ -19,7 +19,7 @@ const Results = () => {
         <h1 className="font-MartianBThai text-white text-center lg:text-left text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] max-w-[572px]">
           Real Results. Global Reach. Proven Trust
         </h1>
-        <p className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[651px]">
+        <p className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[580px] 2xl:max-w-[651px]">
           Attribution Booster delivers measurable growth through full-stack
           development, performance marketing, and analytics-driven strategies.
           With a global footprint and a client-first mindset
@@ -49,7 +49,7 @@ const Results = () => {
           <div className="bg-neutral-5 opacity-40 w-full h-full rounded-xl absolute top-0 left-0 pointer-events-none"></div>
 
           {/* Shine Effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none"></div>
 
           {/* Text Content */}
           <div className="absolute bottom-4 left-[30px] pointer-events-none">

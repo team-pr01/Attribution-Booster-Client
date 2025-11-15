@@ -95,14 +95,14 @@ const Partner = () => {
               className="text-center sm:text-left"
             >
               <motion.h1
-                className="font-MartianBThai text-white text-xl sm:text-3xl md:text-[32px] lg:text-[36px] font-semibold leading-tight"
+                className="font-MartianBThai text-white sm:text-xl md:text-2xl lg:text-[36px] font-semibold leading-tight"
                 variants={slideInRight}
               >
                 Trusted by Google to deliver top-tier advertising performance
               </motion.h1>
 
               <motion.p
-                className="text-neutral-300 text-base sm:text-lg md:text-xl mt-3 leading-relaxed"
+                className="text-neutral-300 text-base sm:text-lg lg:text-xl mt-3 leading-relaxed"
                 variants={slideInRight}
                 transition={{ delay: 0.1 }}
               >
