@@ -86,7 +86,7 @@ const TrustedClients = () => {
         variants={itemVariants}
         className="mt-10 overflow-hidden relative"
       >
-        
+        {/* First marquee */}
         <Marquee
           speed={40}
           pauseOnHover={true}
@@ -187,19 +187,11 @@ const TrustedClients = () => {
                   ))}
                 </motion.div>
               </motion.div>
-
-              {/* Shine Effect */}
-              {/* <motion.div
-                className="absolute inset-0 rounded-[10px] bg-linear-to-r from-transparent via-white/10 to-transparent"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "100%" }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-              /> */}
             </motion.div>
           ))}
         </Marquee>
 
-        {/* Second Marquee for continuous flow (optional) */}
+        {/* Second Marquee) */}
         <Marquee
           speed={35}
           pauseOnHover={true}
@@ -210,7 +202,7 @@ const TrustedClients = () => {
           {logos.map((logo, index) => (
             <motion.div
               key={`second-${index}`}
-              className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] flex flex-col items-center justify-center w-[230px] h-[101px] relative border border-transparent cursor-pointer mx-[15px]"
+              className="bg-neutral-10 rounded-[10px] flex flex-col items-center justify-center w-[230px] h-[101px] relative border border-transparent cursor-pointer mx-[15px]"
               whileHover={{
                 scale: 1.05,
                 opacity: 1,

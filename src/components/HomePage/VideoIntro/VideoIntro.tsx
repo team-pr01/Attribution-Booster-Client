@@ -6,7 +6,6 @@ import { motion, useInView, easeOut } from "framer-motion";
 import { useRef, useState } from "react";
 import Modal from "@/components/Reusable/Modal/Modal";
 import "./VideoIntro.css";
-import Container from "@/components/Shared/Container/Container";
 
 const VideoIntro = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -108,14 +107,14 @@ const VideoIntro = () => {
   };
 
   return (
-    <Container>
+    <div>
       <motion.div
         ref={containerRef}
         initial="hidden"
         animate={isContainerInView ? "visible" : "hidden"}
         className="mt-20 2xl:mt-[130px] relative"
       >
-        <div className="max-w-[1531px] mx-auto">
+        <div className="max-w-[85%] mx-auto">
           {/* Header */}
           <motion.div
             variants={containerVariants}
@@ -191,11 +190,11 @@ const VideoIntro = () => {
           variants={cardContainerVariants}
           initial="hidden"
           animate={isVideoInView ? "visible" : "hidden"}
-          className="absolute -bottom-40 w-full -z-10 hidden xl:block"
+          className="absolute -bottom-40 -z-10 hidden xl:block w-full"
         >
           <motion.div
             variants={containerVariants}
-            className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] min-h-[573px] overflow-hidden"
+            className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] min-h-[573px] overflow-hidden max-w-[95%] mx-auto"
           >
             <Image
               src={IMAGES.circle}
@@ -220,7 +219,7 @@ const VideoIntro = () => {
           </div>
         </Modal>
       </motion.div>
-    </Container>
+    </div>
   );
 };
 
