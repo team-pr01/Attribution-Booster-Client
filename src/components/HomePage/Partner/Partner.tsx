@@ -5,6 +5,7 @@ import Image from "next/image";
 import { IMAGES } from "../../../../public/assets";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Container from "@/components/Shared/Container/Container";
 
 const Partner = () => {
   const ref = useRef(null);
@@ -58,7 +59,8 @@ const Partner = () => {
   };
 
   return (
-    <motion.div
+    <Container>
+      <motion.div
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
@@ -112,6 +114,7 @@ const Partner = () => {
         </div>
 
     </motion.div>
+    </Container>
   );
 };
 
