@@ -202,14 +202,14 @@ const RecentProjects = () => {
               {/* Header Section */}
               <motion.h1
                 variants={fadeInUp}
-                className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px]"
+                className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px]"
               >
                 Recent Projects
               </motion.h1>
 
               <motion.p
                 variants={fadeInUp}
-                className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[749px]"
+                className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[749px]"
               >
                 Discover our most successful projects showcasing every service
                 we offer. Use the filter buttons above to select a specific
@@ -256,7 +256,7 @@ const RecentProjects = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="grid grid-cols-1 md:grid-cols-3 gap-9 mt-12"
+                className="grid grid-cols-1 md:grid-cols-2 lg::grid-cols-3 gap-9 mt-12"
               >
                 {filteredProjects?.map((project, index) => (
                   <motion.div

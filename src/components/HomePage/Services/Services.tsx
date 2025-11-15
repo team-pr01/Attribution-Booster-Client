@@ -232,14 +232,14 @@ const Services = () => {
           >
             <motion.h1
               variants={slideInLeft}
-              className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[780px]"
+              className="font-MartianBThai text-white text-center lg:text-left text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] max-w-[780px]"
             >
               Unleash server-side tracking's potential with us!
             </motion.h1>
 
             <motion.p
               variants={slideInRight}
-              className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[430px] font-Poppins mt-4 lg:mt-0"
+              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[430px] font-Poppins mt-4 lg:mt-0"
             >
               Maximize Your Campaign's Potential and Boost Your ROI with Our
               Advanced Tracking Tools and Techniques.
@@ -248,7 +248,7 @@ const Services = () => {
 
           {/* Services Grid */}
           <motion.div
-            className="mt-[70px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+            className="mt-[70px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-5"
             variants={staggerCards}
           >
             {servicesData?.map((service, index) => (

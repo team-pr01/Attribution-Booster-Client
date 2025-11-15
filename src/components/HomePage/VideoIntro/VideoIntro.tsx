@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 import Modal from "@/components/Reusable/Modal/Modal";
 import "./VideoIntro.css";
 
-const VideoIntro = () => {
+const   VideoIntro = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const videoSectionRef = useRef(null);
@@ -122,13 +122,13 @@ const VideoIntro = () => {
           >
             <motion.h1
               variants={headerVariants}
-              className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[643px]"
+              className="font-MartianBThai text-white text-center lg:text-left text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] max-w-[643px]"
             >
               Attribution Booster In a Minute
             </motion.h1>
             <motion.p
               variants={textVariants}
-              className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[750px] mt-4 lg:mt-0"
+              className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[750px] mt-4 lg:mt-0"
             >
               In this section, we would love to integrate a short video about
               Attribution Booster, which will cover our unique services, why you

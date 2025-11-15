@@ -95,7 +95,7 @@ const Partner = () => {
               className="text-center sm:text-left"
             >
               <motion.h1
-                className="font-MartianBThai text-white text-2xl sm:text-3xl md:text-[32px] lg:text-[36px] font-semibold leading-tight"
+                className="font-MartianBThai text-white text-xl sm:text-3xl md:text-[32px] lg:text-[36px] font-semibold leading-tight"
                 variants={slideInRight}
               >
                 Trusted by Google to deliver top-tier advertising performance

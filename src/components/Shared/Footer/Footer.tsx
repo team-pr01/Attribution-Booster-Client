@@ -165,7 +165,7 @@ const Footer = () => {
                 {services?.slice(0, 6)?.map((item) => (
                   <p
                     key={item}
-                    className="text-sm lg:text-lg text-neutral-300 font-Poppins max-w-[143px]"
+                    className="text-sm lg:text-lg text-neutral-300 font-Poppins w-full lg:max-w-[143px]"
                   >
                     {item}
                   </p>
@@ -175,7 +175,7 @@ const Footer = () => {
                 {services?.slice(6, 11)?.map((item) => (
                   <p
                     key={item}
-                    className="text-sm lg:text-lg text-neutral-300 font-Poppins max-w-[234px]"
+                    className="text-sm lg:text-lg text-neutral-300 font-Poppins w-full lg:max-w-[234px]"
                   >
                     {item}
                   </p>
@@ -257,7 +257,7 @@ const Footer = () => {
         </p>
 
         {/* Resources */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5">
+        <div className="flex flex-col sm:flex-row items-start lg:items-center gap-5">
           {companyLegalLinks?.map((item) => (
             <a
               key={item?.title}

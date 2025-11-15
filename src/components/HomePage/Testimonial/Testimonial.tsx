@@ -208,7 +208,7 @@ const Testimonial = () => {
           <div className="relative z-5 flex flex-col lg:flex-row items-center justify-between mb-16">
             <motion.h1
               variants={fadeInUp}
-              className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[727px]"
+              className="font-MartianBThai text-white text-center lg:text-left text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] max-w-[727px]"
             >
               Trusted by Clients Around the World
             </motion.h1>
@@ -216,7 +216,7 @@ const Testimonial = () => {
             <motion.p
               variants={fadeInUp}
               transition={{ delay: 0.1 }}
-              className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[520px]"
+              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[520px]"
             >
               Hear from real clients who rely on our digital solutions,
               development expertise, and marketing strategies to grow and

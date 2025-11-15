@@ -145,13 +145,13 @@ const Team = () => {
         >
           <motion.h1
             variants={headerVariants}
-            className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] max-w-[666px]"
+            className="font-MartianBThai text-white text-center lg:text-left text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] max-w-[666px]"
           >
             Meet the Minds Behind Your Digital Growth
           </motion.h1>
           <motion.p
             variants={textVariants}
-            className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-4 lg:mt-0"
+            className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-4 lg:mt-0"
           >
             At Attribution Booster, our team is your competitive edge. Each
             member brings deep expertise, relentless focus, and a results-driven

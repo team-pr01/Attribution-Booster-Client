@@ -95,7 +95,7 @@ const PackageOffer = () => {
   };
 
   return (
-    <div className="relative overflow-hidden h-[1000px] md:h-[700px] 2xl:h-[800px]">
+    <div className="relative overflow-hidden h-fit pb-10">
       <Image
         src={IMAGES.offerGlobe}
         alt="Decorative Globe"
@@ -148,12 +148,12 @@ const PackageOffer = () => {
         /> */}
 
         {/* Main content */}
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-10 xl:gap-0 items-center justify-between relative z-10 w-full">
+        <div className="flex flex-col p-5 lg:p-0 lg:flex-row gap-16 lg:gap-10 xl:gap-0 items-center justify-between relative z-10 w-full">
           {/* Left side content */}
           <motion.div variants={slideInLeft} className="w-full">
             <motion.h1
               variants={fadeInUp}
-              className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold leading-10 xl:leading-[61px] w-full max-w-[898px]"
+              className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] w-full max-w-[898px]"
             >
               Enjoy 10% Off When You Choose Our Annual Package
             </motion.h1>
