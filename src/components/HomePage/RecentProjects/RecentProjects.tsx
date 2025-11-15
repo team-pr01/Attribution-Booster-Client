@@ -209,7 +209,7 @@ const RecentProjects = () => {
 
               <motion.p
                 variants={fadeInUp}
-                className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[749px]"
+                className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[749px] mt-3"
               >
                 Discover our most successful projects showcasing every service
                 we offer. Use the filter buttons above to select a specific

@@ -151,7 +151,7 @@ const Team = () => {
           </motion.h1>
           <motion.p
             variants={textVariants}
-            className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-4 lg:mt-0"
+            className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-3 lg:mt-0"
           >
             At Attribution Booster, our team is your competitive edge. Each
             member brings deep expertise, relentless focus, and a results-driven

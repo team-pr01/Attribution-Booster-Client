@@ -19,7 +19,7 @@ const ProjectCard = ({image, name, category} : any) => {
   };
   return (
     <motion.div
-      className="group relative bg-white/5 backdrop-blur-md border-[3px] border-white/10 rounded-[7px] overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full max-w-xs sm:max-w-none mx-auto hover:border-transparent min-h-[340px] sm:min-h-[360px] md:min-h-[380px]"
+      className="group relative bg-white/5 backdrop-blur-md border-[3px] border-white/10 rounded-[7px] overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full max-w-xs sm:max-w-none mx-auto hover:border-transparent min-h-[340px] sm:min-h-[360px] md:min-h-[380px] h-full flex flex-col justify-between"
       variants={itemVariants}
       whileHover={{ scale: 1.02, y: -10 }}
       transition={{ duration: 0.3 }}

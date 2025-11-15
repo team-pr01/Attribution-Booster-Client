@@ -128,7 +128,7 @@ const   VideoIntro = () => {
             </motion.h1>
             <motion.p
               variants={textVariants}
-              className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[570px] 2xl:max-w-[750px] mt-4 lg:mt-0"
+              className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[570px] 2xl:max-w-[750px] mt-3 lg:mt-0"
             >
               In this section, we would love to integrate a short video about
               Attribution Booster, which will cover our unique services, why you

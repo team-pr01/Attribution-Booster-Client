@@ -117,7 +117,7 @@ const Hero = () => {
       className="max-w-[1300px] 2xl:max-w-[1800px] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[730px] md:h-[1000px] 2xl:h-[1080px]"
+        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[680px] md:h-[900px] 2xl:h-[1080px]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -139,7 +139,7 @@ const Hero = () => {
 
         {/* Top globes */}
         <motion.div
-          className="flex items-center justify-between max-w-[320px] md:max-w-[500px] xl:max-w-[1000px] mx-auto absolute left-4 md:left-20 lg:left-[250px] 2xl:left-[380px] top-48 w-full"
+          className="flex items-center justify-between max-w-[320px] md:max-w-[500px] xl:max-w-[1000px] mx-auto absolute left-4 md:left-20 lg:left-[250px] 2xl:left-[380px] top-32 lg:top-48 w-full"
           variants={staggerContainer}
         >
           <motion.div
@@ -259,12 +259,12 @@ const Hero = () => {
 
         {/* Contents */}
         <motion.div
-          className="absolute top-56 w-full flex flex-col items-center justify-center"
+          className="absolute top-40 lg:top-56 w-full flex flex-col items-center justify-center"
           variants={staggerContainer}
         >
           <motion.h1
             variants={fadeInUp}
-            className="font-MartianBThai text-white text-[32px] md:text-[40px] lg:text-[61px] 2xl:text-[90px] font-semibold leading-10 md:leading-12 lg:leading-[70px] 2xl:leading-[99px] max-w-full md:max-w-[450px] lg:max-w-[700px] 2xl:max-w-[984px] text-center"
+            className="font-MartianBThai text-white text-[32px] md:text-[50px] lg:text-[61px] 2xl:text-[90px] font-semibold leading-10 md:leading-12 lg:leading-[70px] 2xl:leading-[99px] max-w-full md:max-w-[540px] lg:max-w-[700px] 2xl:max-w-[984px] text-center"
           >
             Built to Scale. Optimized for Growth.
           </motion.h1>
@@ -299,7 +299,7 @@ const Hero = () => {
           </div>
 
           {/* Rotate cards */}
-          <div className="hidden md:flex justify-between w-full max-w-[900px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[370px] lg:top-[400px] px-2 sm:px-5">
+          <div className="hidden md:flex justify-between w-full max-w-[900px] md:max-w-[650px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[370px] lg:top-[400px] px-2 sm:px-5">
             {/* Happy Clients Card */}
             <motion.div
               variants={rotateCardLeft}
@@ -308,7 +308,12 @@ const Hero = () => {
               className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
             >
               <motion.div className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]">
-                <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
+                <div
+                  className="flex items-center justify-between 
+      gap-2 sm:gap-4 md:gap-5
+      px-2 sm:px-4 md:px-4 
+      py-2 sm:py-3 md:py-2"
+                >
                   <motion.div
                     animate={{ rotate: [0, 5, 0, -5, 0] }}
                     transition={{
@@ -324,22 +329,27 @@ const Hero = () => {
                       }}
                       src={IMAGES.happyClients}
                       alt="Happy Clients"
-                      className="w-9 md:w-[77px] h-12 sm:h-[65px] md:h-[82px]"
+                      className="w-8 sm:w-10 md:w-[55px] 
+                     h-10 sm:h-[55px] md:h-[65px]"
                     />
                   </motion.div>
+
                   <div>
                     <motion.h1
-                      className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
+                      className="font-Poppins text-white 
+                     text-base sm:text-2xl md:text-[32px] 
+                     font-semibold leading-tight md:leading-[36px] text-center"
                       initial={{ scale: 0.5, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      transition={{
-                        duration: 0.8,
-                        ease: "easeOut",
-                      }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                       <Counter from={0} to={200} duration={2} />+
                     </motion.h1>
-                    <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
+                    <p
+                      className="text-white 
+            text-xs sm:text-sm md:text-base 
+            text-center leading-4 sm:leading-6 md:leading-6"
+                    >
                       Happy Clients
                     </p>
                   </div>
@@ -355,7 +365,12 @@ const Hero = () => {
               className="relative rounded-lg sm:rounded-[10px] p-px bg-linear-to-r from-gray-300/50 via-transparent to-gray-600"
             >
               <motion.div className="rounded-lg sm:rounded-[10px] bg-neutral-5 backdrop-blur-[15px]">
-                <div className="flex items-center justify-between gap-3 sm:gap-5 md:gap-[30px] px-3 sm:px-5 py-2 sm:py-3">
+                <div
+                  className="flex items-center justify-between 
+      gap-2 sm:gap-4 md:gap-5
+      px-2 sm:px-4 md:px-4 
+      py-2 sm:py-3 md:py-2"
+                >
                   <motion.div
                     animate={{ rotate: [0, -5, 0, 5, 0] }}
                     transition={{
@@ -372,23 +387,27 @@ const Hero = () => {
                       }}
                       src={IMAGES.projectCompleted}
                       alt="Project Completed"
-                      className="w-9 md:w-[77px] h-10 sm:h-[55px] md:h-[82px]"
+                      className="w-8 sm:w-10 md:w-[55px] 
+                     h-10 sm:h-[55px] md:h-[65px]"
                     />
                   </motion.div>
+
                   <div>
                     <motion.h1
-                      className="font-Poppins text-white text-lg sm:text-2xl md:text-[52px] font-semibold leading-tight md:leading-[57px] text-center"
+                      className="font-Poppins text-white 
+                     text-base sm:text-2xl md:text-[32px] 
+                     font-semibold leading-tight md:leading-[36px] text-center"
                       initial={{ scale: 0.5, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      transition={{
-                        duration: 0.8,
-                        ease: "easeOut",
-                        delay: 0.3,
-                      }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                       <Counter from={0} to={1500} duration={2.5} />+
                     </motion.h1>
-                    <p className="text-white text-xs sm:text-base md:text-lg text-center leading-5 sm:leading-[30px]">
+                    <p
+                      className="text-white 
+            text-xs sm:text-sm md:text-base 
+            text-center leading-4 sm:leading-6 md:leading-6"
+                    >
                       Project Completed
                     </p>
                   </div>

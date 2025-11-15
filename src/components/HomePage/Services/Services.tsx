@@ -227,7 +227,7 @@ const Services = () => {
         <div className="mt-20 xl:mt-40">
           {/* Header Section */}
           <motion.div
-            className="flex flex-col lg:flex-row items-center justify-between"
+            className="flex flex-col lg:flex-row items-center justify-between gap-5"
             variants={containerVariants}
           >
             <motion.h1
@@ -239,7 +239,7 @@ const Services = () => {
 
             <motion.p
               variants={slideInRight}
-              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[430px] font-Poppins mt-4 lg:mt-0"
+              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[410px] font-Poppins mt-4 lg:mt-0"
             >
               Maximize Your Campaign's Potential and Boost Your ROI with Our
               Advanced Tracking Tools and Techniques.

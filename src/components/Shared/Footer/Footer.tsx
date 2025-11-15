@@ -111,7 +111,7 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="bg-neutral-15 py-5 lg:py-10 2xl:py-16 mt-32">
+    <div className="bg-neutral-15 py-5 md:py-10 2xl:py-16 mt-32">
       <Container>
         <div className="flex flex-col lg:flex-row justify-between gap-10 2xl:gap-0">
           {/* Company info + Contact details */}

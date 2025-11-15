@@ -162,7 +162,7 @@ const contactInfo = [
               <motion.p
                 variants={itemVariants}
                 transition={{ delay: 0.1 }}
-                className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[664px] mt-4 lg:mt-0"
+                className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[664px] mt-3 lg:mt-0"
               >
                 Get in touch with us today! We're always happy to set up a time
                 for us to talk about your digital marketing goals.

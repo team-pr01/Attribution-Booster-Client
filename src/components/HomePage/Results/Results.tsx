@@ -19,7 +19,7 @@ const Results = () => {
         <h1 className="font-MartianBThai text-white text-center lg:text-left text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] max-w-[572px]">
           Real Results. Global Reach. Proven Trust
         </h1>
-        <p className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[580px] 2xl:max-w-[651px]">
+        <p className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[580px] 2xl:max-w-[651px] mt-3">
           Attribution Booster delivers measurable growth through full-stack
           development, performance marketing, and analytics-driven strategies.
           With a global footprint and a client-first mindset

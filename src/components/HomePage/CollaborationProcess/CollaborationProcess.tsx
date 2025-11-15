@@ -198,7 +198,7 @@ const CollaborationProcess = () => {
             <motion.p
               variants={headerVariants}
               transition={{ delay: 0.1 }}
-              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-4 lg:mt-0"
+              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-3 lg:mt-0"
             >
               We prioritize open communication, transparency, and strategy from
               day one, ensuring every project starts with clarity and ends with

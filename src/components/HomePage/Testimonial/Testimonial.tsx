@@ -216,7 +216,7 @@ const Testimonial = () => {
             <motion.p
               variants={fadeInUp}
               transition={{ delay: 0.1 }}
-              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[520px]"
+              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[520px] mt-3 lg:mt-0"
             >
               Hear from real clients who rely on our digital solutions,
               development expertise, and marketing strategies to grow and
