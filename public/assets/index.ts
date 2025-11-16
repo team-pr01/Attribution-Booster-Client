@@ -54,7 +54,19 @@ import uiUx from "./images/projects/ui-ux-project.webp";
 import uiUx2 from "./images/projects/ui-ux-project-2.webp";
 import seoProject from "./images/projects/seo-project.webp";
 import marketing from "./images/projects/marketing.webp";
-
+// Clients
+import client1 from "./images/clients/avinell.png";
+import client2 from "./images/clients/seranova_client.png";
+import client3 from "./images/clients/cardo_client.png";
+import client4 from "./images/clients/certified_partner.png";
+import client5 from "./images/clients/cookie_partner.png";
+import client6 from "./images/clients/dma_client.webp";
+import client7 from "./images/clients/level_partner.png";
+import client8 from "./images/clients/meta_partner.png";
+import client9 from "./images/clients/seranova_client.png";
+import client10 from "./images/clients/shopify_partner.png";
+import client11 from "./images/clients/stape_partner.png";
+import client12 from "./images/clients/wix_partner.png";
 
 // Icons
 import topRightArrow from "./icons/top-right-arrow.svg";
@@ -123,9 +135,21 @@ export const IMAGES = {
   uiUx,
   uiUx2,
   seoProject,
-  marketing
+  marketing,
+  // Clients
+  client1,
+  client2,
+  client3,
+  client4,
+  client5,
+  client6,
+  client7,
+  client8,
+  client9,
+  client10,
+  client11,
+  client12,
 };
-
 
 export const ICONS = {
   topRightArrow,
