@@ -14,7 +14,7 @@ const ServiceCard = ({
 }) => {
   return (
     <motion.div
-      className="bg-neutral-10 group backdrop-blur-[15px] rounded-[10px] px-3 py-[30px] flex flex-col items-center justify-center w-full max-w-[360px] relative border border-transparent cursor-pointer shadow-[inset_0_0_20px_rgba(7,244,250,0.5)]"
+      className="bg-neutral-10 group backdrop-blur-[15px] rounded-[10px] px-3 py-[30px] flex flex-col items-center justify-between w-full max-w-[360px] relative border border-transparent cursor-pointer shadow-[inset_0_0_20px_rgba(7,244,250,0.5)] h-full"
       whileHover="hover"
       initial="initial"
       transition={{

@@ -27,15 +27,15 @@ const Preloader: React.FC = () => {
 
   return (
     <div
-      className={`fixed inset-0 bg-[#06101A] flex items-center justify-center z-[999999]
+      className={`fixed inset-0 bg-neutral-5 flex items-center justify-center z-[999999]
       transition-opacity duration-300 ${fadeOut ? "opacity-0" : "opacity-100"}`}
     >
       <div className="animate-logo-scale">
         <Image
           src={IMAGES.logo}
           alt="Logo"
-          width={140}
-          height={40}
+          width={300}
+          height={60}
           priority
           draggable={false}
         />

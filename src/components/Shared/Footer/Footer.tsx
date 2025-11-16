@@ -88,30 +88,35 @@ const Footer = () => {
       title: "LinkedIn",
       link: "https://www.linkedin.com",
       icon: ICONS.linkedin,
+      iconSize: "size-[30px]",
     },
     {
       title: "Facebook",
       link: "https://www.facebook.com",
       icon: ICONS.facebook,
+      iconSize: "size-6",
     },
     {
       title: "YouTube",
       link: "https://www.youtube.com",
       icon: ICONS.youtube,
+      iconSize: "size-6",
     },
     {
       title: "Pinterest",
       link: "https://www.pinterest.com",
       icon: ICONS.pinterest,
+      iconSize: "size-[20px]",
     },
     {
       title: "Instagram",
       link: "https://www.instagram.com",
       icon: ICONS.instagram,
+      iconSize: "size-[22px]",
     },
   ];
   return (
-    <div className="bg-neutral-15 py-5 md:py-10 2xl:py-16 mt-32">
+    <div className="bg-neutral-15 py-10 2xl:py-16 mt-32">
       <Container>
         <div className="flex flex-col lg:flex-row justify-between gap-10 2xl:gap-0">
           {/* Company info + Contact details */}
@@ -120,7 +125,7 @@ const Footer = () => {
               <Image
                 src={IMAGES.logo}
                 alt="Logo"
-                className="w-[219px] relative"
+                className="w-40 md:w-[200px] 2xl:w-[290px] relative"
               />
             </Link>
             <p className="text-neutral-300 mt-4 text-sm lg:text-base font-Poppins max-w-[436px]">
@@ -215,7 +220,11 @@ const Footer = () => {
                   href={item.link}
                   className="size-10 rounded-full bg-neutral-10 backdrop-blur-[15px] p-2 flex items-center justify-center text-white text-xl"
                 >
-                  <Image src={item?.icon} alt={item?.title} className="size-6" />
+                  <Image
+                    src={item?.icon}
+                    alt={item?.title}
+                    className={`${item.iconSize}`}
+                  />
                 </a>
               ))}
             </div>
@@ -251,24 +260,24 @@ const Footer = () => {
       {/* Copyright */}
       <Container>
         <div className="flex flex-col lg:flex-row items-start md:items-center lg:items-start justify-between gap-7 lg:gap-0 mt-10">
-        <p className="text-sm lg:text-base text-neutral-300 font-Poppins text-start md:text-center lg:text-start">
-          © 2025 Attribution Booster | All Rights Reserved | Serving clients
-          since 2017
-        </p>
+          <p className="text-sm lg:text-base text-neutral-300 font-Poppins text-start md:text-center lg:text-start">
+            © 2025 Attribution Booster | All Rights Reserved | Serving clients
+            since 2017
+          </p>
 
-        {/* Resources */}
-        <div className="flex flex-col sm:flex-row items-start lg:items-center gap-5">
-          {companyLegalLinks?.map((item) => (
-            <a
-              key={item?.title}
-              href={item?.link}
-              className="text-sm lg:text-base text-neutral-300 font-Poppins hover:text-primary-5 hover:underline transition duration-300"
-            >
-              {item?.title}
-            </a>
-          ))}
+          {/* Resources */}
+          <div className="flex flex-col sm:flex-row items-start lg:items-center gap-5">
+            {companyLegalLinks?.map((item) => (
+              <a
+                key={item?.title}
+                href={item?.link}
+                className="text-sm lg:text-base text-neutral-300 font-Poppins hover:text-primary-5 hover:underline transition duration-300"
+              >
+                {item?.title}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
       </Container>
     </div>
   );

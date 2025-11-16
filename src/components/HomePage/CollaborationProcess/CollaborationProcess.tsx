@@ -291,16 +291,6 @@ const CollaborationProcess = () => {
                   >
                     {item.description}
                   </motion.p>
-
-                  {/* Connection Line (for visual flow) */}
-                  {index < collaborationProcess.length - 1 && (
-                    <motion.div
-                      className="hidden xl:block absolute -right-4 top-1/2 w-4 h-0.5 bg-primary-5/50 z-20"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ delay: 0.8 + index * 0.2 }}
-                    />
-                  )}
                 </motion.div>
               </motion.div>
             ))}

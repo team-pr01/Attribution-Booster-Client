@@ -239,7 +239,7 @@ const Services = () => {
 
             <motion.p
               variants={slideInRight}
-              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[410px] font-Poppins mt-4 lg:mt-0"
+              className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[410px] font-Poppins"
             >
               Maximize Your Campaign's Potential and Boost Your ROI with Our
               Advanced Tracking Tools and Techniques.
