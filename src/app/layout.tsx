@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Preloader from "@/components/Preloader";
 
 export const metadata: Metadata = {
   title: "Attribution Booster",
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body
         className={`antialiased bg-[#06101A]`}
       >
+        <Preloader/>
         {children}
       </body>
     </html>

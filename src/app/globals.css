@@ -296,3 +296,24 @@
   --duration: 8s;
   background-image: radial-gradient(transparent, transparent, #06b6d4, #3b82f6, #8b5cf6, transparent, transparent);
 }
+
+@layer utilities {
+  @keyframes logo-scale {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-logo-scale {
+    animation: logo-scale 1.2s ease-out forwards;
+  }
+}
