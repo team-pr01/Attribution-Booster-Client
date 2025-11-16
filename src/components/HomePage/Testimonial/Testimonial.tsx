@@ -17,7 +17,7 @@ const testimonials = [
     name: "Sarah Thompson",
     title: "CEO of BlueBloom",
     feedback:
-      "Working with this team was an absolute pleasure! They helped us scale our online presence and boost sales significantly.",
+      "Attribution Booster delivered an outstanding experience. They flawlessly set up our Facebook Conversion API while also providing expertise in web design & development, UX/UI, tracking, AI automation, and performance marketing. Reliable, professional, and results-driven – highly recommended!",
   },
   {
     name: "Michael Lee",

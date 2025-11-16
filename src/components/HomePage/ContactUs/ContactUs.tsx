@@ -59,7 +59,7 @@ const contactInfo = [
   {
     icon: IMAGES.location,
     title: "Location",
-    description: "1901 Thornridge Cir. Shiloh, Hawaii 81063",
+    description: "23 Business Ave, Suite 100, New York, NY 10001",
     link: "#",
   },
   {
@@ -71,13 +71,13 @@ const contactInfo = [
   {
     icon: IMAGES.phone,
     title: "Phone Number",
-    description: "+8801725896489 , 01866545648",
-    link: "tel:+8801725896489",
+    description: "+8801812526073",
+    link: "tel:+8801812526073",
   },
   {
     icon: IMAGES.workingHours,
     title: "Working Hours",
-    description: "Sunday - Monday (10 am - 05 pm)",
+    description: "Monday - Friday | 9am - 6pm EST",
     link: "#",
   },
 ];
@@ -164,8 +164,7 @@ const contactInfo = [
                 transition={{ delay: 0.1 }}
                 className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[664px] mt-3 lg:mt-0"
               >
-                Get in touch with us today! We're always happy to set up a time
-                for us to talk about your digital marketing goals.
+               Get in touch with us to learn how we can help you scale and grow through our comprehensive digital transformation services.
               </motion.p>
             </div>
 

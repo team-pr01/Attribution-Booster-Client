@@ -76,9 +76,7 @@ const TrustedClients = () => {
         variants={itemVariants}
         className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] text-center max-w-[937px] mx-auto mt-5"
       >
-        After our services section there will be a section to showcase the logo
-        of the brands, company or partner program that we have worked with and
-        get partner certificates. Example:
+       Proud to work with brands and partners who share our vision for measurable, performance-driven growth.
       </motion.p>
 
       {/* Marquee Section */}

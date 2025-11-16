@@ -98,19 +98,19 @@ const Team = () => {
       icon: IMAGES.dataExperts,
       title: "Performance Marketing & Data Experts",
       description:
-        "Certified to run high-ROI campaigns and implement GDPR-compliant tracking that drives smarter decisions.",
+        "Creating data-driven campaigns and analytics that drive measurable business growth.",
     },
     {
       icon: IMAGES.strategicCreatives,
       title: "Strategic Creatives",
       description:
-        "Designing user-centric interfaces and compelling content that boost engagement, conversions, and brand loyalty.",
+        "Designing compelling visuals and user experiences that convert visitors into customers.",
     },
     {
       icon: IMAGES.projectManagers,
       title: "Results-Driven Project Managers",
       description:
-        "Managing timelines and milestones efficiently to deliver consistent, measurable business outcomes.",
+        "Ensuring projects are delivered on time, within budget, and exceed expectations.",
     },
   ];
 
@@ -153,10 +153,7 @@ const Team = () => {
             variants={textVariants}
             className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-3 lg:mt-0"
           >
-            At Attribution Booster, our team is your competitive edge. Each
-            member brings deep expertise, relentless focus, and a results-driven
-            mindset to transform your digital presence from code to conversions,
-            campaigns to compliance.
+            At Attribution Booster, we believe in your competitive edge. Each member brings their expertise to ensure every build is not just functional but transformative for your business growth
           </motion.p>
         </motion.div>
 
