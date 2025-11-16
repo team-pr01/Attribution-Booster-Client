@@ -94,6 +94,11 @@ import UXUISeniorDesinger from "./images/teams/UX UI Senior Desinger.webp";
 import WordPress from "./images/teams/WordPress.webp";
 import YeasinArafat from "./images/teams/Yeasin Arafat.webp";
 import Yunus from "./images/teams/Yunus.webp";
+// tetsimonial clients image
+import testimonial1 from "./images/testimonial/1.webp";
+import testimonial2 from "./images/testimonial/2.webp";
+import testimonial3 from "./images/testimonial/3.webp";
+import testimonial4 from "./images/testimonial/4.webp";
 
 
 // Icons
@@ -204,6 +209,11 @@ export const IMAGES = {
   WordPress,
   YeasinArafat,
   Yunus,
+  // testimonial clients image
+  testimonial1,
+  testimonial2,
+  testimonial3,
+  testimonial4,
 };
 
 export const ICONS = {

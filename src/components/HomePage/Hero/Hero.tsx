@@ -185,7 +185,7 @@ const Hero = () => {
           <Image
             src={IMAGES.heroBg}
             alt=""
-            className="w-full h-[1125px] opacity-[0.6]"
+            className="w-full h-[680px] md:h-[900px] 2xl:h-[1125px] opacity-[0.8] 2xl:opacity-[0.6]"
           />
         </motion.div>
 

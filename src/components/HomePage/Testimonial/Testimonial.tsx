@@ -13,31 +13,37 @@ import { useRef } from "react";
 import Container from "@/components/Shared/Container/Container";
 
 const testimonials = [
-  {
-    name: "Sarah Thompson",
-    title: "CEO of BlueBloom",
-    feedback:
-      "Attribution Booster delivered an outstanding experience. They flawlessly set up our Facebook Conversion API while also providing expertise in web design & development, UX/UI, tracking, AI automation, and performance marketing. Reliable, professional, and results-driven – highly recommended!",
-  },
-  {
-    name: "Michael Lee",
-    title: "Founder of NovaTech",
-    feedback:
-      "Their innovative solutions and dedication truly impressed us. We've found a long-term partner for our digital needs.",
-  },
-  {
-    name: "Emma Johnson",
-    title: "Marketing Director, AdSpark",
-    feedback:
-      "Excellent communication and execution. They delivered beyond expectations and helped our brand grow faster.",
-  },
-  {
-    name: "David Martinez",
-    title: "COO, GreenWorks",
-    feedback:
-      "We experienced top-tier professionalism and creativity. Their work quality speaks for itself!",
-  },
-];
+		{
+			name: "Liya",
+			role: "CEO Founder Roast Marketing",
+			image: IMAGES.testimonial1,
+			rating: 5,
+			feedback: "Attribution Booster delivered an outstanding experience. They flawlessly set up our Facebook Conversion API while also providing expertise in web design & development, UX/UI, tracking, AI automation, and performance marketing. Reliable, professional, and results-driven – highly recommended!"
+		},
+		{
+			name: "Shan Serran",
+			role: "CEO Founder Veewz",
+			image: IMAGES.testimonial2,
+			rating: 5,
+			feedback: "Working with Attribution Booster has been an excellent experience. They seamlessly managed our transition to GA4, ensuring accurate tracking and smooth implementation. Beyond analytics, their expertise in AI automation, advanced tracking, and performance marketing makes them an invaluable partner for any business."
+		},
+		
+		{
+			name: "Zane Vondracek",
+			role: "CEO Founder Astory Media",
+			image: IMAGES.testimonial4,
+			rating: 5,
+			feedback: "I worked with Attribution Booster for web design & development, UX/UI, conversion tracking, and performance marketing. They were professional, fast, and highly knowledgeable. Everything was set up flawlessly, especially the Google Ads tracking which now works perfectly. If you want reliable digital solutions done right the first time, I strongly recommend Attribution Booster."
+		},
+		{
+			name: "Hussien Ellathy",
+			role: "Software Engineer | Web Developer",
+			image: IMAGES.testimonial3,
+			rating: 5,
+			feedback: "Collaborating with Attribution Booster has been a great experience. They always deliver projects on time and often go beyond expectations. Their dedication, creativity, and expertise truly set them apart. For businesses seeking reliable, high-quality digital solutions, I highly recommend Attribution Booster."
+		},
+		
+	];
 
 const Testimonial = () => {
   const containerRef = useRef(null);
@@ -151,7 +157,7 @@ const Testimonial = () => {
         {/* Wrapper with relative positioning */}
         <motion.div
           variants={containerVariants}
-          className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] py-5 lg:py-10 2xl:py-20 px-5 lg:px-10 2xl:px-[135px] overflow-hidden"
+          className="relative rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] py-5 lg:py-10 2xl:py-20 px-5 lg:px-10 2xl:px-10 overflow-hidden"
         >
           {/* Animated Globe */}
           <motion.div
@@ -245,13 +251,13 @@ const Testimonial = () => {
               className="pb-16!"
             >
               {testimonials.map((item, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className="flex">
                   <motion.div
                     variants={cardAnimation}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
-                    className="bg-neutral-10/60 backdrop-blur-[20px] rounded-[10px] px-5 py-[30px] flex flex-col justify-between relative border border-gray-600 cursor-pointer h-full min-h-[280px]"
+                    className="bg-neutral-10/60 backdrop-blur-[20px] rounded-[10px] px-5 py-[30px] flex flex-col justify-between relative border border-gray-600 cursor-pointer h-full min-h-[370px]"
                   >
                     {/* Ratings */}
                     <motion.div
@@ -295,7 +301,7 @@ const Testimonial = () => {
                           transition={{ duration: 0.2 }}
                         >
                           <Image
-                            src={IMAGES.dummyAvatar}
+                            src={item?.image}
                             alt={item.name}
                             className="rounded-full"
                           />
@@ -305,7 +311,7 @@ const Testimonial = () => {
                             {item.name}
                           </h1>
                           <p className="text-neutral-20 text-sm lg:text-base font-Poppins">
-                            {item.title}
+                            {item.role}
                           </p>
                         </div>
                       </motion.div>
