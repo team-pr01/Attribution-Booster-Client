@@ -67,6 +67,34 @@ import client9 from "./images/clients/seranova_client.png";
 import client10 from "./images/clients/shopify_partner.png";
 import client11 from "./images/clients/stape_partner.png";
 import client12 from "./images/clients/wix_partner.png";
+// Team
+import AB from "./images/teams/AB.webp";
+import AmirAhad from "./images/teams/Amir Ahad.webp";
+import CEO from "./images/teams/CEO.webp";
+import EmonUi from "./images/teams/Emon Ui.webp";
+import Emon from "./images/teams/Emon.webp";
+import LimonRana from "./images/teams/Limon Rana.webp";
+import MehediHasanOntor from "./images/teams/Mehedi Hasan Ontor.webp";
+// import Muhammad from "./images/teams/Muhammad.webp";
+import MuhammadNurullah from "./images/teams/Muhammad Nurullah.webp";
+import RabiulIslam from "./images/teams/Rabiul Islam.webp";
+import RionAhmed from "./images/teams/Rion Ahmed.webp";
+import SabbirAhmed from "./images/teams/Sabbir Ahmed.webp";
+import Sakil from "./images/teams/Sakil.webp";
+import ShakilHossain from "./images/teams/Shakil Hossain.webp";
+import Shamim from "./images/teams/Shamim.webp";
+import ShibLalDas from "./images/teams/Shib Lal Das.webp";
+import SohagRoy from "./images/teams/Sohag Roy.webp";
+import TalhaJubair from "./images/teams/Talha Jubair.webp";
+import TanzilSEO from "./images/teams/Tanzil SEO Specialist.webp";
+import Touhid from "./images/teams/Touhid.webp";
+import TuhinRana from "./images/teams/Tuhin Rana.webp";
+import UIUXDesinger2 from "./images/teams/UIUX Desinger 2.webp";
+import UXUISeniorDesinger from "./images/teams/UX UI Senior Desinger.webp";
+import WordPress from "./images/teams/WordPress.webp";
+import YeasinArafat from "./images/teams/Yeasin Arafat.webp";
+import Yunus from "./images/teams/Yunus.webp";
+
 
 // Icons
 import topRightArrow from "./icons/top-right-arrow.svg";
@@ -149,6 +177,33 @@ export const IMAGES = {
   client10,
   client11,
   client12,
+  // team
+  AB,
+  AmirAhad,
+  CEO,
+  EmonUi,
+  Emon,
+  LimonRana,
+  MehediHasanOntor,
+  // Muhammad,
+  MuhammadNurullah,
+  RabiulIslam,
+  RionAhmed,
+  SabbirAhmed,
+  Sakil,
+  ShakilHossain,
+  Shamim,
+  ShibLalDas,
+  SohagRoy,
+  TalhaJubair,
+  TanzilSEO,
+  Touhid,
+  TuhinRana,
+  UIUXDesinger2,
+  UXUISeniorDesinger,
+  WordPress,
+  YeasinArafat,
+  Yunus,
 };
 
 export const ICONS = {

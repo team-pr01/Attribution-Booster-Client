@@ -58,21 +58,6 @@ const Team = () => {
     },
   };
 
-  const cardVariants: any = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-        duration: 0.6,
-      },
-    },
-  };
-
   const buttonAnimation: any = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -114,8 +99,6 @@ const Team = () => {
     },
   ];
 
-  const teamMembers = Array(9).fill(null);
-
   // Navigation handlers
   const handlePrev = () => {
     if (swiperInstance) {
@@ -129,6 +112,139 @@ const Team = () => {
     }
   };
 
+
+  const teamMembers = [
+        {
+            id: 1,
+            name: "Muhammad Nurullah",
+            role: "CEO & Founder",
+            image: IMAGES.CEO
+        },
+        {
+            id: 17,
+            name: "Md Touhid",
+            role: "Projects Manager",
+            image: IMAGES.Touhid
+        },
+        {
+            id: 21,
+            name: "Shib Lal Das",
+            role: "Web Analytics Specialist",
+            image: IMAGES.ShibLalDas
+        },
+        {
+            id: 22,
+            name: "Rabiul Islam",
+            role: "Sales Manager",
+            image: IMAGES.RabiulIslam
+        },
+        {
+            id: 19,
+            name: "Sohag Roy",
+            role: "Full Stack Webflow Developer",
+            image: IMAGES.SohagRoy
+        },
+        {
+            id: 13,
+            name: "AB Salam",
+            role: "Webflow Designer & Developer",
+            image: IMAGES.AB
+        },
+
+
+        {
+            id: 18,
+            name: "Limon Rana",
+            role: "Webflow Junior Designer",
+            image: IMAGES.LimonRana
+        },
+        {
+            id: 7,
+            name: "Amir Ahad",
+            role: "Full Stack Developer",
+            image: IMAGES.AmirAhad
+        },
+        {
+            id: 5,
+            name: "Talha Jubair",
+            role: "Full Stack Developer",
+            image: IMAGES.TalhaJubair
+        },
+        {
+            id: 6,
+            name: "Sabbir Ahmed",
+            role: "Full Stack Developer",
+            image: IMAGES.SabbirAhmed
+        },
+        {
+            id: 14,
+            name: "Emon Hossain",
+            role: "Junior UX & UI Designer",
+            image: IMAGES.Emon
+        },
+        {
+            id: 23,
+            name: "Yeasin Arafat",
+            role: "UI/UX Designer",
+            image: IMAGES.YeasinArafat
+        },
+        {
+            id: 24,
+            name: "Mehedi Hasan Ontor",
+            role: "UI/UX Designer",
+            image: IMAGES.MehediHasanOntor
+        },
+        {
+            id: 25,
+            name: "Md Sakil Ahamed",
+            role: "WordPress Developer",
+            image: IMAGES.Sakil
+        },
+        {
+            id: 15,
+            name: "Yunus",
+            role: "WordPress Design & Developer",
+            image: IMAGES.Yunus
+        },
+        {
+            id: 12,
+            name: "Emon Hossain",
+            role: "Performance Marketing Specialist",
+            image: IMAGES.EmonUi
+        },
+        {
+            id: 20,
+            name: "Rion Ahmed",
+            role: "Conversion Tracking Expert",
+            image: IMAGES.RionAhmed
+        },
+        {
+            id: 26,
+            name: "Tanzil Ahmed",
+            role: "SEO Specialist",
+            image: IMAGES.TanzilSEO
+        },
+        {
+            id: 2,
+            name: "Shamim Uzzaman",
+            role: "Graphics Designer",
+            image: IMAGES.Shamim
+        },
+        {
+            id: 11,
+            name: "Tuhin Rana",
+            role: "Video Editing Expert",
+            image: IMAGES.TuhinRana
+        },
+
+        {
+            id: 16,
+            name: "Shakil Hossain",
+            role: "AI Automation Expert",
+            image: IMAGES.ShakilHossain
+        },
+
+    ]
   return (
     <Container>
       <motion.div
@@ -215,7 +331,7 @@ const Team = () => {
             }}
             className="pb-16"
           >
-            {teamMembers.map((_, index) => (
+            {teamMembers.map((member, index) => (
               <SwiperSlide key={index}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -223,7 +339,7 @@ const Team = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <TeamMemberCard />
+                  <TeamMemberCard {...member} />
                 </motion.div>
               </SwiperSlide>
             ))}

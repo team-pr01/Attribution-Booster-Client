@@ -7,7 +7,7 @@ import { useRef, useState } from "react";
 import Modal from "@/components/Reusable/Modal/Modal";
 import "./VideoIntro.css";
 
-const   VideoIntro = () => {
+const VideoIntro = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const videoSectionRef = useRef(null);
@@ -208,15 +208,17 @@ const   VideoIntro = () => {
         </motion.div>
 
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <div className="w-full aspect-video mx-auto">
-            {/* <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-            title="YouTube video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="w-full h-full rounded"
-          /> */}
-          </div>
+          {isModalOpen && (
+            <div className="w-full aspect-video mx-auto">
+              <iframe
+                src="https://www.youtube.com/embed/9RSUQk1ITYI?autoplay=1&si=dLPYosTUXIjICDN2"
+                title="YouTube video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full rounded"
+              />
+            </div>
+          )}
         </Modal>
       </motion.div>
     </div>

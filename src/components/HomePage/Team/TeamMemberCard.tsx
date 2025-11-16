@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import Image from "next/image";
-import { IMAGES } from "../../../../public/assets";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 
-const TeamMemberCard = () => {
+const TeamMemberCard = ({ name, image, role }: any) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const socialIcons = [
@@ -39,7 +39,7 @@ const TeamMemberCard = () => {
       {/* Image Container */}
       <div className="relative overflow-hidden p-1">
         <Image
-          src={IMAGES.ceo}
+          src={image}
           alt="Muhammad Nurullah - CEO"
           className="h-[310px] xl:h-[425px] rounded-lg object-cover w-full transition-transform duration-300"
         />
@@ -69,9 +69,9 @@ const TeamMemberCard = () => {
       {/* Content */}
       <div className="p-5 xl:p-[30px]">
         <h2 className="font-MartianBThai text-white group-hover:text-primary-5 text-2xl 2xl:text-[28px] leading-9 font-semibold text-center">
-          Muhammad Nurullah
+          {name}
         </h2>
-        <p className="text-neutral-300 font-Poppins text-center mt-1">CEO</p>
+        <p className="text-neutral-300 font-Poppins text-center mt-1">{role}</p>
       </div>
     </motion.div>
   );
