@@ -299,7 +299,7 @@ const Hero = () => {
           </div>
 
           {/* Rotate cards */}
-          <div className="hidden md:flex justify-between w-full max-w-[900px] md:max-w-[650px] 2xl:max-w-[1500px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[370px] lg:top-[400px] px-2 sm:px-5">
+          <div className="hidden md:flex justify-between w-full max-w-[900px] md:max-w-[650px] 2xl:max-w-[1300px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[370px] lg:top-[400px] px-2 sm:px-5">
             {/* Happy Clients Card */}
             <motion.div
               variants={rotateCardLeft}
