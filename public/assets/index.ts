@@ -1,6 +1,6 @@
 import logo from "./images/logo.webp";
 import heroImg from "./images/image 86.png";
-import heroBg from "./images/hero-bg.webp";
+import heroBg from "./images/hero_update_1.webp";
 import heroRightGradient from "./images/hero-right-gradient.png";
 import heroLeftGradient from "./images/hero-left-gradient.png";
 import heroMiddleGradient from "./images/hero-middle-gradient.png";

@@ -10,8 +10,8 @@ const Footer = () => {
     {
       icon: IMAGES.phone,
       title: "Phone Number",
-      description: "+8801812526073",
-      link: "tel:+8801812526073",
+      description: "+447848145804",
+      link: "tel:+447848145804",
     },
     {
       icon: IMAGES.email,
@@ -22,7 +22,7 @@ const Footer = () => {
     {
       icon: IMAGES.location,
       title: "Location",
-      description: "1901 Thornridge Cir. Shiloh, Hawaii 81063",
+      description: "Suite A, 82 James Carter Road, Mildenhall, Bury St. Edmunds, United Kingdom, IP28 7DE",
       link: "#",
     },
   ];
@@ -146,12 +146,12 @@ const Footer = () => {
                   {item.link && item.link !== "#" ? (
                     <a
                       href={item.link}
-                      className="text-sm lg:text-base text-neutral-300 font-Poppins mt-2 hover:text-cyan-400 transition-colors duration-200 block"
+                      className="text-sm lg:text-base text-neutral-300 font-Poppins hover:text-cyan-400 transition-colors duration-200 block"
                     >
                       {item.description}
                     </a>
                   ) : (
-                    <p className="text-sm lg:text-base text-neutral-300 font-Poppins mt-2">
+                    <p className="text-sm lg:text-base text-neutral-300 font-Poppins max-w-[400px]">
                       {item.description}
                     </p>
                   )}

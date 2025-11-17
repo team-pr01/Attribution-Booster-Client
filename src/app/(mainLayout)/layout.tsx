@@ -2,6 +2,7 @@
 import Footer from "@/components/Shared/Footer/Footer";
 import Navbar from "@/components/Shared/Navbar/Navbar";
 import { ReactNode, useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,6 +30,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
       {children}
 
       <Footer />
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
 };
