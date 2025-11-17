@@ -86,31 +86,31 @@ const Footer = () => {
   const socialMediaLinks = [
     {
       title: "LinkedIn",
-      link: "https://www.linkedin.com",
+      link: "https://www.linkedin.com/company/attribution-booster/about/",
       icon: ICONS.linkedin,
       iconSize: "size-[30px]",
     },
     {
       title: "Facebook",
-      link: "https://www.facebook.com",
+      link: "https://www.facebook.com/attributioinbooster",
       icon: ICONS.facebook,
       iconSize: "size-6",
     },
     {
       title: "YouTube",
-      link: "https://www.youtube.com",
+      link: "https://www.youtube.com/@attributionbooster",
       icon: ICONS.youtube,
       iconSize: "size-6",
     },
     {
       title: "Pinterest",
-      link: "https://www.pinterest.com",
+      link: "https://www.pinterest.com/attributionbooster/",
       icon: ICONS.pinterest,
       iconSize: "size-[20px]",
     },
     {
       title: "Instagram",
-      link: "https://www.instagram.com",
+      link: "https://www.instagram.com/attribution_booster/",
       icon: ICONS.instagram,
       iconSize: "size-[22px]",
     },
@@ -218,6 +218,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={item.link}
+                  target="_blank"
                   className="size-10 rounded-full bg-neutral-10 backdrop-blur-[15px] p-2 flex items-center justify-center text-white text-xl"
                 >
                   <Image
