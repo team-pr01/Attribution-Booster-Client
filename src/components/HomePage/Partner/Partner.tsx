@@ -65,7 +65,7 @@ const Partner = () => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="max-w-[1200px] 2xl:max-w-[1400px] mx-auto mt-20 lg:mt-10 px-3 sm:px-5 relative"
+      className="max-w-[1000px] 2xl:max-w-[1200px] mx-auto mt-20 lg:mt-10 px-3 sm:px-5 relative"
     >
       {/* Shine Border Effect for full section */}
         <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none z-50 m-0"></div>
@@ -95,14 +95,14 @@ const Partner = () => {
               className="text-center sm:text-left"
             >
               <motion.h1
-                className="font-MartianBThai text-white sm:text-xl md:text-2xl lg:text-[36px] font-semibold leading-tight"
+                className="font-MartianBThai text-white sm:text-xl md:text-2xl 2xl:text-[36px] font-semibold leading-tight"
                 variants={slideInRight}
               >
                 Trusted by Google to deliver top-tier advertising performance
               </motion.h1>
 
               <motion.p
-                className="text-neutral-300 text-base sm:text-lg lg:text-xl mt-3 leading-relaxed"
+                className="text-neutral-300 text-base sm:text-lg 2xl:text-xl mt-3 leading-relaxed"
                 variants={slideInRight}
                 transition={{ delay: 0.1 }}
               >

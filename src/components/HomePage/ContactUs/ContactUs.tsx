@@ -47,7 +47,8 @@ const ContactUs = () => {
 
   const {
     register,
-    handleSubmit,
+    reset,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -154,12 +155,19 @@ const ContactUs = () => {
     if (!form.current) return;
 
     try {
-      await emailjs.sendForm(
-        "", //service id
-        "", //template id
-        form.current,
-        "Cg5X16aA9m-EFkzTu"
+      await emailjs.send(
+        "service_kj5viar", // service ID
+        "template_yazqtum", // template ID
+        {
+          name: watch("name"),
+          email: watch("email"),
+          message: watch("message"),
+          phoneNumber: watch("phoneNumber"),
+          service: selectedServiceValue,
+        },
+        "7p2xPtnOWu4JVSlE8" // public key
       );
+      reset();
       toast("Thanks for your interest. We will contact with you soon!", {
         style: {
           padding: "10px",
@@ -184,6 +192,7 @@ const ContactUs = () => {
         animate={isInView ? "visible" : "hidden"}
         variants={containerVariants}
         className="mt-20 xl:mt-40"
+        id="contact-us"
       >
         <div>
           <div className="flex flex-col lg:flex-row gap-10 w-full">
@@ -293,9 +302,9 @@ const ContactUs = () => {
 
                 <TextInput
                   type="tel"
-                  placeholder="Enter your WhatsApp number"
+                  placeholder="Enter your phone number"
                   register={register}
-                  name="whatsapp"
+                  name="phoneNumber"
                   required
                   disabled={!selectedServiceValue}
                 />
@@ -310,10 +319,9 @@ const ContactUs = () => {
                 />
 
                 <TextInput
-                  type="url"
-                  placeholder="Enter your company website (Optional)"
+                  placeholder="Enter your company name (Optional)"
                   register={register}
-                  name="website"
+                  name="companyName"
                   disabled={!selectedServiceValue}
                 />
 
@@ -321,7 +329,7 @@ const ContactUs = () => {
                 <div className="flex flex-col">
                   <textarea
                     placeholder="Describe your project requirements..."
-                    {...register("projectDetails")}
+                    {...register("message")}
                     disabled={!selectedServiceValue}
                     rows={4}
                     className="w-full px-4 py-3 bg-neutral-10 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
@@ -334,20 +342,17 @@ const ContactUs = () => {
                   whileTap={{ scale: 0.98 }}
                   className="pl-3 lg:pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative "
                 >
-                  {isLoading ? (
-                    "Sending mail..."
-                  ) : (
-                    <div className="flex items-center gap-2.5">
-                      Request Free Consultancy
-                      <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center">
-                        <Image
-                          src={ICONS.topRightArrow}
-                          alt=""
-                          className="size-6"
-                        />
-                      </div>
+                  <div className="flex items-center gap-2.5">
+                    {isLoading ? "Sending mail..." : "Request Free Consultancy"}
+
+                    <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center">
+                      <Image
+                        src={ICONS.topRightArrow}
+                        alt=""
+                        className="size-6"
+                      />
                     </div>
-                  )}
+                  </div>
                 </motion.button>
               </form>
             </motion.div>

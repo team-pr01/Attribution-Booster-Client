@@ -117,7 +117,7 @@ const Hero = () => {
       className="max-w-[1300px] 2xl:max-w-[98%] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[680px] md:h-[900px] 2xl:h-[1080px]"
+        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[590px] md:h-[900px] 2xl:h-[1080px]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -139,7 +139,7 @@ const Hero = () => {
 
         {/* Top globes */}
         <motion.div
-          className="flex items-center justify-between max-w-[320px] md:max-w-[500px] xl:max-w-[1000px] mx-auto absolute left-4 md:left-20 lg:left-[250px] 2xl:left-[380px] top-32 lg:top-48 w-full"
+          className="flex items-center justify-between max-w-[320px] md:max-w-[500px] xl:max-w-[1000px] mx-auto absolute left-4 md:left-20 lg:left-[250px] 2xl:left-[380px] top-28 lg:top-48 w-full"
           variants={staggerContainer}
         >
           <motion.div
@@ -259,12 +259,12 @@ const Hero = () => {
 
         {/* Contents */}
         <motion.div
-          className="absolute top-40 lg:top-56 w-full flex flex-col items-center justify-center"
+          className="absolute top-32 md:top-40 lg:top-56 w-full flex flex-col items-center justify-center"
           variants={staggerContainer}
         >
           <motion.h1
             variants={fadeInUp}
-            className="font-MartianBThai text-white text-[32px] md:text-[50px] lg:text-[61px] 2xl:text-[90px] font-semibold leading-10 md:leading-12 lg:leading-[70px] 2xl:leading-[99px] max-w-full md:max-w-[540px] lg:max-w-[700px] 2xl:max-w-[984px] text-center"
+            className="font-MartianBThai text-white text-[32px] md:text-[50px] lg:text-[61px] 2xl:text-[90px] font-semibold leading-10 md:leading-12 lg:leading-[70px] 2xl:leading-[99px] max-w-[350px] md:max-w-[540px] lg:max-w-[700px] 2xl:max-w-[984px] text-center"
           >
             Built to Scale. Optimized for Growth.
           </motion.h1>
@@ -278,7 +278,15 @@ const Hero = () => {
             conversion-first design.
           </motion.p>
 
-          <div className="flex items-center justify-center font-sans mt-11">
+          <div
+            onClick={() => {
+              const contactSection = document.getElementById("services");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="flex items-center justify-center font-sans mt-11 cursor-pointer"
+          >
             <style>{customCss}</style>
             <button className="relative inline-flex items-center justify-center p-[3px] bg-primary-5 dark:bg-black rounded-full overflow-hidden group hover:scale-105 transition-transform duration-300">
               <div
@@ -299,7 +307,7 @@ const Hero = () => {
           </div>
 
           {/* Rotate cards */}
-          <div className="hidden md:flex justify-between w-full max-w-[900px] md:max-w-[650px] 2xl:max-w-[1300px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[370px] lg:top-[400px] px-2 sm:px-5">
+          <div className="hidden md:flex justify-between w-full max-w-[900px] md:max-w-[650px] lg:max-w-[900px] 2xl:max-w-[1300px] absolute top-[380px] 2xl:top-[350px] sm:top-[250px] md:top-[370px] lg:top-[400px] px-2 sm:px-5">
             {/* Happy Clients Card */}
             <motion.div
               variants={rotateCardLeft}
@@ -396,7 +404,7 @@ const Hero = () => {
                     <motion.h1
                       className="font-Poppins text-white 
                      text-base sm:text-2xl md:text-[32px] 
-                     font-semibold leading-tight md:leading-[36px] text-center"
+                     font-semibold leading-tight md:leading-9 text-center"
                       initial={{ scale: 0.5, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.8, ease: "easeOut" }}

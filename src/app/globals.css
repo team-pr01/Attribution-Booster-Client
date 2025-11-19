@@ -317,3 +317,8 @@
     animation: logo-scale 1.2s ease-out forwards;
   }
 }
+
+
+.shine-active {
+  opacity: 1 !important;
+}

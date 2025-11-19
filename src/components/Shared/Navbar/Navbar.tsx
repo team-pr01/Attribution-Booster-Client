@@ -43,14 +43,14 @@ const Navbar = () => {
   };
 
   // Mobile menu animations
-  const mobileMenuVariants:any = {
+  const mobileMenuVariants: any = {
     closed: {
       opacity: 0,
       height: 0,
       transition: {
         duration: 0.3,
         ease: "easeInOut",
-      }
+      },
     },
     open: {
       opacity: 1,
@@ -58,8 +58,8 @@ const Navbar = () => {
       transition: {
         duration: 0.3,
         ease: "easeInOut",
-      }
-    }
+      },
+    },
   };
 
   const mobileLinkVariants = {
@@ -70,7 +70,7 @@ const Navbar = () => {
     open: {
       opacity: 1,
       x: 0,
-    }
+    },
   };
 
   const toggleMobileMenu = () => {
@@ -114,14 +114,19 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <button className="px-5 lg:px-[30px] py-3 lg:py-[18px] bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-sm md:text-lg leading-5 cursor-pointer relative hidden lg:block transition-all duration-200 hover:bg-primary-5/80 active:scale-95">
+        <button
+          onClick={() => {
+            const contactSection = document.getElementById("contact-us");
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="px-5 lg:px-[30px] py-3 lg:py-[18px] bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-sm md:text-lg leading-5 cursor-pointer relative hidden lg:block transition-all duration-200 hover:bg-primary-5/80 active:scale-95"
+        >
           Get Started
         </button>
 
-        <button 
-          className="block lg:hidden"
-          onClick={toggleMobileMenu}
-        >
+        <button className="block lg:hidden" onClick={toggleMobileMenu}>
           <motion.div
             animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
             transition={{ duration: 0.3 }}
@@ -152,7 +157,7 @@ const Navbar = () => {
                     transition={{ delay: index * 0.1 }}
                     className="relative"
                   >
-                    <Link 
+                    <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
@@ -162,7 +167,7 @@ const Navbar = () => {
                     </Link>
                   </motion.div>
                 ))}
-                
+
                 {/* Mobile Get Started Button */}
                 <motion.div
                   variants={mobileLinkVariants}
@@ -171,7 +176,7 @@ const Navbar = () => {
                   transition={{ delay: navLinks.length * 0.1 }}
                   className="pt-2"
                 >
-                  <button 
+                  <button
                     className="w-full px-5 py-3 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-lg leading-5 cursor-pointer transition-all duration-200 hover:bg-primary-5/80 active:scale-95"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

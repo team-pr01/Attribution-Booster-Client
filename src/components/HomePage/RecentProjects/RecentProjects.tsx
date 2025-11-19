@@ -14,7 +14,13 @@ const RecentProjects = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
-  const tabs = ["See All", "Development", "UI/UX Design", "Marketing", "SEO"];
+  const tabs = [
+    "See All",
+    "Development",
+    "UI/UX Design",
+    "Webflow",
+    "Wordpress",
+  ];
 
   // Animation variants
   const containerVariants: any = {
@@ -81,45 +87,6 @@ const RecentProjects = () => {
     },
   };
 
-  const cardsContainerVariants: any = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const cardItemVariants: any = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      scale: 0.9,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-        duration: 0.6,
-      },
-    },
-    exit: {
-      opacity: 0,
-      y: -50,
-      scale: 0.9,
-      transition: {
-        duration: 0.3,
-        ease: "easeIn",
-      },
-    },
-  };
-
   const projects = [
     {
       image: IMAGES.uiUx2,
@@ -128,13 +95,8 @@ const RecentProjects = () => {
     },
     {
       image: IMAGES.seoProject,
-      name: "Agency Website with SEO",
-      category: "SEO",
-    },
-    {
-      image: IMAGES.uiUx,
-      name: "Sports Website",
-      category: "UI/UX Design",
+      name: "Agency Website",
+      category: "Webflow",
     },
     {
       image: IMAGES.development,
@@ -142,13 +104,19 @@ const RecentProjects = () => {
       category: "Development",
     },
     {
+      image: IMAGES.uiUx,
+      name: "Sports Website",
+      category: "UI/UX Design",
+    },
+
+    {
       image: IMAGES.marketing,
       name: "Financial Website",
-      category: "Marketing",
+      category: "Wordpress",
     },
     {
       image: IMAGES.development2,
-      name: "Framework Development",
+      name: "Library Development",
       category: "Development",
     },
   ];
@@ -249,10 +217,10 @@ const RecentProjects = () => {
             </motion.div>
 
             {/* Animated Projects Grid */}
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               <motion.div
                 key={activeTab}
-                variants={cardsContainerVariants}
+                // variants={cardsContainerVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
@@ -261,13 +229,12 @@ const RecentProjects = () => {
                 {filteredProjects?.map((project, index) => (
                   <motion.div
                     key={`${activeTab}-${index}`}
-                    variants={cardItemVariants}
                     layout
                     transition={{
                       type: "spring",
                       stiffness: 100,
                       damping: 15,
-                      duration: 0.5,
+                      duration: 0.1,
                     }}
                   >
                     <ProjectCard {...project} />

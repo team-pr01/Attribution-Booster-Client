@@ -14,18 +14,29 @@ const ServiceCard = ({
 }) => {
   return (
     <motion.div
-      className="bg-neutral-10 group backdrop-blur-[15px] rounded-[10px] px-3 py-[30px] flex flex-col items-center justify-between w-full max-w-[360px] relative border border-transparent cursor-pointer shadow-[inset_0_0_20px_rgba(7,244,250,0.5)] h-full"
+      className="bg-neutral-10 group backdrop-blur-[15px] rounded-[10px] px-4 py-[30px] flex flex-col items-center justify-between w-full max-w-[360px] relative border border-transparent cursor-pointer shadow-[inset_0_0_20px_rgba(7,244,250,0.5)] h-[300px]"
       whileHover="hover"
+      whileTap="hover"
       initial="initial"
       transition={{
         duration: 0.3,
         ease: "easeOut",
       }}
+      onTouchStart={(e) => {
+        const shine = e.currentTarget.querySelector(".shine-border");
+        shine?.classList.add("shine-active");
+        setTimeout(() => shine?.classList.remove("shine-active"), 300);
+      }}
+      onClick={(e) => {
+        const shine = e.currentTarget.querySelector(".shine-border");
+        shine?.classList.add("shine-active");
+        setTimeout(() => shine?.classList.remove("shine-active"), 300);
+      }}
     >
       {/* Shine Border Effect */}
       <div className="shine-border absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100"></div>
 
-      <div>
+      <div className="flex flex-col justify-between h-full">
         {/* Animated Arrow Icon */}
         <motion.div
           className="size-9 rounded-full flex items-center justify-center border absolute top-4 right-4 overflow-hidden"
@@ -81,7 +92,7 @@ const ServiceCard = ({
             ease: "easeOut",
           }}
         >
-          <h1 className="font-MartianBThai text-white text-xl 2xl:text-[28px] leading-[35px] font-semibold text-center mt-4">
+          <h1 className="font-MartianBThai text-white text-xl font-semibold text-center mt-4">
             {name}
           </h1>
           <p className="text-neutral-300 text-sm font-Poppins text-center mt-2">

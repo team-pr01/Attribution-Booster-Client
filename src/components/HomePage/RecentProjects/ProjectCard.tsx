@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import Image from "next/image";
 
-const ProjectCard = ({image, name, category} : any) => {
+const ProjectCard = ({ image, name, category }: any) => {
   const itemVariants: any = {
     hidden: { opacity: 0, y: 40, scale: 0.9 },
     visible: {
@@ -19,6 +19,16 @@ const ProjectCard = ({image, name, category} : any) => {
   };
   return (
     <motion.div
+      onTouchStart={(e) => {
+        const shine = e.currentTarget.querySelector(".shine-border");
+        shine?.classList.add("shine-active");
+        setTimeout(() => shine?.classList.remove("shine-active"), 300);
+      }}
+      onClick={(e) => {
+        const shine = e.currentTarget.querySelector(".shine-border");
+        shine?.classList.add("shine-active");
+        setTimeout(() => shine?.classList.remove("shine-active"), 300);
+      }}
       className="group relative bg-white/5 backdrop-blur-md border-[3px] border-white/10 rounded-[7px] overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full max-w-xs sm:max-w-none mx-auto hover:border-transparent min-h-[340px] sm:min-h-[360px] md:min-h-[380px] h-full flex flex-col justify-between"
       variants={itemVariants}
       whileHover={{ scale: 1.02, y: -10 }}
@@ -46,11 +56,7 @@ const ProjectCard = ({image, name, category} : any) => {
       />
 
       <div className="relative h-[300px] 2xl:h-[376px] rounded-t-[7px]">
-        <Image
-          src={image}
-          alt=""
-          className="h-full rounded-t-[7px]"
-        />
+        <Image src={image} alt="" className="h-full rounded-t-[7px]" />
         {/* Dark Overlay */}
         <div className="bg-neutral-5 opacity-30 w-full h-full rounded-[7px] absolute top-0 left-0 pointer-events-none"></div>
       </div>
@@ -68,7 +74,7 @@ const ProjectCard = ({image, name, category} : any) => {
         className="flex items-center justify-between p-5"
       >
         <div>
-          <h1 className="font-MartianBThai text-white text-xl lg:text-2xl leading-[35px] font-semibold">
+          <h1 className="font-MartianBThai text-white text-xl leading-[35px] font-semibold">
             {name}
           </h1>
           <p className="text-neutral-300 text-sm lg:text-base font-Poppins mt-2">

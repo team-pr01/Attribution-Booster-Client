@@ -112,139 +112,136 @@ const Team = () => {
     }
   };
 
-
   const teamMembers = [
-        {
-            id: 1,
-            name: "Muhammad Nurullah",
-            role: "CEO & Founder",
-            image: IMAGES.CEO
-        },
-        {
-            id: 17,
-            name: "Md Touhid",
-            role: "Projects Manager",
-            image: IMAGES.Touhid
-        },
-        {
-            id: 21,
-            name: "Shib Lal Das",
-            role: "Web Analytics Specialist",
-            image: IMAGES.ShibLalDas
-        },
-        {
-            id: 22,
-            name: "Rabiul Islam",
-            role: "Sales Manager",
-            image: IMAGES.RabiulIslam
-        },
-        {
-            id: 19,
-            name: "Sohag Roy",
-            role: "Full Stack Webflow Developer",
-            image: IMAGES.SohagRoy
-        },
-        {
-            id: 13,
-            name: "AB Salam",
-            role: "Webflow Designer & Developer",
-            image: IMAGES.AB
-        },
+    {
+      id: 1,
+      name: "Muhammad Nurullah",
+      role: "CEO & Founder",
+      image: IMAGES.CEO,
+    },
+    {
+      id: 17,
+      name: "Md Touhid",
+      role: "Projects Manager",
+      image: IMAGES.Touhid,
+    },
+    {
+      id: 21,
+      name: "Shib Lal Das",
+      role: "Web Analytics Specialist",
+      image: IMAGES.ShibLalDas,
+    },
+    {
+      id: 22,
+      name: "Rabiul Islam",
+      role: "Sales Manager",
+      image: IMAGES.RabiulIslam,
+    },
+    {
+      id: 19,
+      name: "Sohag Roy",
+      role: "Full Stack Webflow Developer",
+      image: IMAGES.SohagRoy,
+    },
+    {
+      id: 13,
+      name: "AB Salam",
+      role: "Webflow Designer & Developer",
+      image: IMAGES.AB,
+    },
 
+    {
+      id: 18,
+      name: "Limon Rana",
+      role: "Webflow Junior Designer",
+      image: IMAGES.LimonRana,
+    },
+    {
+      id: 7,
+      name: "Amir Ahad",
+      role: "Full Stack Developer",
+      image: IMAGES.AmirAhad,
+    },
+    {
+      id: 5,
+      name: "Talha Jubair",
+      role: "Full Stack Developer",
+      image: IMAGES.TalhaJubair,
+    },
+    {
+      id: 6,
+      name: "Sabbir Ahmed",
+      role: "Full Stack Developer",
+      image: IMAGES.SabbirAhmed,
+    },
+    {
+      id: 14,
+      name: "Emon Hossain",
+      role: "Junior UX & UI Designer",
+      image: IMAGES.Emon,
+    },
+    {
+      id: 23,
+      name: "Yeasin Arafat",
+      role: "UI/UX Designer",
+      image: IMAGES.YeasinArafat,
+    },
+    {
+      id: 24,
+      name: "Mehedi Hasan Ontor",
+      role: "UI/UX Designer",
+      image: IMAGES.MehediHasanOntor,
+    },
+    {
+      id: 25,
+      name: "Md Sakil Ahamed",
+      role: "WordPress Developer",
+      image: IMAGES.Sakil,
+    },
+    {
+      id: 15,
+      name: "Yunus",
+      role: "WordPress Design & Developer",
+      image: IMAGES.Yunus,
+    },
+    {
+      id: 12,
+      name: "Emon Hossain",
+      role: "Performance Marketing Specialist",
+      image: IMAGES.EmonUi,
+    },
+    {
+      id: 20,
+      name: "Rion Ahmed",
+      role: "Conversion Tracking Expert",
+      image: IMAGES.RionAhmed,
+    },
+    {
+      id: 26,
+      name: "Tanzil Ahmed",
+      role: "SEO Specialist",
+      image: IMAGES.TanzilSEO,
+    },
+    {
+      id: 2,
+      name: "Shamim Uzzaman",
+      role: "Graphics Designer",
+      image: IMAGES.Shamim,
+    },
+    {
+      id: 11,
+      name: "Tuhin Rana",
+      role: "Video Editing Expert",
+      image: IMAGES.TuhinRana,
+    },
 
-        {
-            id: 18,
-            name: "Limon Rana",
-            role: "Webflow Junior Designer",
-            image: IMAGES.LimonRana
-        },
-        {
-            id: 7,
-            name: "Amir Ahad",
-            role: "Full Stack Developer",
-            image: IMAGES.AmirAhad
-        },
-        {
-            id: 5,
-            name: "Talha Jubair",
-            role: "Full Stack Developer",
-            image: IMAGES.TalhaJubair
-        },
-        {
-            id: 6,
-            name: "Sabbir Ahmed",
-            role: "Full Stack Developer",
-            image: IMAGES.SabbirAhmed
-        },
-        {
-            id: 14,
-            name: "Emon Hossain",
-            role: "Junior UX & UI Designer",
-            image: IMAGES.Emon
-        },
-        {
-            id: 23,
-            name: "Yeasin Arafat",
-            role: "UI/UX Designer",
-            image: IMAGES.YeasinArafat
-        },
-        {
-            id: 24,
-            name: "Mehedi Hasan Ontor",
-            role: "UI/UX Designer",
-            image: IMAGES.MehediHasanOntor
-        },
-        {
-            id: 25,
-            name: "Md Sakil Ahamed",
-            role: "WordPress Developer",
-            image: IMAGES.Sakil
-        },
-        {
-            id: 15,
-            name: "Yunus",
-            role: "WordPress Design & Developer",
-            image: IMAGES.Yunus
-        },
-        {
-            id: 12,
-            name: "Emon Hossain",
-            role: "Performance Marketing Specialist",
-            image: IMAGES.EmonUi
-        },
-        {
-            id: 20,
-            name: "Rion Ahmed",
-            role: "Conversion Tracking Expert",
-            image: IMAGES.RionAhmed
-        },
-        {
-            id: 26,
-            name: "Tanzil Ahmed",
-            role: "SEO Specialist",
-            image: IMAGES.TanzilSEO
-        },
-        {
-            id: 2,
-            name: "Shamim Uzzaman",
-            role: "Graphics Designer",
-            image: IMAGES.Shamim
-        },
-        {
-            id: 11,
-            name: "Tuhin Rana",
-            role: "Video Editing Expert",
-            image: IMAGES.TuhinRana
-        },
-
-        {
-            id: 16,
-            name: "Shakil Hossain",
-            role: "AI Automation Expert",
-            image: IMAGES.ShakilHossain
-        },
-
-    ]
+    {
+      id: 16,
+      name: "Shakil Hossain",
+      role: "AI Automation Expert",
+      image: IMAGES.ShakilHossain,
+    },
+  ];
   return (
     <Container>
       <motion.div
@@ -269,7 +266,9 @@ const Team = () => {
             variants={textVariants}
             className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-3 lg:mt-0"
           >
-            At Attribution Booster, we believe in your competitive edge. Each member brings their expertise to ensure every build is not just functional but transformative for your business growth
+            At Attribution Booster, we believe in your competitive edge. Each
+            member brings their expertise to ensure every build is not just
+            functional but transformative for your business growth
           </motion.p>
         </motion.div>
 
@@ -369,7 +368,7 @@ const Team = () => {
         </motion.div>
 
         {/* View All Members Button */}
-        <motion.button
+        {/* <motion.button
           variants={buttonAnimation}
           whileHover="hover"
           whileTap="tap"
@@ -379,7 +378,7 @@ const Team = () => {
           <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center">
             <Image src={ICONS.topRightArrow} alt="" className="size-6" />
           </div>
-        </motion.button>
+        </motion.button> */}
       </motion.div>
     </Container>
   );

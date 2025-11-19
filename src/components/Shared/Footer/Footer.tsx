@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ICONS, IMAGES } from "../../../../public/assets";
 import { motion } from "framer-motion";
 import Container from "../Container/Container";
+import { FaStar } from "react-icons/fa";
 
 const Footer = () => {
   const contactInfo = [
@@ -22,7 +23,8 @@ const Footer = () => {
     {
       icon: IMAGES.location,
       title: "Location",
-      description: "Suite A, 82 James Carter Road, Mildenhall, Bury St. Edmunds, United Kingdom, IP28 7DE",
+      description:
+        "Suite A, 82 James Carter Road, Mildenhall, Bury St. Edmunds, United Kingdom, IP28 7DE",
       link: "#",
     },
   ];
@@ -219,7 +221,7 @@ const Footer = () => {
                   key={index}
                   href={item.link}
                   target="_blank"
-                  className="size-10 rounded-full bg-neutral-10 backdrop-blur-[15px] p-2 flex items-center justify-center text-white text-xl"
+                  className="size-13 rounded-full bg-neutral-10 backdrop-blur-[15px] p-2 flex items-center justify-center text-white text-xl"
                 >
                   <Image
                     src={item?.icon}
@@ -252,7 +254,47 @@ const Footer = () => {
             <div className="text-white text-2xl font-medium mt-1">Partner</div>
           </motion.a>
 
-          <Image src={ICONS.glassdoorReview} alt="" className="" />
+          {/* Glassdoor Review */}
+          <motion.div
+            className="bg-gray-800/40 rounded-xl p-4 border border-gray-600/50 relative overflow-hidden"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Shine Border Effect */}
+            <div className="shine-border absolute inset-0 rounded-xl pointer-events-none"></div>
+
+            <div className="flex justify-between items-start relative z-10">
+              {/* Left side - Clutch logo and rating */}
+              <div className="flex flex-col">
+                <div className="flex items-center space-x-2 mb-3">
+                  <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">C</span>
+                  </div>
+                  <div className="flex text-cyan-400 text-sm">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <FaStar key={star} className="w-3 h-3 fill-current" />
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm font-medium">50 review</p>
+              </div>
+
+              {/* Right side - Glassdoor */}
+              <div className="flex flex-col items-end">
+                <span className="text-green-400 font-bold text-lg mb-2">
+                  glassdoor
+                </span>
+                <div className="flex items-center space-x-1">
+                  <span className="text-green-400 font-bold text-lg">4.9</span>
+                  <div className="flex text-green-400">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <FaStar key={star} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </Container>
 

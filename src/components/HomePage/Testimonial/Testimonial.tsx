@@ -279,7 +279,7 @@ const Testimonial = () => {
                     </motion.div>
 
                     <motion.p
-                      className="text-white text-sm lg:text-lg leading-[30px] font-Poppins mt-3 lg:mt-0"
+                      className="text-white text-sm 2xl:text-lg leading-[30px] font-Poppins mt-3 lg:mt-0"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: 0.4 }}

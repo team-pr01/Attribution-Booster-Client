@@ -171,6 +171,12 @@ const PackageOffer = () => {
               </motion.p>
 
               <motion.button
+                onClick={() => {
+                  const contactSection = document.getElementById("contact-us");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
                 variants={buttonAnimation}
                 whileHover="hover"
                 whileTap="tap"

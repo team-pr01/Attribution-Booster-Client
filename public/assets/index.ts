@@ -34,6 +34,7 @@ import workingHours from "./icons/working-hours.webp";
 import phone from "./icons/phone.webp";
 import location from "./icons/location.webp";
 // Services
+import aiAutomation from "./images/services/ai-automation.png";
 import analyticsConversionTracking from "./images/services/analytics-conversion-tracking.webp";
 import appDevelopment from "./images/services/app-development.webp";
 import cyberSecurity from "./images/services/cyber-security.webp";
@@ -149,6 +150,7 @@ export const IMAGES = {
   phone,
   location,
   // Services
+  aiAutomation,
   analyticsConversionTracking,
   appDevelopment,
   cyberSecurity,
