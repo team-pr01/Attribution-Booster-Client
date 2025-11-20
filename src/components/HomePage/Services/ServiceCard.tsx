@@ -78,7 +78,7 @@ const ServiceCard = ({
             ease: "easeOut",
           }}
         >
-          <Image src={icon} alt="" className="size-[110px] mx-auto" />
+          <Image src={icon} alt="" className="size-20 mx-auto" />
         </motion.div>
 
         {/* Animated Text Content */}

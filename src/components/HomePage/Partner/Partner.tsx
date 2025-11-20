@@ -65,13 +65,13 @@ const Partner = () => {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="max-w-[1000px] 2xl:max-w-[1200px] mx-auto mt-20 lg:mt-10 px-3 sm:px-5 relative"
+      className="mt-20 lg:mt-10 px-3 sm:px-5 relative"
     >
       {/* Shine Border Effect for full section */}
         <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none z-50 m-0"></div>
         <div className="rounded-[10px] bg-neutral-5 backdrop-blur-[15px] relative z-10">
           {/* Responsive layout */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 p-4">
+          <div className="flex flex-col sm:flex-row items-center gap-6 px-4 py-7">
             {/* Left image - slides from left */}
             <motion.div
               variants={slideInLeft}

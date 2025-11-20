@@ -278,7 +278,7 @@ const Team = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[30px] mt-14 lg:mt-20"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] mt-14 lg:mt-20"
         >
           {teamOverview?.map((item, index) => (
             <motion.div
@@ -292,7 +292,7 @@ const Team = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Image src={item?.icon} alt="" className="w-[110px] h-20" />
+                  <Image src={item?.icon} alt="" className="w-16 lg:w-[110px] h-16 lg:h-20" />
                 </motion.div>
 
                 <div>
