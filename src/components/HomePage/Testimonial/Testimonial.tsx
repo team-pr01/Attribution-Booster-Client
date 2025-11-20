@@ -13,37 +13,40 @@ import { useRef } from "react";
 import Container from "@/components/Shared/Container/Container";
 
 const testimonials = [
-		{
-			name: "Liya",
-			role: "CEO Founder Roast Marketing",
-			image: IMAGES.testimonial1,
-			rating: 5,
-			feedback: "Attribution Booster delivered an outstanding experience. They flawlessly set up our Facebook Conversion API while also providing expertise in web design & development, UX/UI, tracking, AI automation, and performance marketing. Reliable, professional, and results-driven – highly recommended!"
-		},
-		{
-			name: "Shan Serran",
-			role: "CEO Founder Veewz",
-			image: IMAGES.testimonial2,
-			rating: 5,
-			feedback: "Working with Attribution Booster has been an excellent experience. They seamlessly managed our transition to GA4, ensuring accurate tracking and smooth implementation. Beyond analytics, their expertise in AI automation, advanced tracking, and performance marketing makes them an invaluable partner for any business."
-		},
-		
-		{
-			name: "Zane Vondracek",
-			role: "CEO Founder Astory Media",
-			image: IMAGES.testimonial4,
-			rating: 5,
-			feedback: "I worked with Attribution Booster for web design & development, UX/UI, conversion tracking, and performance marketing. They were professional, fast, and highly knowledgeable. Everything was set up flawlessly, especially the Google Ads tracking which now works perfectly. If you want reliable digital solutions done right the first time, I strongly recommend Attribution Booster."
-		},
-		{
-			name: "Hussien Ellathy",
-			role: "Software Engineer | Web Developer",
-			image: IMAGES.testimonial3,
-			rating: 5,
-			feedback: "Collaborating with Attribution Booster has been a great experience. They always deliver projects on time and often go beyond expectations. Their dedication, creativity, and expertise truly set them apart. For businesses seeking reliable, high-quality digital solutions, I highly recommend Attribution Booster."
-		},
-		
-	];
+  {
+    name: "Liya",
+    role: "CEO Founder Roast Marketing",
+    image: IMAGES.testimonial1,
+    rating: 5,
+    feedback:
+      "Attribution Booster delivered an outstanding experience. They flawlessly set up our Facebook Conversion API while also providing expertise in web design & development, UX/UI, tracking, AI automation, and performance marketing. Reliable, professional, and results-driven – highly recommended!",
+  },
+  {
+    name: "Shan Serran",
+    role: "CEO Founder Veewz",
+    image: IMAGES.testimonial2,
+    rating: 5,
+    feedback:
+      "Working with Attribution Booster has been an excellent experience. They seamlessly managed our transition to GA4, ensuring accurate tracking and smooth implementation. Beyond analytics, their expertise in AI automation, advanced tracking, and performance marketing makes them an invaluable partner for any business.",
+  },
+
+  {
+    name: "Zane Vondracek",
+    role: "CEO Founder Astory Media",
+    image: IMAGES.testimonial4,
+    rating: 5,
+    feedback:
+      "I worked with Attribution Booster for web design & development, UX/UI, conversion tracking, and performance marketing. They were professional, fast, and highly knowledgeable. Everything was set up flawlessly, especially the Google Ads tracking which now works perfectly. If you want reliable digital solutions done right the first time, I strongly recommend Attribution Booster.",
+  },
+  {
+    name: "Hussien Ellathy",
+    role: "Software Engineer | Web Developer",
+    image: IMAGES.testimonial3,
+    rating: 5,
+    feedback:
+      "Collaborating with Attribution Booster has been a great experience. They always deliver projects on time and often go beyond expectations. Their dedication, creativity, and expertise truly set them apart. For businesses seeking reliable, high-quality digital solutions, I highly recommend Attribution Booster.",
+  },
+];
 
 const Testimonial = () => {
   const containerRef = useRef(null);
@@ -206,7 +209,7 @@ const Testimonial = () => {
             <Image
               src={IMAGES.circle}
               alt="circle background"
-              className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.03] z-1"
+              className="w-[543px] absolute -top-64 -right-56 opacity-[0.03] z-1"
             />
           </motion.div>
 

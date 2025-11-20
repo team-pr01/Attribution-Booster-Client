@@ -109,7 +109,7 @@ const Services = () => {
     {
       name: "Full Stack Web Development",
       description:
-        "Offering end-to-end full-stack solutions with scalable frontend and backend expertise for reliable applications.",
+        "End-to-end full-stack solutions with scalable frontend and backend expertise.",
       icon: IMAGES.webDevelopment,
     },
     {
@@ -256,7 +256,7 @@ const Services = () => {
 
           {/* Services Grid */}
           <motion.div
-            className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 place-items-center gap-5"
+            className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center gap-5"
             variants={staggerCards}
           >
             {servicesData?.map((service, index) => (

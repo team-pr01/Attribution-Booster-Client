@@ -36,7 +36,7 @@ const ServiceCard = ({
       {/* Shine Border Effect */}
       <div className="shine-border absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100"></div>
 
-      <div className="flex flex-col justify-between h-full">
+      <div className="flex flex-col h-full">
         {/* Animated Arrow Icon */}
         <motion.div
           className="size-9 rounded-full flex items-center justify-center border absolute top-4 right-4 overflow-hidden"

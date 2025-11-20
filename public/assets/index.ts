@@ -107,11 +107,11 @@ import topRightArrow from "./icons/top-right-arrow.svg";
 import clientDummyLogo from "./icons/client-dummy-logo.svg";
 import googlePartner2 from "./icons/google-partner.svg";
 import glassdoorReview from "./icons/glassdoor-review.svg";
-import linkedin from "./icons/linkedin.webp";
-import facebook from "./icons/facebook.webp";
-import youtube from "./icons/youtube.webp";
-import pinterest from "./icons/pinterest.webp";
-import instagram from "./icons/instagram.webp";
+import linkedin from "./icons/linkedin.svg";
+import facebook from "./icons/facebook.svg";
+import youtube from "./icons/youtube.svg";
+import pinterest from "./icons/pinterest.svg";
+import instagram from "./icons/instagram.svg";
 
 export const IMAGES = {
   logo,

@@ -223,7 +223,7 @@ const CollaborationProcess = () => {
               >
                 {/* Animated SVG Wave Background */}
                 <motion.div
-                  className="absolute -top-5 xl:-top-7 2xl:-top-5 inset-x-0 flex justify-center -z-10"
+                  className="absolute -top-5 xl:-top-7 inset-x-0 flex justify-center -z-10"
                   variants={svgWaveVariants}
                   whileHover={{
                     scale: 1.1,
@@ -231,7 +231,7 @@ const CollaborationProcess = () => {
                   }}
                 >
                   <svg
-                  className="w-[274px] xl:w-[200px] h-[113px]"
+                    className="w-[274px] xl:w-[200px] h-[113px]"
                     xmlns="http://www.w3.org/2000/svg"
                     width="274"
                     height="113"
@@ -271,7 +271,7 @@ const CollaborationProcess = () => {
                     <Image
                       src={item?.icon}
                       alt="Process icon"
-                      className="size-20 mt-[60px]"
+                      className="size-20 mt-7"
                     />
                   </motion.div>
 
@@ -286,7 +286,7 @@ const CollaborationProcess = () => {
 
                   {/* Description */}
                   <motion.p
-                    className="text-neutral-300 text-sm lg:text-base mt-4 font-Poppins"
+                    className="text-neutral-300 text-sm lg:text-base mt-2 font-Poppins"
                     variants={textVariants}
                     transition={{ delay: 0.2 }}
                   >

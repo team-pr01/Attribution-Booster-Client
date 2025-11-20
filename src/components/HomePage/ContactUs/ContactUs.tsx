@@ -297,7 +297,6 @@ const ContactUs = () => {
                   register={register}
                   name="name"
                   required
-                  disabled={!selectedServiceValue}
                 />
 
                 <TextInput
@@ -306,7 +305,6 @@ const ContactUs = () => {
                   register={register}
                   name="phoneNumber"
                   required
-                  disabled={!selectedServiceValue}
                 />
 
                 <TextInput
@@ -315,14 +313,12 @@ const ContactUs = () => {
                   register={register}
                   name="email"
                   required
-                  disabled={!selectedServiceValue}
                 />
 
                 <TextInput
                   placeholder="Enter your company name (Optional)"
                   register={register}
                   name="companyName"
-                  disabled={!selectedServiceValue}
                 />
 
                 {/* Project Description */}
@@ -330,14 +326,12 @@ const ContactUs = () => {
                   <textarea
                     placeholder="Describe your project requirements..."
                     {...register("message")}
-                    disabled={!selectedServiceValue}
                     rows={4}
                     className="w-full px-4 py-3 bg-neutral-10 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                   />
                 </div>
 
                 <motion.button
-                  disabled={!selectedServiceValue}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="pl-3 lg:pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative "

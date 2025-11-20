@@ -29,16 +29,16 @@ const ProjectCard = ({ image, name, category }: any) => {
         shine?.classList.add("shine-active");
         setTimeout(() => shine?.classList.remove("shine-active"), 300);
       }}
-      className="group relative bg-white/5 backdrop-blur-md border-[3px] border-white/10 rounded-[7px] overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full max-w-xs sm:max-w-none mx-auto hover:border-transparent min-h-[340px] sm:min-h-[360px] md:min-h-[380px] h-full flex flex-col justify-between"
+      className="group relative bg-white/5 backdrop-blur-md border-[3px] border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full max-w-xs sm:max-w-none mx-auto hover:border-transparent min-h-[340px] sm:min-h-[360px] md:min-h-[380px] h-full flex flex-col justify-between"
       variants={itemVariants}
       whileHover={{ scale: 1.02, y: -10 }}
       transition={{ duration: 0.3 }}
     >
       {/* Shine Border Effect - Only visible on hover */}
-      <div className="shine-border absolute inset-0 rounded-[7px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+      <div className="shine-border absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
       {/* Animated Border Glow Effect */}
       <motion.div
-        className="absolute inset-0 rounded-[7px] pointer-events-none"
+        className="absolute inset-0 rounded-xl pointer-events-none"
         variants={{
           initial: {
             opacity: 0,
@@ -55,10 +55,10 @@ const ProjectCard = ({ image, name, category }: any) => {
         }}
       />
 
-      <div className="relative h-[300px] 2xl:h-[376px] rounded-t-[7px]">
-        <Image src={image} alt="" className="h-full rounded-t-[7px]" />
+      <div className="relative h-[280px] w-full rounded-t-[7px]">
+        <Image src={image} alt="" className="h-full w-full rounded-t-[7px]" />
         {/* Dark Overlay */}
-        <div className="bg-neutral-5 opacity-30 w-full h-full rounded-[7px] absolute top-0 left-0 pointer-events-none"></div>
+        <div className="bg-neutral-5 opacity-30 w-full h-full rounded-xl absolute top-0 left-0 pointer-events-none"></div>
       </div>
 
       {/* Animated Text Content */}

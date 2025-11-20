@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
-import { ICONS, IMAGES } from "../../../../public/assets";
+import { IMAGES } from "../../../../public/assets";
 import TeamMemberCard from "./TeamMemberCard";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -58,19 +58,19 @@ const Team = () => {
     },
   };
 
-  const buttonAnimation: any = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 },
-    },
-    tap: { scale: 0.95 },
-  };
+  // const buttonAnimation: any = {
+  //   hidden: { opacity: 0, scale: 0.8 },
+  //   visible: {
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: { duration: 0.5, ease: "easeOut" },
+  //   },
+  //   hover: {
+  //     scale: 1.05,
+  //     transition: { duration: 0.2 },
+  //   },
+  //   tap: { scale: 0.95 },
+  // };
 
   const teamOverview = [
     {
@@ -81,7 +81,7 @@ const Team = () => {
     },
     {
       icon: IMAGES.dataExperts,
-      title: "Performance Marketing & Data Experts",
+      title: "Data-Driven Performance Marketers",
       description:
         "Creating data-driven campaigns and analytics that drive measurable business growth.",
     },
@@ -296,7 +296,7 @@ const Team = () => {
                 </motion.div>
 
                 <div>
-                  <h2 className="font-MartianBThai text-white text-2xl 2xl:text-[32px] leading-9 font-semibold">
+                  <h2 className="font-MartianBThai text-white text-2xl 2xl:text-[28px] leading-9 font-semibold">
                     {item?.title}
                   </h2>
                   <p className="text-neutral-300 font-Poppins mt-3">

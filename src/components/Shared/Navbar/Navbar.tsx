@@ -167,22 +167,6 @@ const Navbar = () => {
                     </Link>
                   </motion.div>
                 ))}
-
-                {/* Mobile Get Started Button */}
-                <motion.div
-                  variants={mobileLinkVariants}
-                  initial="closed"
-                  animate="open"
-                  transition={{ delay: navLinks.length * 0.1 }}
-                  className="pt-2"
-                >
-                  <button
-                    className="w-full px-5 py-3 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-lg leading-5 cursor-pointer transition-all duration-200 hover:bg-primary-5/80 active:scale-95"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Get Started
-                  </button>
-                </motion.div>
               </nav>
             </div>
           </motion.div>

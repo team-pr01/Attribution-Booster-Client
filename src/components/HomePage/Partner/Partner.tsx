@@ -71,7 +71,7 @@ const Partner = () => {
         <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none z-50 m-0"></div>
         <div className="rounded-[10px] bg-neutral-5 backdrop-blur-[15px] relative z-10">
           {/* Responsive layout */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12 p-4">
+          <div className="flex flex-col sm:flex-row items-center gap-6 p-4">
             {/* Left image - slides from left */}
             <motion.div
               variants={slideInLeft}
@@ -85,7 +85,7 @@ const Partner = () => {
               <Image
                 src={IMAGES.googlePartner}
                 alt="Google Partner"
-                className="object-contain w-[140px] sm:w-[180px] md:w-[220px] lg:w-[260px] xl:w-[300px]"
+                className="object-contain w-[140px]"
               />
             </motion.div>
 
@@ -102,7 +102,7 @@ const Partner = () => {
               </motion.h1>
 
               <motion.p
-                className="text-neutral-300 text-base sm:text-lg 2xl:text-xl mt-3 leading-relaxed"
+                className="text-neutral-300 text-base sm:text-lg 2xl:text-xl mt-2 leading-relaxed"
                 variants={slideInRight}
                 transition={{ delay: 0.1 }}
               >
