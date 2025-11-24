@@ -104,6 +104,10 @@ import testimonial4 from "./images/testimonial/4.webp";
 import aboutUsHero from "./images/about-us-hero.webp";
 import mission from "./images/mission.webp";
 import vision from "./images/vision.webp";
+import ctaAboutUs from "./images/cta-about-us.webp";
+import ctaServiceDetails from "./images/cta-service-details.webp";
+import ctaPortfolio from "./images/cta-portfolio.webp";
+import ctaTeam from "./images/cta-team.webp";
 
 
 // Icons
@@ -229,6 +233,8 @@ export const IMAGES = {
   aboutUsHero,
   mission,
   vision,
+
+  ctaAboutUs
 };
 
 export const ICONS = {

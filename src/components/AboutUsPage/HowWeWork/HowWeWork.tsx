@@ -5,10 +5,10 @@ import Container from "@/components/Shared/Container/Container";
 import Image from "next/image";
 import { ICONS, IMAGES } from "../../../../public/assets";
 import StepCard from "@/components/Reusable/StepCard/StepCard";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const HowWeWork = () => {
-    const cardContainerVariants: any = {
+  const cardContainerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -18,7 +18,7 @@ const HowWeWork = () => {
       },
     },
   };
-  
+
   const workProcess = [
     {
       icon: ICONS.understandAndAlign,
@@ -83,14 +83,14 @@ const HowWeWork = () => {
             </div>
 
             {/* Process Cards Grid */}
-          <motion.div
-            variants={cardContainerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] gap-y-10 mt-16 overflow-visible"
-          >
-            {workProcess?.map((item, index) => (
-              <StepCard key={index} index={index} {...item} />
-            ))}
-          </motion.div>
+            <motion.div
+              variants={cardContainerVariants}
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] gap-y-10 mt-16 overflow-visible"
+            >
+              {workProcess?.map((item, index) => (
+                <StepCard key={index} index={index} {...item} />
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>

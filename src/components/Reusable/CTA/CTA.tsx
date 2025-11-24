@@ -1,14 +1,12 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-
 import Image from "next/image";
 import { ICONS, IMAGES } from "../../../../public/assets";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-const PackageOffer = () => {
+const CTA = ({ heading, description, image, buttonText }) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
@@ -156,18 +154,14 @@ const PackageOffer = () => {
                 variants={fadeInUp}
                 className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] w-full max-w-[898px]"
               >
-                Enjoy 10% Off When You Choose Our Annual Package
+                {heading}
               </motion.h1>
 
               <motion.p
                 variants={fadeInUp}
                 className="text-neutral-300 text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[808px] font-Poppins mt-5"
               >
-                Take advantage of a special 10% discount on your first annual
-                subscription. This limited-time offer is exclusively available
-                for new customers. Don't miss out—subscribe today and start
-                enjoying premium features while saving money on your yearly
-                plan!
+                {description}
               </motion.p>
 
               <motion.button
@@ -182,7 +176,7 @@ const PackageOffer = () => {
                 whileTap="tap"
                 className="pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative flex items-center gap-2.5 mt-8"
               >
-                Start Now
+                {buttonText}
                 <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center">
                   <Image src={ICONS.topRightArrow} alt="" className="size-6" />
                 </div>
@@ -222,7 +216,7 @@ const PackageOffer = () => {
                 }}
               >
                 <Image
-                  src={IMAGES.packageOffer}
+                  src={image}
                   alt="Special Offer"
                   className="w-full md:w-[440px] lg:w-[300px] xl:w-[440px]"
                 />
@@ -249,4 +243,4 @@ const PackageOffer = () => {
   );
 };
 
-export default PackageOffer;
+export default CTA;
