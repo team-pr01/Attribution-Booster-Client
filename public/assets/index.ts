@@ -108,6 +108,7 @@ import ctaAboutUs from "./images/cta-about-us.webp";
 import ctaServiceDetails from "./images/cta-service-details.webp";
 import ctaPortfolio from "./images/cta-portfolio.webp";
 import ctaTeam from "./images/cta-team.webp";
+import serviceHero from "./images/service-hero.webp";
 
 
 // Icons
@@ -234,7 +235,8 @@ export const IMAGES = {
   mission,
   vision,
 
-  ctaAboutUs
+  ctaAboutUs,
+  serviceHero,
 };
 
 export const ICONS = {
