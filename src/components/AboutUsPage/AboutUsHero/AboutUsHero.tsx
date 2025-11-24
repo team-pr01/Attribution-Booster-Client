@@ -58,12 +58,11 @@ const AboutUsHero = () => {
       className="max-w-[1300px] 2xl:max-w-[98%] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[700px] w-full flex justify-center"
+        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[800px] md:h-[950px] lg:h-[700px] w-full flex justify-center"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-
         {/* Hero bg */}
         <motion.div transition={{ duration: 1.5, delay: 0.5 }}>
           <Image
@@ -130,11 +129,11 @@ const AboutUsHero = () => {
 
         {/* Contents */}
         <motion.div
-          className="absolute top-32 md:top-40 lg:top-56 w-full flex justify-center max-w-[320px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto"
+          className="absolute top-32 md:top-40 lg:top-56 w-full flex flex-col lg:flex-row justify-center gap-20 max-w-[320px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto"
           variants={staggerContainer}
         >
           {/* Left side contents */}
-          <div className="w-[60%] relative">
+          <div className="w-full lg:w-[60%] relative">
             {/* Breadcrumbs */}
             <div className="font-Poppins flex items-center gap-2.5">
               <Link
@@ -148,7 +147,7 @@ const AboutUsHero = () => {
             </div>
             <motion.h1
               variants={fadeInUp}
-              className="font-MartianBThai text-white text-[32px] md:text-[50px] font-semibold leading-10 md:leading-12 max-w-[641px] mt-5"
+              className="font-MartianBThai text-white text-[32px] md:text-[50px] lg:text-[45px] xl:text-[50px] font-semibold leading-10 md:leading-12 max-w-[641px] mt-5"
             >
               Driven by Data. Designed for Growth
             </motion.h1>
@@ -165,36 +164,36 @@ const AboutUsHero = () => {
             </motion.p>
 
             <motion.div
-            variants={globeAnimation}
-            animate={{
-              y: [0, -12, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <Image
-              src={IMAGES.globeCircle}
-              alt=""
-              className="size-9 md:size-12 absolute right-20"
-            />
-          </motion.div>
+              variants={globeAnimation}
+              animate={{
+                y: [0, -12, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src={IMAGES.globeCircle}
+                alt=""
+                className="size-9 md:size-12 absolute right-20"
+              />
+            </motion.div>
           </div>
 
           {/* Right side image */}
-          <div className="relative w-[40%]">
+          <div className="relative w-full lg:w-[45%] xl:w-[40%]">
             <Image
               src={IMAGES.offerGlobe}
               alt="Decorative Globe"
               className="
-                size-[200px] 
+                size-[130px] lg:size-[200px] 
                 opacity-80 blur-[2px] animate-spin
-                absolute -top-20 -left-20
+                absolute -top-14 lg:-top-20 -left-16 lg:-left-20
                 "
             />
-            <div className="max-w-[691px] h-[340px] object-cover rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
+            <div className="max-w-[691px] md:h-[340px] lg:h-full xl:h-[340px] object-cover rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
               <Image
                 src={IMAGES.aboutUsHero}
                 alt=""
@@ -204,12 +203,13 @@ const AboutUsHero = () => {
           </div>
         </motion.div>
 
-        <div className="absolute -bottom-3 w-full">
+        {/* Marquee text */}
+        <div className="absolute -bottom-1 lg:-bottom-3 w-full">
           <Marquee
             speed={40}
             pauseOnHover
             gradient={false}
-            className="flex gap-5 lg:gap-[30px] overflow-hidden text-[100px] text-[#17212a] font-MartianBThai font-semibold z-0"
+            className="flex gap-5 lg:gap-[30px] overflow-hidden text-[50px] lg:text-[100px] text-[#17212a] font-MartianBThai font-semibold z-0"
           >
             Digital Agency * Creative Soluation *
           </Marquee>
