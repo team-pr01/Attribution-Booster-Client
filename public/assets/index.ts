@@ -100,6 +100,10 @@ import testimonial1 from "./images/testimonial/1.webp";
 import testimonial2 from "./images/testimonial/2.webp";
 import testimonial3 from "./images/testimonial/3.webp";
 import testimonial4 from "./images/testimonial/4.webp";
+// About us page
+import aboutUsHero from "./images/about-us-hero.webp";
+import mission from "./images/mission.webp";
+import vision from "./images/vision.webp";
 
 
 // Icons
@@ -112,6 +116,10 @@ import facebook from "./icons/facebook.svg";
 import youtube from "./icons/youtube.svg";
 import pinterest from "./icons/pinterest.svg";
 import instagram from "./icons/instagram.svg";
+import understandAndAlign from "./icons/understand-align.webp";
+import strategizeAndPlan from "./icons/strategize-plan.webp";
+import buildAndOptimize from "./icons/build-optimize.webp";
+import deliverAndSupport from "./icons/deliver-support.webp";
 
 export const IMAGES = {
   logo,
@@ -216,6 +224,11 @@ export const IMAGES = {
   testimonial2,
   testimonial3,
   testimonial4,
+
+  // About us page
+  aboutUsHero,
+  mission,
+  vision,
 };
 
 export const ICONS = {
@@ -228,4 +241,8 @@ export const ICONS = {
   youtube,
   pinterest,
   instagram,
+  understandAndAlign,
+  strategizeAndPlan,
+  buildAndOptimize,
+  deliverAndSupport,
 };
