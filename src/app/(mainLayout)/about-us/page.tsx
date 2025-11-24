@@ -1,4 +1,5 @@
 import AboutUsHero from "@/components/AboutUsPage/AboutUsHero/AboutUsHero";
+import HowWeWork from "@/components/AboutUsPage/HowWeWork/HowWeWork";
 import MissionAndVision from "@/components/AboutUsPage/MissionAndVision/MissionAndVision";
 
 const AboutUs = () => {
@@ -6,6 +7,7 @@ const AboutUs = () => {
         <div>
             <AboutUsHero/>
             <MissionAndVision/>
+            <HowWeWork/>
         </div>
     );
 };
