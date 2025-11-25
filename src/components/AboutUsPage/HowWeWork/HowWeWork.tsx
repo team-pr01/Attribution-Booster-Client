@@ -50,7 +50,7 @@ const HowWeWork = () => {
       <div className="h-fit mx-auto mt-20 xl:mt-40 relative">
         {/* Shine Border Effect for full section */}
         <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none z-50 m-0"></div>
-        <div className="rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden p-5 lg:p-10">
+        <div className="rounded-[20px] bg-[rgba(255,255,255,0.02)] border border-gray-700 relative overflow-hidden p-5 lg:p-10">
           {/* Animated Background Circles */}
           <div>
             <Image

@@ -247,7 +247,7 @@ const ServiceHero = () => {
                 absolute -top-14 lg:-top-20 -left-16 lg:-left-20
                 "
             />
-            <div className="max-w-[691px] md:h-[340px] lg:h-full xl:h-[340px] object-cover rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
+            <div className="max-w-[691px] md:h-[340px] lg:h-full xl:h-[280px] 2xl:h-[340px] object-cover rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
               <Image
                 src={IMAGES.serviceHero}
                 alt=""

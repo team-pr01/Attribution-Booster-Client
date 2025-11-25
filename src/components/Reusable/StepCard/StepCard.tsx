@@ -88,7 +88,7 @@ const StepCard = ({index, icon, title, description} : {index:number; icon: any; 
     >
       {/* Animated SVG Wave Background */}
       <motion.div
-        className="absolute -top-5 xl:-top-7 inset-x-0 flex justify-center -z-10"
+        className="absolute -top-5 xl:-top-7 inset-x-0 flex justify-center -z-1"
         variants={svgWaveVariants}
         whileHover={{
           scale: 1.1,
