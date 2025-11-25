@@ -4,10 +4,10 @@ import Image, { StaticImageData } from "next/image";
 import { ICONS, IMAGES } from "../../../../public/assets";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
-import { usePathname, useRouter } from "next/navigation";
+import { useScrollNavigation } from "@/hooks/useScrollNavigation";
 
 const HeroSection = ({
   heading,
@@ -24,8 +24,7 @@ const HeroSection = ({
   breadcrumbs: any[];
   sectionHeight?: string;
 }) => {
-  const pathname = usePathname();
-  const router = useRouter();
+  const { navigateAndScroll } = useScrollNavigation();
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
@@ -88,29 +87,6 @@ const HeroSection = ({
       }
     }
   `;
-
-  // For auto scrolling to form section
-  useEffect(() => {
-    const storedSection = sessionStorage.getItem("scrollToSection");
-    if (storedSection) {
-      setTimeout(() => {
-        document
-          .getElementById(storedSection)
-          ?.scrollIntoView({ behavior: "smooth" });
-        sessionStorage.removeItem("scrollToSection");
-      }, 300);
-    }
-  }, [pathname]);
-  const handleNavigation = (id: string) => {
-    const targetPage = "/services";
-
-    if (pathname === targetPage) {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      sessionStorage.setItem("scrollToSection", id);
-      router.push(targetPage);
-    }
-  };
   return (
     <motion.div
       ref={containerRef}
@@ -239,7 +215,7 @@ const HeroSection = ({
             </motion.p>
 
             <div
-              onClick={() => handleNavigation("services")}
+              onClick={() => navigateAndScroll("/services", "services")}
               className="mt-11 cursor-pointer"
             >
               <style>{customCss}</style>

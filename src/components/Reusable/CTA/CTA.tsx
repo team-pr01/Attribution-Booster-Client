@@ -1,12 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { ICONS, IMAGES } from "../../../../public/assets";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useScrollNavigation } from "@/hooks/useScrollNavigation";
 
-const CTA = ({ heading, description, image, buttonText }) => {
+const CTA = ({
+  heading,
+  description,
+  image,
+  buttonText,
+}: {
+  heading: string;
+  description: string;
+  image: StaticImageData;
+  buttonText: string;
+}) => {
+  const { navigateAndScroll } = useScrollNavigation();
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
@@ -140,12 +152,6 @@ const CTA = ({ heading, description, image, buttonText }) => {
             />
           </motion.div>
 
-          {/* <Image
-          src={IMAGES.circle}
-          alt=""
-          className="w-[643px] h-[664px] absolute -bottom-64 -right-56 opacity-[0.06] z-999"
-        /> */}
-
           {/* Main content */}
           <div className="flex flex-col p-3 md:p-5 lg:p-0 lg:flex-row gap-16 lg:gap-10 xl:gap-0 items-center justify-between relative z-10 w-full">
             {/* Left side content */}
@@ -165,12 +171,7 @@ const CTA = ({ heading, description, image, buttonText }) => {
               </motion.p>
 
               <motion.button
-                onClick={() => {
-                  const contactSection = document.getElementById("contact-us");
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                onClick={() => navigateAndScroll("/contact-us", "contact-us")}
                 variants={buttonAnimation}
                 whileHover="hover"
                 whileTap="tap"
