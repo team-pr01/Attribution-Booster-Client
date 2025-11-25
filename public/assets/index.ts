@@ -237,6 +237,7 @@ export const IMAGES = {
   vision,
 
   ctaAboutUs,
+  ctaPortfolio,
   serviceHero,
   portfolioHero,
 };
