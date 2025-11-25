@@ -6,9 +6,12 @@ import { IMAGES } from "../../../../public/assets";
 import Link from "next/link";
 import { FaAlignRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -18,7 +21,7 @@ const Navbar = () => {
     { href: "/portfolio", label: "Portfolio" },
     { href: "/", label: "Blog" },
     { href: "/team", label: "Team" },
-    { href: "/", label: "Contact Us" },
+    { href: "/contact-us", label: "Contact Us" },
   ];
 
   const linkVariants: any = {
@@ -79,6 +82,31 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // For auto scrolling to form section
+  useEffect(() => {
+    const storedSection = sessionStorage.getItem("scrollToSection");
+    if (storedSection) {
+      setTimeout(() => {
+        document
+          .getElementById(storedSection)
+          ?.scrollIntoView({ behavior: "smooth" });
+        sessionStorage.removeItem("scrollToSection");
+      }, 300);
+    }
+  }, [pathname]);
+  const handleNavigation = (id: string) => {
+    const targetPage = "/contact-us"; // <-- CHANGE THIS
+
+    if (pathname === targetPage) {
+      // Already on the contact page → just scroll
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate first then scroll
+      sessionStorage.setItem("scrollToSection", id);
+      router.push(targetPage);
+    }
+  };
+
   return (
     <div className="rounded-[10px] bg-neutral-10 border border-neutral-20/10 backdrop-blur-[15px] w-full max-w-[320px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto">
       <div className="flex items-center justify-between px-3 lg:px-[29px] py-3">
@@ -116,26 +144,23 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <button
-          onClick={() => {
-            const contactSection = document.getElementById("contact-us");
-            if (contactSection) {
-              contactSection.scrollIntoView({ behavior: "smooth" });
-            }
-          }}
-          className="px-5 lg:px-[30px] py-3 lg:py-[18px] bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-sm md:text-lg leading-5 cursor-pointer relative hidden lg:block transition-all duration-200 hover:bg-primary-5/80 active:scale-95"
-        >
-          Get Started
-        </button>
-
-        <button className="block lg:hidden" onClick={toggleMobileMenu}>
-          <motion.div
-            animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
-            transition={{ duration: 0.3 }}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => handleNavigation("contact-us")}
+            className="px-5 lg:px-[30px] py-3 lg:py-[18px] bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-sm md:text-lg leading-5 cursor-pointer relative hidden lg:block transition-all duration-200 hover:bg-primary-5/80 active:scale-95"
           >
-            <FaAlignRight className="text-white text-2xl" />
-          </motion.div>
-        </button>
+            Get Started
+          </button>
+
+          <button className="block xl:hidden" onClick={toggleMobileMenu}>
+            <motion.div
+              animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <FaAlignRight className="text-white text-2xl" />
+            </motion.div>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
