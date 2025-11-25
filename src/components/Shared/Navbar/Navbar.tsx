@@ -95,13 +95,11 @@ const Navbar = () => {
     }
   }, [pathname]);
   const handleNavigation = (id: string) => {
-    const targetPage = "/contact-us"; // <-- CHANGE THIS
+    const targetPage = "/contact-us";
 
     if (pathname === targetPage) {
-      // Already on the contact page → just scroll
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Navigate first then scroll
       sessionStorage.setItem("scrollToSection", id);
       router.push(targetPage);
     }
