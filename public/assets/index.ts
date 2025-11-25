@@ -110,6 +110,7 @@ import ctaPortfolio from "./images/cta-portfolio.webp";
 import ctaTeam from "./images/cta-team.webp";
 import serviceHero from "./images/service-hero.webp";
 import portfolioHero from "./images/portfolio-hero.webp";
+import teamHero from "./images/team-hero.webp";
 
 
 // Icons
@@ -238,8 +239,10 @@ export const IMAGES = {
 
   ctaAboutUs,
   ctaPortfolio,
+  ctaTeam,
   serviceHero,
   portfolioHero,
+  teamHero,
 };
 
 export const ICONS = {
