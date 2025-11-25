@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { ICONS, IMAGES } from "../../../../public/assets";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -8,7 +8,21 @@ import { useRef } from "react";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
-const ServiceHero = () => {
+const HeroSection = ({
+  heading,
+  description,
+  btnText,
+  image,
+  breadcrumbs,
+  sectionHeight = "h-[800px] md:h-[950px] lg:h-[800px]",
+}: {
+  heading: string;
+  description: string;
+  btnText: string;
+  image: StaticImageData;
+  breadcrumbs: any[];
+  sectionHeight?: string;
+}) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
@@ -71,7 +85,6 @@ const ServiceHero = () => {
       }
     }
   `;
-
   return (
     <motion.div
       ref={containerRef}
@@ -80,7 +93,7 @@ const ServiceHero = () => {
       className="max-w-[1300px] 2xl:max-w-[98%] mx-auto py-5 lg:py-10 px-3 2xl:px-0"
     >
       <motion.div
-        className="rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden h-[800px] md:h-[950px] lg:h-[800px] w-full flex justify-center"
+        className={`rounded-[20px] border border-gray-700 backdrop-blur-[15px] relative overflow-hidden w-full flex justify-center ${sectionHeight}`}
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -158,31 +171,45 @@ const ServiceHero = () => {
           <div className="w-full lg:w-[60%] relative">
             {/* Breadcrumbs */}
             <div className="font-Poppins flex items-center gap-2.5">
+              {/* Static Home */}
               <Link
-                href={"/"}
+                href="/"
                 className="text-white text-sm md:text-lg hover:underline"
               >
                 Home
               </Link>
-              <p className="text-white text-sm md:text-lg">{">"}</p>
-              <p className="text-primary-5 text-sm md:text-lg">Services</p>
+
+              {breadcrumbs.map((item, index) => (
+                <div key={index} className="flex items-center gap-2.5">
+                  <p className="text-white text-sm md:text-lg">{">"}</p>
+
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="text-primary-5 text-sm md:text-lg hover:underline"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <p className="text-primary-5 text-sm md:text-lg">
+                      {item.label}
+                    </p>
+                  )}
+                </div>
+              ))}
             </div>
             <motion.h1
               variants={fadeInUp}
               className="font-MartianBThai text-white text-[32px] md:text-[50px] lg:text-[45px] xl:text-[50px] font-semibold leading-10 md:leading-12 max-w-[700px] mt-5"
             >
-              Solutions Built to Perform. Services Designed to Scale.
+              {heading}
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
               className="text-neutral-300 text-sm md:text-lg leading-6 md:leading-[30px] max-w-[644px] mt-5 font-Poppins"
             >
-              Attribution Booster offers a complete suite of digital solutions,
-              from full-stack web and app development to performance marketing,
-              analytics, UI/UX, content creation, and cybersecurity. Every
-              service is built to scale with your business and optimized to
-              deliver measurable results that drive growth.
+              {description}
             </motion.p>
 
             <div
@@ -205,7 +232,7 @@ const ServiceHero = () => {
                   }}
                 />
                 <span className="pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative flex items-center gap-2.5 group-hover:bg-primary-6 transition-colors duration-300">
-                  Explore Our Services
+                  {btnText}
                   <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center group-hover:bg-neutral-4 transition-colors duration-300">
                     <Image
                       src={ICONS.topRightArrow}
@@ -249,7 +276,7 @@ const ServiceHero = () => {
             />
             <div className="max-w-[691px] md:h-[340px] lg:h-full xl:h-[280px] 2xl:h-[340px] object-cover rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
               <Image
-                src={IMAGES.serviceHero}
+                src={image}
                 alt=""
                 className="w-full h-full rounded-[10px]"
               />
@@ -273,4 +300,4 @@ const ServiceHero = () => {
   );
 };
 
-export default ServiceHero;
+export default HeroSection;
