@@ -129,14 +129,13 @@ const CTA = ({
         >
           {/* Faint background circle */}
           <motion.div
-            // variants={circleAnimation}
             initial="hidden"
             animate="visible"
           >
             <Image
               src={IMAGES.circle}
               alt=""
-              className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.03] z-0"
+              className="w-[300px] xl:w-[400px] 2xl:w-[643px] absolute -top-32 2xl:-top-64 -left-32 2xl:-left-56 opacity-[0.03] z-0"
             />
           </motion.div>
 
@@ -148,7 +147,7 @@ const CTA = ({
             <Image
               src={IMAGES.circle}
               alt=""
-              className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.03] z-999"
+              className="w-[300px] xl:w-[400px] 2xl:w-[643px] absolute -top-32 2xl:-top-64 -right-32 2xl:-right-56 opacity-[0.03] z-999"
             />
           </motion.div>
 

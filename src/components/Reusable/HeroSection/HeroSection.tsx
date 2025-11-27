@@ -15,7 +15,7 @@ const HeroSection = ({
   btnText,
   image,
   breadcrumbs,
-  sectionHeight = "h-[800px] md:h-[950px] lg:h-[800px]",
+  sectionHeight = "h-[850px] md:h-[990px] lg:h-[800px]",
 }: {
   heading: string;
   description: string;
@@ -166,11 +166,11 @@ const HeroSection = ({
 
         {/* Contents */}
         <motion.div
-          className="absolute top-32 md:top-40 lg:top-56 w-full flex flex-col lg:flex-row items-start lg:items-center justify-center gap-20 max-w-[320px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto"
+          className="absolute top-28 md:top-32 lg:top-56 w-full flex flex-col lg:flex-row items-start lg:items-center justify-center gap-10 lg:gap-20 md:gap-10  max-w-[320px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto"
           variants={staggerContainer}
         >
           {/* Left side contents */}
-          <div className="w-full lg:w-[60%] relative">
+          <div className="w-full lg:w-[60%] relative z-10">
             {/* Breadcrumbs */}
             <div className="font-Poppins flex items-center gap-2.5">
               {/* Static Home */}
@@ -255,7 +255,7 @@ const HeroSection = ({
               <Image
                 src={IMAGES.globeCircle}
                 alt=""
-                className="size-9 md:size-12 absolute -top-32 right-32"
+                className="size-9 md:size-12 absolute -top-[100px] md:-top-32 right-24 md:right-32"
               />
             </motion.div>
           </div>
@@ -282,12 +282,12 @@ const HeroSection = ({
         </motion.div>
 
         {/* Marquee text */}
-        <div className="absolute -bottom-1 lg:-bottom-3 w-full">
+        <div className="absolute -bottom-1 md:-bottom-2 lg:-bottom-3 w-full">
           <Marquee
             speed={40}
             pauseOnHover
             gradient={false}
-            className="flex gap-5 lg:gap-[30px] overflow-hidden text-[50px] lg:text-[100px] text-[#17212a] font-MartianBThai font-semibold z-0"
+            className="flex gap-5 lg:gap-[30px] overflow-hidden text-[50px] lg:text-[100px] text-primary-5/20 font-MartianBThai font-semibold z-0"
           >
             Digital Agency * Creative Soluation *
           </Marquee>

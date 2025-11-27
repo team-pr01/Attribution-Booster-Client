@@ -20,6 +20,7 @@ const Navbar = () => {
     { href: "/portfolio", label: "Portfolio" },
     { href: "/", label: "Blog" },
     { href: "/team", label: "Team" },
+    { href: "/career", label: "Career" },
     { href: "/contact-us", label: "Contact Us" },
   ];
 
@@ -103,7 +104,7 @@ const Navbar = () => {
               <Link href={link.href}>
                 <motion.span
                   variants={linkVariants}
-                  className="text-white text-lg leading-5 block cursor-pointer"
+                  className="text-white leading-5 block cursor-pointer"
                 >
                   {link.label}
                 </motion.span>

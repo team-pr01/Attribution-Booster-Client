@@ -31,7 +31,6 @@ const TeamMemberCard = ({ name, image, role }: any) => {
   return (
     <motion.div
       className="group relative rounded-[10px] bg-[rgba(255,255,255,0.02)] border border-gray-700 backdrop-blur-[15px] flex flex-col overflow-hidden cursor-pointer"
-      /* ⭐ MOBILE TAP: show icons + shine */
       onTouchStart={() => setIsHovered(true)}
       onClick={(e) => {
         setIsHovered(true);

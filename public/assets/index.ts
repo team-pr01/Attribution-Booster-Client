@@ -112,6 +112,7 @@ import serviceHero from "./images/service-hero.webp";
 import portfolioHero from "./images/portfolio-hero.webp";
 import teamHero from "./images/team-hero.webp";
 import contactUsHero from "./images/contact-us-hero.webp";
+import careerHero from "./images/career-hero.webp";
 
 
 // Icons
@@ -239,12 +240,14 @@ export const IMAGES = {
   vision,
 
   ctaAboutUs,
+  ctaServiceDetails,
   ctaPortfolio,
   ctaTeam,
   serviceHero,
   portfolioHero,
   teamHero,
   contactUsHero,
+  careerHero,
 };
 
 export const ICONS = {

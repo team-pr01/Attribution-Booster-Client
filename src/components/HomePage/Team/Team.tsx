@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
-import { IMAGES } from "../../../../public/assets";
+import { ICONS, IMAGES } from "../../../../public/assets";
 import TeamMemberCard from "./TeamMemberCard";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -13,8 +13,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaArrowLeftLong, FaArrowRight } from "react-icons/fa6";
 import Container from "@/components/Shared/Container/Container";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import TeamGrid from "./TeamGrid";
 
 const Team = () => {
+  const pathName = usePathname();
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
@@ -58,19 +62,19 @@ const Team = () => {
     },
   };
 
-  // const buttonAnimation: any = {
-  //   hidden: { opacity: 0, scale: 0.8 },
-  //   visible: {
-  //     opacity: 1,
-  //     scale: 1,
-  //     transition: { duration: 0.5, ease: "easeOut" },
-  //   },
-  //   hover: {
-  //     scale: 1.05,
-  //     transition: { duration: 0.2 },
-  //   },
-  //   tap: { scale: 0.95 },
-  // };
+  const buttonAnimation: any = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+    hover: {
+      scale: 1.05,
+      transition: { duration: 0.2 },
+    },
+    tap: { scale: 0.95 },
+  };
 
   const teamOverview = [
     {
@@ -292,7 +296,11 @@ const Team = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Image src={item?.icon} alt="" className="w-16 lg:w-[110px] h-16 lg:h-20" />
+                  <Image
+                    src={item?.icon}
+                    alt=""
+                    className="w-16 lg:w-[110px] h-16 lg:h-20"
+                  />
                 </motion.div>
 
                 <div>
@@ -309,76 +317,86 @@ const Team = () => {
         </motion.div>
 
         {/* Swiper Section */}
-        <motion.div variants={headerVariants} className="mt-20 relative">
-          <Swiper
-            modules={[Navigation, Autoplay, Pagination]}
-            spaceBetween={30}
-            slidesPerView={1}
-            onSwiper={setSwiperInstance}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-              el: ".custom-pagination",
-            }}
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="pb-16"
-          >
-            {teamMembers.map((member, index) => (
-              <SwiperSlide key={index}>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+        {pathName === "/" ? (
+          <motion.div variants={headerVariants} className="mt-20 relative">
+            <Swiper
+              modules={[Navigation, Autoplay, Pagination]}
+              spaceBetween={30}
+              slidesPerView={1}
+              onSwiper={setSwiperInstance}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+                el: ".custom-pagination",
+              }}
+              breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
+              className="pb-16"
+            >
+              {teamMembers.map((member, index) => (
+                <SwiperSlide key={index}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <TeamMemberCard {...member} />
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Custom Navigation + Pagination */}
+            <div className="flex flex-col items-center gap-6 mt-8">
+              {/* Pagination Dots */}
+              <div className="custom-pagination flex justify-center gap-2" />
+
+              {/* Navigation Buttons */}
+              <div className="flex justify-center gap-4">
+                <button
+                  onClick={handlePrev}
+                  className="size-10 rounded-full bg-neutral-900 border border-gray-600 flex items-center justify-center text-white hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 text-sm cursor-pointer"
                 >
-                  <TeamMemberCard {...member} />
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Custom Navigation + Pagination */}
-          <div className="flex flex-col items-center gap-6 mt-8">
-            {/* Pagination Dots */}
-            <div className="custom-pagination flex justify-center gap-2" />
-
-            {/* Navigation Buttons */}
-            <div className="flex justify-center gap-4">
-              <button
-                onClick={handlePrev}
-                className="size-10 rounded-full bg-neutral-900 border border-gray-600 flex items-center justify-center text-white hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 text-sm cursor-pointer"
-              >
-                <FaArrowLeftLong />
-              </button>
-              <button
-                onClick={handleNext}
-                className="size-10 rounded-full bg-neutral-900 border border-gray-600 flex items-center justify-center text-white hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 text-sm cursor-pointer"
-              >
-                <FaArrowRight />
-              </button>
+                  <FaArrowLeftLong />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="size-10 rounded-full bg-neutral-900 border border-gray-600 flex items-center justify-center text-white hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300 text-sm cursor-pointer"
+                >
+                  <FaArrowRight />
+                </button>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        ) : (
+          <motion.div variants={headerVariants} className="mt-20 relative">
+            <TeamGrid teamMembers={teamMembers} />
+          </motion.div>
+        )}
 
         {/* View All Members Button */}
-        {/* <motion.button
-          variants={buttonAnimation}
-          whileHover="hover"
-          whileTap="tap"
-          className="pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative flex items-center gap-2.5 mt-11 mx-auto"
-        >
-          View All Members
-          <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center">
-            <Image src={ICONS.topRightArrow} alt="" className="size-6" />
-          </div>
-        </motion.button> */}
+        {pathName === "/" && (
+          <Link href="team">
+            <motion.button
+              variants={buttonAnimation}
+              whileHover="hover"
+              whileTap="tap"
+              className="pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative flex items-center gap-2.5 mt-11 mx-auto"
+            >
+              View All Members
+              <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center">
+                <Image src={ICONS.topRightArrow} alt="" className="size-6" />
+              </div>
+            </motion.button>
+          </Link>
+        )}
       </motion.div>
     </Container>
   );
