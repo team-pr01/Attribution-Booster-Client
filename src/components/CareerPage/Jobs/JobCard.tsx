@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ICONS } from "../../../../public/assets";
 
-const JobCard = () => {
+const JobCard = ({ job }: any) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <motion.div
@@ -26,20 +27,24 @@ const JobCard = () => {
       <div className="relative overflow-hidden px-5 py-7 flex flex-col md:flex-row items-start md:items-center gap-7 md:gap-0 justify-between w-full">
         <div className=" flex flex-col gap-4">
           <p className="text-primary-5 text-sm lg:text-lg font-Poppins">
-            Engineering
+            {job?.category}
           </p>
           <h2 className="font-MartianBThai text-white group-hover:text-primary-5 text-xl 2xl:text-[32px] leading-9 font-semibold">
-            Full-Stack Developers
+            {job?.title}
           </h2>
 
           <div className="flex items-center gap-3">
             <div className="bg-neutral-10 px-4 py-2 rounded-[42px] flex items-center gap-2.5 text-neutral-40 text-sm md:text-base">
-              <Image src={ICONS.locationGray} alt="" className="size-4 md:size-5" />
-              On Site
+              <Image
+                src={ICONS.locationGray}
+                alt=""
+                className="size-4 md:size-5"
+              />
+              {job?.location}
             </div>
             <div className="bg-neutral-10 px-4 py-2 rounded-[42px] flex items-center gap-2.5 text-neutral-40 text-sm md:text-base">
               <Image src={ICONS.jobType} alt="" className="size-4 md:size-5" />
-              Full Time
+              {job?.type}
             </div>
           </div>
         </div>
@@ -47,7 +52,7 @@ const JobCard = () => {
         <div className=" flex flex-row md:flex-col gap-5">
           <div className="flex items-center gap-2.5 text-neutral-40">
             <Image src={ICONS.deadline} alt="" className="size-5" />
-            10/07/2025
+            {job?.date}
           </div>
           <button className="relative inline-flex items-center justify-center p-[3px] bg-primary-5 dark:bg-black rounded-full overflow-hidden group hover:scale-105 transition-transform duration-300">
             <div
