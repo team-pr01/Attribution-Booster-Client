@@ -129,6 +129,9 @@ import understandAndAlign from "./icons/understand-align.webp";
 import strategizeAndPlan from "./icons/strategize-plan.webp";
 import buildAndOptimize from "./icons/build-optimize.webp";
 import deliverAndSupport from "./icons/deliver-support.webp";
+import locationGray from "./icons/location-gray.svg";
+import jobType from "./icons/jobType.svg";
+import deadline from "./icons/deadline.svg";
 
 export const IMAGES = {
   logo,
@@ -264,4 +267,7 @@ export const ICONS = {
   strategizeAndPlan,
   buildAndOptimize,
   deliverAndSupport,
+  locationGray,
+  jobType,
+  deadline,
 };
