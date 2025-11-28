@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
+import { Providers } from "./provider";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Attribution Booster",
@@ -15,10 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased bg-[#06101A]`}
+        className={`antialiased bg-neutral-5`}
       >
         <Preloader/>
-        {children}
+        <Providers>{children}</Providers>
+        <Toaster position="top-center" reverseOrder={false} />
       </body>
     </html>
   );
