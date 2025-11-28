@@ -8,7 +8,6 @@ import {persistReducer, persistStore, FLUSH,
   PersistConfig,} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import authReducer,{ AuthState } from './features/Auth/authSlice';
-import customizationReducer from "./features/Customizations/customizationSlice";
 import { baseApi } from './api/baseApi';
 
 const persistConfig: PersistConfig<AuthState> = {
@@ -26,7 +25,6 @@ export const store = configureStore({
         // Add the generated reducer as a specific top-level slice
         [baseApi.reducerPath]: baseApi.reducer,
         auth : persistedAuthReducer,
-         customization: customizationReducer,
       },
 
       middleware: (getDefaultMiddleware) =>
