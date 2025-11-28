@@ -16,6 +16,7 @@ export type TBlog = {
   updatedAt: string;
 };
 
+
 const AllBlogs = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const { data: blogs, isLoading } = useGetAllBlogsQuery({

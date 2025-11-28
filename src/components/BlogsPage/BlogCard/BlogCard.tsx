@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { ICONS } from "../../../../public/assets";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { TBlog } from "@/app/(adminLayout)/dashboard/blogs/page";
+import { usePathname } from "next/navigation";
+import { LuPencil } from "react-icons/lu";
 
 function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
@@ -40,6 +43,7 @@ const BlogCard = ({
   imageUrl,
   createdAt,
 }: TBlog) => {
+  const pathname = usePathname();
   return (
     <div className="group relative bg-linear-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden hover:border-[#07f4fa]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#07f4fa]/5 hover:-translate-y-1">
       {/* Animated gradient border */}
@@ -65,6 +69,15 @@ const BlogCard = ({
                 {category}
               </span>
             </div>
+
+            {pathname === "/dashboard/blogs" && (
+              <Link
+                href={`/dashboard/edit-blog/${_id}`}
+                className="absolute top-3 right-3 size-7 flex items-center justify-center rounded-full bg-[#07f4fa]/90 backdrop-blur-sm text-gray-900"
+              >
+                <LuPencil />
+              </Link>
+            )}
           </div>
         </div>
 

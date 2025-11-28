@@ -44,7 +44,7 @@ const blogApi = baseApi.injectEndpoints({
     }),
 
     updateBlog: builder.mutation({
-      query: ({ data, id }) => ({
+      query: ({ id, data }) => ({
         url: `/blog/update/${id}`,
         method: "PUT",
         body: data,
