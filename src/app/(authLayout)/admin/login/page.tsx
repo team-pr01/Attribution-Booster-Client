@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -6,24 +7,69 @@ import Image from "next/image";
 import Link from "next/link";
 import { IMAGES } from "../../../../../public/assets";
 import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
+import { useLoginMutation } from "@/redux/features/Auth/authApi";
+import Cookies from "js-cookie";
+import toast from "react-hot-toast";
+import { setUser } from "@/redux/features/Auth/authSlice";
 
-interface LoginForm {
+type TFormData = {
   email: string;
   password: string;
-}
+};
 
 const AdminLogin = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginForm>();
+  } = useForm<TFormData>();
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const onSubmit = (data: LoginForm) => {
-    console.log(data);
-    // Handle login logic here
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const [login, { isLoading }] = useLoginMutation();
+
+  const handleLogin = async (data: TFormData) => {
+    try {
+      const payload = {
+        ...data,
+      };
+      const response = await login(payload).unwrap();
+      const user = response.data?.user;
+      const accessToken = response.data?.accessToken;
+
+      const userRole = response?.data?.user?.role;
+      if (accessToken) {
+        Cookies.set("accessToken", accessToken, {
+          expires: 7,
+          secure:
+            typeof window !== "undefined" &&
+            window.location.protocol === "https:",
+          sameSite: "strict",
+        });
+        Cookies.set("role", userRole, {
+          expires: 7,
+          secure: window.location.protocol === "https:",
+          sameSite: "strict",
+        });
+      }
+
+      if (response?.success) {
+        dispatch(setUser({ user, token: response?.data?.accessToken }));
+        toast.success(response?.message);
+
+        if (userRole === "admin") {
+          router.push("/dashboard/admin");
+        } else if (userRole === "user") {
+          router.push("/dashboard/user/my-profile");
+        }
+      }
+    } catch (err: any) {
+      toast.error(err?.data?.message || "Something went wrong!");
+    }
   };
 
   return (
@@ -31,12 +77,12 @@ const AdminLogin = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#07f4fa]/10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#06a0ed]/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary-20/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative w-full max-w-md">
         {/* Login Card */}
-        <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 shadow-2xl hover:shadow-[#07f4fa]/10 transition-all duration-500">
+        <div className="relative bg-linear-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 shadow-2xl hover:shadow-[#07f4fa]/10 transition-all duration-500">
           {/* Shine Border Effect */}
           <div className="shine-border absolute inset-0 rounded-2xl pointer-events-none"></div>
 
@@ -53,7 +99,7 @@ const AdminLogin = () => {
           </div>
 
           {/* Login Form */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(handleLogin)} className="space-y-6">
             {/* Email Field */}
             <div className="">
               <label className="text-sm font-medium text-gray-300">
@@ -91,7 +137,7 @@ const AdminLogin = () => {
                 </label>
                 <Link
                   href="/forgot-password"
-                  className="text-xs text-[#07f4fa] hover:text-[#6ecaf8] transition-colors"
+                  className="text-xs text-[#07f4fa] hover:text-primary-15 transition-colors"
                 >
                   Forgot Password?
                 </Link>
@@ -134,9 +180,9 @@ const AdminLogin = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full relative inline-flex items-center justify-center p-2 overflow-hidden group bg-gradient-to-r from-[#07f4fa] to-[#06a0ed] rounded-xl hover:from-[#6ecaf8] hover:to-[#0696e7] transition-all duration-300 hover:shadow-lg hover:shadow-[#07f4fa]/25 cursor-pointer"
+              className="w-full relative inline-flex items-center justify-center p-2 overflow-hidden group bg-linear-to-r from-[#07f4fa] to-primary-20 rounded-xl hover:from-primary-15 hover:to-primary-30 transition-all duration-300 hover:shadow-lg hover:shadow-[#07f4fa]/25 cursor-pointer"
             >
-              Login
+              {!isLoading ? "Loading..." : "Login"}
             </button>
           </form>
 
@@ -151,7 +197,7 @@ const AdminLogin = () => {
         {/* Additional decorative elements */}
         <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-sm">
           <div className="absolute top-0 left-0 w-4 h-4 bg-[#07f4fa] rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 right-0 w-3 h-3 bg-[#06a0ed] rounded-full opacity-20 animate-pulse delay-1000"></div>
+          <div className="absolute bottom-0 right-0 w-3 h-3 bg-primary-20 rounded-full opacity-20 animate-pulse delay-1000"></div>
         </div>
       </div>
 
