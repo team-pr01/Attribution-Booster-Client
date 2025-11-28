@@ -60,12 +60,7 @@ const AdminLogin = () => {
       if (response?.success) {
         dispatch(setUser({ user, token: response?.data?.accessToken }));
         toast.success(response?.message);
-
-        if (userRole === "admin") {
-          router.push("/dashboard/admin");
-        } else if (userRole === "user") {
-          router.push("/dashboard/user/my-profile");
-        }
+        router.push("/dashboard/blogs");
       }
     } catch (err: any) {
       toast.error(err?.data?.message || "Something went wrong!");
@@ -180,9 +175,10 @@ const AdminLogin = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full relative inline-flex items-center justify-center p-2 overflow-hidden group bg-linear-to-r from-[#07f4fa] to-primary-20 rounded-xl hover:from-primary-15 hover:to-primary-30 transition-all duration-300 hover:shadow-lg hover:shadow-[#07f4fa]/25 cursor-pointer"
+              disabled={isLoading}
+              className="w-full relative inline-flex items-center justify-center p-2 overflow-hidden group bg-linear-to-r from-[#07f4fa] to-primary-20 rounded-xl hover:from-primary-15 hover:to-primary-30 transition-all duration-300 hover:shadow-lg hover:shadow-[#07f4fa]/25 cursor-pointer disabled:cursor-not-allowed"
             >
-              {!isLoading ? "Loading..." : "Login"}
+              {isLoading ? "Loading..." : "Login"}
             </button>
           </form>
 

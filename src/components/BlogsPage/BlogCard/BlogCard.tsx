@@ -1,27 +1,45 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import Link from "next/link";
 import { ICONS } from "../../../../public/assets";
 import { AiOutlineCalendar } from "react-icons/ai";
+import { TBlog } from "@/app/(adminLayout)/dashboard/blogs/page";
 
-interface BlogCardProps {
-  id: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  image: any;
-  date: string;
-  slug: string;
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+
+  const day = date.getUTCDate(); // 28
+  const month = date.toLocaleString("en-US", {
+    month: "long",
+    timeZone: "UTC",
+  }); // "November"
+  const year = date.getUTCFullYear(); // 2025
+
+  // Function to get ordinal suffix
+  const getOrdinal = (n: number) => {
+    if (n >= 11 && n <= 13) return "th";
+    switch (n % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  };
+
+  return `${day}${getOrdinal(day)} ${month}, ${year}`;
 }
 
 const BlogCard = ({
+  _id,
   title,
-  excerpt,
+  overview,
   category,
-  image,
-  date,
-  slug,
-}: BlogCardProps) => {
+  imageUrl,
+  createdAt,
+}: TBlog) => {
   return (
     <div className="group relative bg-linear-to-br from-gray-900/80 to-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden hover:border-[#07f4fa]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#07f4fa]/5 hover:-translate-y-1">
       {/* Animated gradient border */}
@@ -33,7 +51,7 @@ const BlogCard = ({
         <div className="relative overflow-hidden">
           <div className="aspect-4/3 relative overflow-hidden">
             <Image
-              src={image}
+              src={imageUrl}
               alt={title}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -59,7 +77,7 @@ const BlogCard = ({
                 className="opacity-60 text-[#07f4fa]"
                 size={14}
               />
-              {date}
+              {formatDate(createdAt)}
             </span>
           </div>
 
@@ -68,15 +86,15 @@ const BlogCard = ({
             {title}
           </h3>
 
-          {/* Excerpt */}
+          {/* Overview */}
           <p className="text-gray-300 text-xs mb-4 line-clamp-2 flex-1 leading-relaxed">
-            {excerpt}
+            {overview}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex items-center justify-between pt-3 border-t border-gray-700/50">
             <Link
-              href={`/blog/${slug}`}
+              href={`/blog/${_id}`}
               className="relative inline-flex items-center gap-1.5 text-[#07f4fa] hover:text-primary-15 font-medium text-xs group/btn transition-colors duration-300"
             >
               Read More

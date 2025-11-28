@@ -1,6 +1,6 @@
 export const categories = [
-  "All",
-  "Web Development",
+  "all",
+  "Development",
   "Next.js",
   "AI & Machine Learning",
   "UI/UX Design",
