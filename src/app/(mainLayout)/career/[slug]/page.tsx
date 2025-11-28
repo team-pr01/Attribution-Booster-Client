@@ -14,9 +14,7 @@ export async function generateStaticParams() {
 }
 
 const Career = ({ params }: { params: Promise<{ slug: string }> }) => {
-  // Unwrap the params promise using React's use() hook
-  const resolvedParams = use(params);
-  console.log(resolvedParams);
+  const resolvedParams = use(params); 
 
   const jobDetail = jobs.find((job) => job.slug === resolvedParams.slug);
 

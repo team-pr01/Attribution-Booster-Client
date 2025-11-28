@@ -92,9 +92,9 @@ const BlogCard = ({
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex items-center justify-between pt-3 border-t border-gray-700/50">
+          <div className="flex items-center justify-end pt-3 border-t border-gray-700/50">
             <Link
-              href={`/blog/${_id}`}
+              href={`/blogs/${_id}`}
               className="relative inline-flex items-center gap-1.5 text-[#07f4fa] hover:text-primary-15 font-medium text-xs group/btn transition-colors duration-300"
             >
               Read More
@@ -110,14 +110,6 @@ const BlogCard = ({
                 </div>
               </div>
             </Link>
-
-            {/* View button with primary colors */}
-            <button className="relative inline-flex items-center justify-center overflow-hidden group/button bg-linear-to-r from-[#07f4fa] to-primary-20 hover:from-primary-15 hover:to-primary-30 text-gray-900 px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#07f4fa]/20">
-              <span className="relative z-10">View Post</span>
-
-              {/* Shine effect */}
-              <div className="absolute inset-0 -left-8 -top-8 w-16 h-16 bg-white/30 transform rotate-45 transition-all duration-700 group-hover/button:left-[110%] group-hover/button:top-[110%]" />
-            </button>
           </div>
         </div>
       </div>

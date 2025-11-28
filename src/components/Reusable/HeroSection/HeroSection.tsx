@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { ICONS, IMAGES } from "../../../../public/assets";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -20,7 +21,7 @@ const HeroSection = ({
   heading: string;
   description: string;
   btnText: string;
-  image: StaticImageData;
+  image: any;
   breadcrumbs: any[];
   sectionHeight?: string;
 }) => {
@@ -272,7 +273,7 @@ const HeroSection = ({
                 "
             />
             <div className="max-w-[691px] md:h-[340px] lg:h-full xl:h-[280px] 2xl:h-[340px] object-cover rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
-              <Image
+              <img
                 src={image}
                 alt=""
                 className="w-full h-full rounded-[10px]"

@@ -41,7 +41,7 @@ const Blogs = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 rounded-full border transition-all duration-300 font-medium text-sm md:text-base whitespace-nowrap cursor-pointer ${
+                className={`px-6 py-3 rounded-full border transition-all duration-300 font-medium text-sm md:text-base whitespace-nowrap capitalize cursor-pointer ${
                   activeCategory === category
                     ? "bg-[#07f4fa] text-gray-900 border-[#07f4fa] shadow-lg shadow-[#07f4fa]/25 transform scale-105"
                     : "bg-gray-800/50 text-gray-300 border-gray-600 hover:bg-gray-700/50 hover:border-[#07f4fa]/30 hover:text-white"
