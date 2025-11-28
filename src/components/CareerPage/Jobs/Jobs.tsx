@@ -3,9 +3,10 @@ import Container from "@/components/Shared/Container/Container";
 import { useState } from "react";
 import JobCard from "./JobCard";
 import CustomDropdown from "@/components/Reusable/CustomDropdown/CustomDropdown";
-import { jobs } from "@/data/jobs.data";
+import jobsData from "@/data/jobs.json";
 import { FiBriefcase } from "react-icons/fi";
 
+const jobs = jobsData.jobs;
 const Jobs = () => {
   const positions = [
     { name: "All positions", count: 12 },
@@ -23,7 +24,13 @@ const Jobs = () => {
     { name: "AI Agent Creation & Automation", count: 1 },
   ];
 
-  const locations = ["All Locations", "Onsite", "Remote", "Hybrid", "Remote/On-Site"];
+  const locations = [
+    "All Locations",
+    "Onsite",
+    "Remote",
+    "Hybrid",
+    "Remote/On-Site",
+  ];
 
   const [showAll, setShowAll] = useState(false);
 
@@ -34,22 +41,20 @@ const Jobs = () => {
   const [activePosition, setActivePosition] = useState<string>("All positions");
 
   const filteredJobs = jobs?.filter((job) => {
-  const matchesSearch = job.title
-    .toLowerCase()
-    .includes(keyword.toLowerCase());
+    const matchesSearch = job.title
+      .toLowerCase()
+      .includes(keyword.toLowerCase());
 
-  const matchesCategory =
-    activePosition === "All positions" ||
-    job.categoryMatch === activePosition ||
-    job.category === activePosition;
+    const matchesCategory =
+      activePosition === "All positions" ||
+      job.categoryMatch === activePosition ||
+      job.category === activePosition;
 
-  const matchesLocation =
-    selectedLocation === "All Locations" ||
-    job.location === selectedLocation;
+    const matchesLocation =
+      selectedLocation === "All Locations" || job.location === selectedLocation;
 
-  return matchesCategory && matchesLocation && matchesSearch;
-});
-
+    return matchesCategory && matchesLocation && matchesSearch;
+  });
 
   return (
     <Container>
@@ -124,22 +129,21 @@ const Jobs = () => {
         </div>
 
         <div className="flex flex-col gap-5 lg:gap-[30px] w-full lg:w-[70%]">
-  {filteredJobs && filteredJobs.length > 0 ? (
-    filteredJobs?.map((job, index) => (
-      <JobCard key={index} job={job} />
-    ))
-  ) : (
-    <div className="flex flex-col items-center justify-center text-center py-20 gap-4 text-neutral-400">
-      <FiBriefcase className="text-5xl text-neutral-500" />
-      <h3 className="text-lg font-semibold text-white">
-        No jobs found
-      </h3>
-      <p className="text-sm max-w-md">
-        Try changing your search keywords, position, or location filters.
-      </p>
-    </div>
-  )}
-</div>
+          {filteredJobs && filteredJobs.length > 0 ? (
+            filteredJobs?.map((job, index) => <JobCard key={index} job={job} />)
+          ) : (
+            <div className="flex flex-col items-center justify-center text-center py-20 gap-4 text-neutral-400">
+              <FiBriefcase className="text-5xl text-neutral-500" />
+              <h3 className="text-lg font-semibold text-white">
+                No jobs found
+              </h3>
+              <p className="text-sm max-w-md">
+                Try changing your search keywords, position, or location
+                filters.
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </Container>
   );

@@ -8,9 +8,9 @@ const Career = () => {
       <HeroSection
         heading="Build the Future With Us"
         description="Our spaces are crafted to spark innovation, fuel bold ideas, and foster a community of forward-thinkers"
-        btnText="Explore Our Services"
+        btnText="Reach Out To Us"
         image={IMAGES.careerHero}
-        breadcrumbs={[{ label: "Reach Out To Us" }]}
+        breadcrumbs={[{ label: "Career" }]}
       />
       <Jobs/>
     </div>

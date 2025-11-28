@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ICONS } from "../../../../public/assets";
+import Link from "next/link";
 
 const JobCard = ({ job }: any) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -54,7 +55,7 @@ const JobCard = ({ job }: any) => {
             <Image src={ICONS.deadline} alt="" className="size-5" />
             {job?.date}
           </div>
-          <button className="relative inline-flex items-center justify-center p-[3px] bg-primary-5 dark:bg-black rounded-full overflow-hidden group hover:scale-105 transition-transform duration-300">
+          <Link href={`/career/${job.slug}`} className="relative inline-flex items-center justify-center p-[3px] bg-primary-5 dark:bg-black rounded-full overflow-hidden group hover:scale-105 transition-transform duration-300">
             <div
               className="absolute inset-0"
               style={{
@@ -69,7 +70,7 @@ const JobCard = ({ job }: any) => {
                 <Image src={ICONS.topRightArrow} alt="" className="size-6" />
               </div>
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>
