@@ -3,9 +3,9 @@ import { ReactNode } from 'react';
 
 const AdminDashboardLayout = ({children} : {children: ReactNode}) => {
     return (
-        <div className='flex gap-6'>
+        <div className='flex'>
             <Sidebar/>
-            <div>
+            <div className='flex-1 p-6'>
                 {children}
             </div>
         </div>

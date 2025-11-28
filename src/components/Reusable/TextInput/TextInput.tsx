@@ -34,7 +34,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
       <div className="flex flex-col gap-2 font-Satoshi w-full">
         <label htmlFor={name} className="text-neutral-65">
           {label}
-          {isRequired && <span className="text-red-600"> *</span>}
+          {isRequired && <span className="text-primary-5"> *</span>}
         </label>
         <input
           required={isRequired}

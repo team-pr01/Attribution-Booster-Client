@@ -20,23 +20,23 @@ const SelectDropdown = forwardRef<HTMLSelectElement, DropdownProps>(
             className="flex flex-row items-center w-full justify-between text-neutral-65"
           >
             <span className="text-neutral-05 leading-[18px] text-[15px] font-medium tracking-[-0.16] ">
-              {label} {isRequired && <span className="text-red-600"> *</span>}
+              {label} {isRequired && <span className="text-primary-5"> *</span>}
             </span>
           </label>
         <select
           ref={ref}
           defaultChecked={selected}
           required={isRequired}
-          className={`px-[18px] py-3.5 rounded-lg  border focus:outline-none focus:border-primary-10 transition duration-300 ${
-            isDisabled ? "bg-neutral-10/30" : "bg-neutral-70"
-          } ${error ? "border-red-500" : "border-neutral-35"}`}
+          className={`px-[18px] py-3.5 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition duration-300 ${
+            isDisabled ? "bg-neutral-10/60" : "bg-neutral-10"
+          } ${error ? "border-red-500" : "border-gray-600"}`}
           {...rest}
         >
           <option value="" disabled selected>
             Select {label}
           </option>
           {options.map((option, index) => (
-            <option key={index} value={option}>
+            <option key={index} value={option} className="text-neutral-5">
               {option}
             </option>
           ))}

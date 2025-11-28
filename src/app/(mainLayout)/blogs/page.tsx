@@ -5,92 +5,83 @@ import React, { useState } from "react";
 import { IMAGES } from "../../../../public/assets";
 import BlogCard from "@/components/BlogsPage/BlogCard/BlogCard";
 import Container from "@/components/Shared/Container/Container";
+import { categories } from "@/data/blogcategory";
 
+
+export const blogPosts = [
+  {
+    id: "1",
+    title: "The Future of Web Development in 2024",
+    excerpt:
+      "Explore the latest trends and technologies shaping the future of web development, from AI integration to new frameworks.",
+    category: "Web Development",
+    image: IMAGES.blogsHero,
+    readTime: "5 min read",
+    date: "Dec 15, 2024",
+    slug: "future-of-web-development-2024",
+  },
+  {
+    id: "2",
+    title: "Mastering Next.js 14 Server Components",
+    excerpt:
+      "Deep dive into the new features of Next.js 14 and how server components can improve your application performance.",
+    category: "Next.js",
+    image: IMAGES.blogsHero,
+    readTime: "8 min read",
+    date: "Dec 12, 2024",
+    slug: "mastering-nextjs-14-server-components",
+  },
+  {
+    id: "3",
+    title: "AI-Powered Applications in 2024",
+    excerpt:
+      "Discover how AI is revolutionizing modern applications and creating better user experiences.",
+    category: "AI & Machine Learning",
+    image: IMAGES.blogsHero,
+    readTime: "6 min read",
+    date: "Dec 10, 2024",
+    slug: "ai-powered-applications-2024",
+  },
+  {
+    id: "4",
+    title: "Modern UI/UX Design Principles",
+    excerpt:
+      "Learn the essential design principles that create engaging and user-friendly interfaces.",
+    category: "UI/UX Design",
+    image: IMAGES.blogsHero,
+    readTime: "7 min read",
+    date: "Dec 8, 2024",
+    slug: "modern-ui-ux-design-principles",
+  },
+  {
+    id: "5",
+    title: "React Native Performance Optimization",
+    excerpt:
+      "Advanced techniques to optimize your React Native applications for better performance.",
+    category: "Mobile Development",
+    image: IMAGES.blogsHero,
+    date: "Dec 5, 2024",
+    slug: "react-native-performance-optimization",
+  },
+  {
+    id: "6",
+    title: "DevOps Best Practices for Startups",
+    excerpt:
+      "Essential DevOps practices that can help startups scale efficiently and reliably.",
+    category: "DevOps",
+    image: IMAGES.blogsHero,
+    date: "Dec 3, 2024",
+    slug: "devops-best-practices-startups",
+  },
+  // Add more posts...
+];
 const Blogs = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  
-  const categories = [
-    "All",
-    "Web Development",
-    "Next.js", 
-    "AI & Machine Learning",
-    "UI/UX Design",
-    "Mobile Development",
-    "DevOps",
-    "Career Tips"
-  ];
 
-  const blogPosts = [
-    {
-      id: "1",
-      title: "The Future of Web Development in 2024",
-      excerpt:
-        "Explore the latest trends and technologies shaping the future of web development, from AI integration to new frameworks.",
-      category: "Web Development",
-      image: IMAGES.blogsHero,
-      readTime: "5 min read",
-      date: "Dec 15, 2024",
-      slug: "future-of-web-development-2024",
-    },
-    {
-      id: "2",
-      title: "Mastering Next.js 14 Server Components",
-      excerpt:
-        "Deep dive into the new features of Next.js 14 and how server components can improve your application performance.",
-      category: "Next.js",
-      image: IMAGES.blogsHero,
-      readTime: "8 min read",
-      date: "Dec 12, 2024",
-      slug: "mastering-nextjs-14-server-components",
-    },
-    {
-      id: "3",
-      title: "AI-Powered Applications in 2024",
-      excerpt:
-        "Discover how AI is revolutionizing modern applications and creating better user experiences.",
-      category: "AI & Machine Learning",
-      image: IMAGES.blogsHero,
-      readTime: "6 min read",
-      date: "Dec 10, 2024",
-      slug: "ai-powered-applications-2024",
-    },
-    {
-      id: "4",
-      title: "Modern UI/UX Design Principles",
-      excerpt:
-        "Learn the essential design principles that create engaging and user-friendly interfaces.",
-      category: "UI/UX Design",
-      image: IMAGES.blogsHero,
-      readTime: "7 min read",
-      date: "Dec 8, 2024",
-      slug: "modern-ui-ux-design-principles",
-    },
-    {
-      id: "5",
-      title: "React Native Performance Optimization",
-      excerpt:
-        "Advanced techniques to optimize your React Native applications for better performance.",
-      category: "Mobile Development",
-      image: IMAGES.blogsHero,
-      date: "Dec 5, 2024",
-      slug: "react-native-performance-optimization",
-    },
-    {
-      id: "6",
-      title: "DevOps Best Practices for Startups",
-      excerpt:
-        "Essential DevOps practices that can help startups scale efficiently and reliably.",
-      category: "DevOps",
-      image: IMAGES.blogsHero,
-      date: "Dec 3, 2024",
-      slug: "devops-best-practices-startups",
-    },
-    // Add more posts...
-  ];
-
-  const filteredPosts = activeCategory === "All" 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === activeCategory);
+  const filteredPosts =
+    activeCategory === "All"
+      ? blogPosts
+      : blogPosts.filter((post) => post.category === activeCategory);
 
   return (
     <div>
@@ -108,7 +99,7 @@ const Blogs = () => {
           <h2 className="text-2xl font-bold text-white text-center mb-8">
             Browse by Category
           </h2>
-          
+
           {/* Desktop Category Filters - Horizontal Scroll on Mobile */}
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
@@ -159,10 +150,13 @@ const Blogs = () => {
         ) : (
           <div className="text-center py-16">
             <div className="text-[#07f4fa] text-6xl mb-4">📝</div>
-            <h3 className="text-2xl font-bold text-white mb-3">No posts found</h3>
+            <h3 className="text-2xl font-bold text-white mb-3">
+              No posts found
+            </h3>
             <p className="text-gray-400 max-w-md mx-auto">
-              We couldn't find any blog posts in the {activeCategory} category. 
-              Try selecting a different category or check back later for new content.
+              We couldn't find any blog posts in the {activeCategory} category.
+              Try selecting a different category or check back later for new
+              content.
             </p>
             <button
               onClick={() => setActiveCategory("All")}
