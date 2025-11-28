@@ -6,82 +6,17 @@ import { IMAGES } from "../../../../public/assets";
 import BlogCard from "@/components/BlogsPage/BlogCard/BlogCard";
 import Container from "@/components/Shared/Container/Container";
 import { categories } from "@/data/blogcategory";
+import { useGetAllBlogsQuery } from "@/redux/features/Blog/blogApi";
+import { TBlog } from "@/app/(adminLayout)/dashboard/blogs/page";
 
-
-export const blogPosts = [
-  {
-    id: "1",
-    title: "The Future of Web Development in 2024",
-    excerpt:
-      "Explore the latest trends and technologies shaping the future of web development, from AI integration to new frameworks.",
-    category: "Web Development",
-    image: IMAGES.blogsHero,
-    readTime: "5 min read",
-    date: "Dec 15, 2024",
-    slug: "future-of-web-development-2024",
-  },
-  {
-    id: "2",
-    title: "Mastering Next.js 14 Server Components",
-    excerpt:
-      "Deep dive into the new features of Next.js 14 and how server components can improve your application performance.",
-    category: "Next.js",
-    image: IMAGES.blogsHero,
-    readTime: "8 min read",
-    date: "Dec 12, 2024",
-    slug: "mastering-nextjs-14-server-components",
-  },
-  {
-    id: "3",
-    title: "AI-Powered Applications in 2024",
-    excerpt:
-      "Discover how AI is revolutionizing modern applications and creating better user experiences.",
-    category: "AI & Machine Learning",
-    image: IMAGES.blogsHero,
-    readTime: "6 min read",
-    date: "Dec 10, 2024",
-    slug: "ai-powered-applications-2024",
-  },
-  {
-    id: "4",
-    title: "Modern UI/UX Design Principles",
-    excerpt:
-      "Learn the essential design principles that create engaging and user-friendly interfaces.",
-    category: "UI/UX Design",
-    image: IMAGES.blogsHero,
-    readTime: "7 min read",
-    date: "Dec 8, 2024",
-    slug: "modern-ui-ux-design-principles",
-  },
-  {
-    id: "5",
-    title: "React Native Performance Optimization",
-    excerpt:
-      "Advanced techniques to optimize your React Native applications for better performance.",
-    category: "Mobile Development",
-    image: IMAGES.blogsHero,
-    date: "Dec 5, 2024",
-    slug: "react-native-performance-optimization",
-  },
-  {
-    id: "6",
-    title: "DevOps Best Practices for Startups",
-    excerpt:
-      "Essential DevOps practices that can help startups scale efficiently and reliably.",
-    category: "DevOps",
-    image: IMAGES.blogsHero,
-    date: "Dec 3, 2024",
-    slug: "devops-best-practices-startups",
-  },
-  // Add more posts...
-];
 const Blogs = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("all");
+  const { data: blogs } = useGetAllBlogsQuery({ category: activeCategory });
 
   const filteredPosts =
-    activeCategory === "All"
-      ? blogPosts
-      : blogPosts.filter((post) => post.category === activeCategory);
+    activeCategory === "all"
+      ? blogs?.data
+      : blogs?.data?.filter((post: TBlog) => post?.category === activeCategory);
 
   return (
     <div>
@@ -106,7 +41,7 @@ const Blogs = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 rounded-full border transition-all duration-300 font-medium text-sm md:text-base whitespace-nowrap ${
+                className={`px-6 py-3 rounded-full border transition-all duration-300 font-medium text-sm md:text-base whitespace-nowrap cursor-pointer ${
                   activeCategory === category
                     ? "bg-[#07f4fa] text-gray-900 border-[#07f4fa] shadow-lg shadow-[#07f4fa]/25 transform scale-105"
                     : "bg-gray-800/50 text-gray-300 border-gray-600 hover:bg-gray-700/50 hover:border-[#07f4fa]/30 hover:text-white"
@@ -135,16 +70,16 @@ const Blogs = () => {
           {/* Active Category Indicator */}
           <div className="text-center mt-6">
             <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#07f4fa]/10 border border-[#07f4fa]/20 text-[#07f4fa] text-sm">
-              Showing: {activeCategory} ({filteredPosts.length} posts)
+              Showing: {activeCategory} ({filteredPosts?.length || 0} posts)
             </span>
           </div>
         </div>
 
         {/* Blog Posts Grid */}
-        {filteredPosts.length > 0 ? (
+        {filteredPosts?.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
-              <BlogCard key={post.id} {...post} />
+            {filteredPosts?.map((post: TBlog) => (
+              <BlogCard key={post._id} {...post} />
             ))}
           </div>
         ) : (
@@ -159,8 +94,8 @@ const Blogs = () => {
               content.
             </p>
             <button
-              onClick={() => setActiveCategory("All")}
-              className="mt-6 px-6 py-3 bg-[#07f4fa] text-gray-900 rounded-full font-semibold hover:bg-primary-15 transition-colors duration-300"
+              onClick={() => setActiveCategory("all")}
+              className="mt-6 px-6 py-3 bg-[#07f4fa] text-gray-900 rounded-full font-semibold hover:bg-primary-15 transition-colors duration-300 cursor-pointer"
             >
               View All Posts
             </button>
