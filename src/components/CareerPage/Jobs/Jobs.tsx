@@ -59,7 +59,7 @@ const Jobs = () => {
   return (
     <Container>
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-[30px] mt-20">
-        <div className="bg-neutral-30 border border-gray-700 rounded-[10px] p-5 flex flex-col gap-6 w-full lg:w-[30%]">
+        <div className="bg-neutral-30 border border-gray-700 rounded-[10px] p-5 flex flex-col gap-6 w-full lg:w-[30%] h-fit">
           <div className="space-y-3">
             {/* Search bar */}
             <div className="flex flex-col gap-2">

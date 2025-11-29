@@ -1,6 +1,7 @@
 import OurServices from "@/components/HomePage/Services/Services";
 import HeroSection from "@/components/Reusable/HeroSection/HeroSection";
 import { IMAGES } from "../../../../public/assets";
+import VideoTestimonial from "@/components/VideoTestimonial/VideoTestimonial";
 
 const Services = () => {
   return (
@@ -16,6 +17,7 @@ const Services = () => {
         image={IMAGES.serviceHero}
         breadcrumbs={[{ label: "Services" }]}
       />
+      <VideoTestimonial/>
       <OurServices />
     </div>
   );

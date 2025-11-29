@@ -10,11 +10,7 @@ const AboutUs = () => {
     <div>
       <HeroSection
         heading="Driven by Data. Designed for Growth"
-        description="Attribution Booster is a results-driven digital agency that blends
-              advanced analytics, creative execution, and full-stack technology
-              to help businesses scale faster and smarter. As a certified Google
-              Partner, we don’t just deliver services, we engineer growth
-              strategies that convert."
+        description="Attribution Booster is a results-driven digital agency that blends advanced analytics, creative execution, and full-stack technology to help businesses scale faster and smarter. As a certified Google Partner, we don't just deliver services, we engineer growth strategies that convert."
         btnText="Explore Our Services"
         image={IMAGES.aboutUsHero}
         breadcrumbs={[{ label: "About Us" }]}
@@ -24,7 +20,7 @@ const AboutUs = () => {
       <CTA
         heading={"Let’s Build Something That Grows"}
         description={
-          "Have questions or need assistance? We’re here to help! Reach out to us for inquiries, collaborations, or service requests, and our team will respond promptly. Let’s start a conversation and explore how we can work together."
+          "Have questions or need assistance? We're here to help! Reach out to us for inquiries, collaborations, or service requests, and our team will respond promptly. Let's start a conversation and explore how we can work together."
         }
         image={IMAGES.ctaAboutUs}
         buttonText={"Get in Touch"}

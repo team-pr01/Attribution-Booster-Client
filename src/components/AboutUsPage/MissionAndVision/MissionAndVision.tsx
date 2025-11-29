@@ -8,13 +8,13 @@ const MissionAndVision = () => {
       image: IMAGES.mission,
       title: "Our Mission",
       description:
-        "To empower businesses with data-driven strategies, custom-built technology, and performance-focused marketing solutions accelerate growth, maximize ROI, and deliver real, measurable impact.",
+        "To empower businesses with tech-driven strategies, cutting-edge technology and performance-focused solutions. We help companies transform their operations, optimize processes, and achieve sustainable growth in today's digital landscape.",
     },
     {
       image: IMAGES.vision,
       title: "Our Vision",
       description:
-        "To become a global leader in digital transformation, known for our innovation, reliability, and results, helping brands scale confidently through smart technology, seamless user experiences, and strategic execution.",
+        "To become a global leader in digital transformation, known for our innovation, integrity, and impact. We aim to create value for our clients through technology solutions that drive meaningful change and sustainable success.",
     },
   ];
   return (

@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Container from "@/components/Shared/Container/Container";
 import Image from "next/image";
@@ -24,25 +23,25 @@ const HowWeWork = () => {
       icon: ICONS.understandAndAlign,
       title: "Understand & Align",
       description:
-        "We begin by listening, diving deep into your business goals, current challenges, and customer journey. We define objectives and align on the right services and success metrics.",
+        "We begin by deeply understanding your business goals, challenges, and requirements. Our team works closely with you to align our strategy with your vision.",
     },
     {
       icon: ICONS.strategizeAndPlan,
       title: "Strategize & Plan",
       description:
-        "Our experts craft a tailored strategy and execution plan. From tech stacks to campaign flows, we define timelines, assign specialists, and set your project up for smooth execution.",
+        "Based on our analysis, we develop a comprehensive strategy and detailed project plan that outlines timelines, milestones, and deliverables.",
     },
     {
       icon: ICONS.buildAndOptimize,
       title: "Build, Launch & Optimize",
       description:
-        "We execute with agility, designing, developing, and deploying your solution. Real-time testing, quality assurance, and iterative improvements are built into every phase.",
+        "We execute the plan with precision, building robust solutions, launching them successfully, and continuously optimizing for peak performance.",
     },
     {
       icon: ICONS.deliverAndSupport,
       title: "Deliver & Support",
       description:
-        "We launch with confidence and back you with ongoing support. Whether it’s performance reporting, technical handover, or campaign optimization, your success is our priority",
+        "We ensure smooth delivery and provide ongoing support, maintenance, and updates to keep your solutions running at their best.",
     },
   ];
   return (
@@ -76,9 +75,7 @@ const HowWeWork = () => {
               </h1>
 
               <p className="text-neutral-300 text-center lg:text-left text-sm lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[749px] mt-3">
-                Every project at Attribution Booster is executed with precision,
-                transparency, and a clear process — whether it's a full-stack
-                web build
+                Every project we undertake follows a structured approach, from initial consultation to final delivery and beyond.
               </p>
             </div>
 
