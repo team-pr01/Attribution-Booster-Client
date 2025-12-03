@@ -5,15 +5,18 @@ import { motion } from "framer-motion";
 
 const ServiceCard = ({
   name,
+  slug,
   description,
   icon,
 }: {
   name: string;
+  slug: string;
   description: string;
   icon: StaticImageData;
 }) => {
   return (
-    <motion.div
+    <motion.a
+      href={`/services/${slug}`}
       className="bg-neutral-10 group backdrop-blur-[15px] rounded-[10px] px-4 py-[30px] flex flex-col items-center justify-between w-full max-w-[360px] relative border border-transparent cursor-pointer shadow-[inset_0_0_20px_rgba(7,244,250,0.5)] h-[300px]"
       whileHover="hover"
       whileTap="hover"
@@ -100,7 +103,7 @@ const ServiceCard = ({
           </p>
         </motion.div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 };
 

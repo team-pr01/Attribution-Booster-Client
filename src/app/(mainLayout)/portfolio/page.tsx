@@ -2,6 +2,7 @@ import HeroSection from "@/components/Reusable/HeroSection/HeroSection";
 import { IMAGES } from "../../../../public/assets";
 import RecentProjects from "@/components/HomePage/RecentProjects/RecentProjects";
 import CTA from "@/components/Reusable/CTA/CTA";
+import VideoTestimonial from "@/components/VideoTestimonial/VideoTestimonial";
 
 const Portfolio = () => {
   return (
@@ -14,6 +15,7 @@ const Portfolio = () => {
         breadcrumbs={[{ label: "Portfolio" }]}
       />
       <RecentProjects />
+      <VideoTestimonial/>
       <CTA
         heading={"Ready to create your success story?"}
         description={

@@ -106,86 +106,92 @@ const Services = () => {
   };
 
   const servicesData = [
-    {
-      name: "Full Stack Web Development",
-      description:
-        "End-to-end full-stack solutions with scalable frontend and backend expertise.",
-      icon: IMAGES.webDevelopment,
-    },
-    {
-      name: "AI Automation & AI Agent Development",
-      description:
-        "Developing AI automation and smart agents to improve efficiency and streamline workflows.",
-      icon: IMAGES.aiAutomation,
-    },
-    {
-      name: "CMS Web Development",
-      description:
-        "Our expert team manages all aspects of your email campaigns, from creating engaging content to analyzing campaign performance.",
-      icon: IMAGES.cmsDevelopment,
-    },
-    {
-      name: "App Development",
-      description:
-        "Innovative Android and iOS app solutions designed to drive business growth and enhance user engagement.",
-      icon: IMAGES.appDevelopment,
-    },
-    {
-      name: "UI/UX Design",
-      description:
-        "User-focused UI/UX design delivering intuitive, engaging, and impactful experiences.",
-      icon: IMAGES.uiUxDesign,
-    },
-    {
-      name: "Analytics and Conversion Tracking",
-      description:
-        "Accurate analytics with advanced tracking to maximize conversions and revenue.",
-      icon: IMAGES.analyticsConversionTracking,
-    },
-    {
-      name: "Google Ads",
-      description:
-        "Targeted Google Ads campaigns built to drive traffic, leads, and measurable ROI.",
-      icon: IMAGES.googleAds,
-    },
-    {
-      name: "SEO",
-      description:
-        "Comprehensive SEO strategies crafted to improve search rankings, increase online visibility, and drive organic traffic effectively.",
-      icon: IMAGES.seo,
-    },
-    {
-      name: "Graphics Design",
-      description:
-        "Creative graphic designs that strengthen branding, marketing, and visual identity.",
-      icon: IMAGES.graphicsDesign,
-    },
-    {
-      name: "Video Editing",
-      description:
-        "High-quality video editing tailored for marketing, branding, and storytelling.",
-      icon: IMAGES.videoEditing,
-    },
-    {
-      name: "Cyber Security",
-      description:
-        "Advanced cybersecurity services to protect digital assets from evolving threats.",
-      icon: IMAGES.cyberSecurity,
-    },
-    {
-      name: "Social Media Marketing",
-      description:
-        "Strategic social media campaigns that grow visibility, engagement, and authority.",
-      icon: IMAGES.socialMediaMarketing,
-    },
+  {
+    name: "Full Stack Web Development",
+    slug: "full-stack-web-development",
+    description:
+      "End-to-end full-stack solutions with scalable frontend and backend expertise.",
+    icon: IMAGES.webDevelopment,
+  },
+  {
+    name: "AI Automation & AI Agent Development",
+    slug: "ai-automation-and-ai-agent-development",
+    description:
+      "Developing AI automation and smart agents to improve efficiency and streamline workflows.",
+    icon: IMAGES.aiAutomation,
+  },
+  {
+    name: "CMS Web Development",
+    slug: "cms-web-development",
+    description:
+      "Custom CMS-based websites that are scalable, secure, and easy to manage.",
+    icon: IMAGES.cmsDevelopment,
+  },
+  {
+    name: "App Development",
+    slug: "app-development",
+    description:
+      "Innovative Android and iOS app solutions designed to drive business growth and enhance user engagement.",
+    icon: IMAGES.appDevelopment,
+  },
+  {
+    name: "UI/UX Design",
+    slug: "ui-ux-design",
+    description:
+      "User-focused UI/UX design delivering intuitive, engaging, and impactful experiences.",
+    icon: IMAGES.uiUxDesign,
+  },
+  {
+    name: "Analytics and Conversion Tracking",
+    slug: "analytics-and-conversion-tracking",
+    description:
+      "Accurate analytics with advanced tracking to maximize conversions and revenue.",
+    icon: IMAGES.analyticsConversionTracking,
+  },
+  {
+    name: "Google Ads",
+    slug: "google-ads",
+    description:
+      "Targeted Google Ads campaigns built to drive traffic, leads, and measurable ROI.",
+    icon: IMAGES.googleAds,
+  },
+  {
+    name: "SEO",
+    slug: "seo",
+    description:
+      "Comprehensive SEO strategies crafted to improve search rankings and drive organic traffic effectively.",
+    icon: IMAGES.seo,
+  },
+  {
+    name: "Graphics Design",
+    slug: "graphics-design",
+    description:
+      "Creative graphic designs that strengthen branding, marketing, and visual identity.",
+    icon: IMAGES.graphicsDesign,
+  },
+  {
+    name: "Video Editing",
+    slug: "video-editing",
+    description:
+      "High-quality video editing tailored for marketing, branding, and storytelling.",
+    icon: IMAGES.videoEditing,
+  },
+  {
+    name: "Cyber Security",
+    slug: "cyber-security",
+    description:
+      "Advanced cybersecurity services to protect digital assets from evolving threats.",
+    icon: IMAGES.cyberSecurity,
+  },
+  {
+    name: "Social Media Marketing",
+    slug: "social-media-marketing",
+    description:
+      "Strategic social media campaigns that grow visibility, engagement, and authority.",
+    icon: IMAGES.socialMediaMarketing,
+  },
+];
 
-    // {
-    //   name: "PPC Advertising",
-    //   description:
-    //     "Our expert team manages all aspects of your email campaigns, from creating engaging content to analyzing campaign performance.",
-    //   icon: IMAGES.ppcAdvertising,
-    // },
-  ];
 
   return (
     <motion.div
