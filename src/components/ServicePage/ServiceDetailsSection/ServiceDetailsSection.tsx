@@ -4,6 +4,7 @@
 import Container from "@/components/Shared/Container/Container";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function ServiceDetailsSection({ service, parentSlug }: any) {
   if (!service) return null;
@@ -98,18 +99,45 @@ export default function ServiceDetailsSection({ service, parentSlug }: any) {
 
         {/* If service has children, display them */}
         {service.children && service.children.length > 0 && (
-          <div className="py-20 border-t border-white/10 mt-20">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center font-MartianBThai">
-              Our {service.title} Services Include:
+          <div className="pt-20 border-t border-white/10 mt-20">
+            <h3 className="font-MartianBThai text-white text-2xl lg:text-3xl font-semibold mb-8 text-center">
+              Our {service.title} Services Includes:
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.children.map((child: any) => (
-                <Link
+                <motion.a
                   key={child.id}
                   href={`/services/${parentSlug}/${child.slug}`}
-                  className="h-full"
+                  className="h-full bg-neutral-10 group backdrop-blur-[15px] rounded-[10px] px-4 py-[30px] relative border border-transparent cursor-pointer shadow-[inset_0_0_20px_rgba(7,244,250,0.5)] h-[300px] cursor-pointer hover:transform hover:scale-105 transition duration-300"
+                  whileHover="hover"
+                  whileTap="hover"
+                  initial="initial"
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeOut",
+                  }}
+                  onTouchStart={(e) => {
+                    const shine =
+                      e.currentTarget.querySelector(".shine-border");
+                    shine?.classList.add("shine-active");
+                    setTimeout(
+                      () => shine?.classList.remove("shine-active"),
+                      300
+                    );
+                  }}
+                  onClick={(e) => {
+                    const shine =
+                      e.currentTarget.querySelector(".shine-border");
+                    shine?.classList.add("shine-active");
+                    setTimeout(
+                      () => shine?.classList.remove("shine-active"),
+                      300
+                    );
+                  }}
                 >
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-white hover:border-cyan-400/50 transition-all duration-300 cursor-pointer hover:transform hover:scale-105 flex flex-col h-full">
+                  {/* Shine Border Effect */}
+                  <div className="shine-border absolute inset-0 rounded-xl pointer-events-none opacity-0 group-hover:opacity-100"></div>
+                  <div className="flex flex-col h-full">
                     <div className="flex flex-col items-center">
                       <div className="w-12 h-12 mb-4">
                         <img
@@ -118,7 +146,7 @@ export default function ServiceDetailsSection({ service, parentSlug }: any) {
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <h4 className="text-lg font-semibold mb-2 text-center">
+                      <h4 className="text-lg font-semibold mb-2 text-center font-Poppins text-white">
                         {child.title}
                       </h4>
                     </div>
@@ -128,7 +156,7 @@ export default function ServiceDetailsSection({ service, parentSlug }: any) {
                         : child.details?.title || ""}
                     </p>
                   </div>
-                </Link>
+                </motion.a>
               ))}
             </div>
           </div>

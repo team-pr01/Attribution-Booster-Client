@@ -14,6 +14,7 @@ const ServiceCard = ({
   description: string;
   icon: StaticImageData;
 }) => {
+  
   return (
     <motion.a
       href={`/services/${slug}`}

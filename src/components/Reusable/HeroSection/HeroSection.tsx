@@ -1,11 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Image from "next/image";
 import { ICONS, IMAGES } from "../../../../public/assets";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import {  useRef } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import Marquee from "react-fast-marquee";
 import { useScrollNavigation } from "@/hooks/useScrollNavigation";
@@ -272,11 +271,12 @@ const HeroSection = ({
                 absolute -top-14 lg:-top-20 -left-16 lg:-left-20
                 "
             />
-            <div className="max-w-[691px] md:h-[340px] lg:h-full xl:h-[280px] 2xl:h-[340px] object-cover rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
-              <img
+            <div className="relative max-w-[691px] md:h-[340px] lg:h-full xl:h-[280px] 2xl:h-[340px] rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
+              <Image
                 src={image}
                 alt=""
-                className="w-full h-full rounded-[10px]"
+                fill
+                className="object-cover rounded-[10px]"
               />
             </div>
           </div>
