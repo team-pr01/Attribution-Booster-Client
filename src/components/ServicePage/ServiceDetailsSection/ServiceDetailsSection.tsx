@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import Image from "next/image";
+import Container from "@/components/Shared/Container/Container";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 
 export default function ServiceDetailsSection({ service, parentSlug }: any) {
-  // If no service provided, return null
   if (!service) return null;
 
   // Get features from service data
@@ -23,13 +22,13 @@ export default function ServiceDetailsSection({ service, parentSlug }: any) {
 
   const featureChunks = chunkFeatures(features, 5);
 
-  // Use sectionImages from service data, fallback to default images
+  // Section Images
   const images =
     service.sectionImages && service.sectionImages.length > 0
       ? service.sectionImages
       : [];
 
-  // Get subtitle - use the subtitle from service prop if available
+  // Get subtitle
   const getSubtitle = () => {
     // First check if service has a subtitle property
     if (service.subtitle) {
@@ -52,32 +51,34 @@ export default function ServiceDetailsSection({ service, parentSlug }: any) {
   };
 
   return (
-    <>
-      <div className="container mx-auto py-20">
+    <Container>
+      <div className="pt-20">
         {featureChunks.map((chunk, index) => {
           const isEven = index % 2 === 0;
-          const imageIndex = index % images.length; // Use modulo to cycle through available images
+          const imageIndex = index % images.length;
 
           return (
             <div
               key={index}
-              className={`grid lg:grid-cols-2 grid-cols-1 gap-6 items-center ${
-                index > 0 ? "py-20" : ""
+              className={`grid lg:grid-cols-2 grid-cols-1 gap-6 lg:gap-10 xl:gap-12 2xl:gap-16 items-center ${
+                index > 0 ? "py-12 lg:py-20" : ""
               }`}
             >
               {/* Content Section */}
               <div className={`container ${!isEven ? "lg:order-2" : ""}`}>
                 {/* Show subtitle only for the first section */}
                 {index === 0 && (
-                  <h3 className="text-3xl font-semibold text-white mb-4">
+                  <h3 className="text-3xl font-semibold text-white mb-6 font-MartianBThai">
                     {getSubtitle()}
                   </h3>
                 )}
                 <ul className="space-y-3 text-slate-200">
                   {chunk.map((feature: any, index: number) => (
-                    <li key={index} className="flex items-start">
-                      <FaCheck className="w-5 h-5 mr-3 mt-0.5 text-white shrink-0" />
-                      <span className="text-xl text-white">{feature}</span>
+                    <li key={index} className="flex items-start font-Poppins">
+                      <FaCheck className="w-5 h-5 mr-3 mt-0.5 text-primary-5 shrink-0" />
+                      <span className="text-base lg:test-lg text-gray-300">
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -88,7 +89,7 @@ export default function ServiceDetailsSection({ service, parentSlug }: any) {
                 <img
                   src={images[imageIndex]}
                   alt="test"
-                  style={{ width: "300px" }}
+                  className="rounded-lg"
                 />
               </div>
             </div>
@@ -98,7 +99,7 @@ export default function ServiceDetailsSection({ service, parentSlug }: any) {
         {/* If service has children, display them */}
         {service.children && service.children.length > 0 && (
           <div className="py-20 border-t border-white/10 mt-20">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">
+            <h3 className="text-2xl font-bold text-white mb-8 text-center font-MartianBThai">
               Our {service.title} Services Include:
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -133,6 +134,6 @@ export default function ServiceDetailsSection({ service, parentSlug }: any) {
           </div>
         )}
       </div>
-    </>
+    </Container>
   );
 }
