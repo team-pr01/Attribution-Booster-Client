@@ -1,5 +1,4 @@
-"use client";
-import { useParams } from "next/navigation";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import CTA from "@/components/Reusable/CTA/CTA";
 import HeroSection from "@/components/Reusable/HeroSection/HeroSection";
 import ServiceDetailsSection from "@/components/ServicePage/ServiceDetailsSection/ServiceDetailsSection";
@@ -7,16 +6,25 @@ import servicesData from "../../../../../data/services.data.json";
 import HowWeWork from "@/components/AboutUsPage/HowWeWork/HowWeWork";
 import RecentProjects from "@/components/HomePage/RecentProjects/RecentProjects";
 import { IMAGES } from "../../../../../../public/assets";
+import { use } from "react";
 
-const ServiceChild = () => {
-  const params = useParams();
-  const childId = params.id;
+export const dynamicParams = false;
+export async function generateStaticParams() {
+  return servicesData.services.map((service) => ({
+    id: service.id,
+  }));
+}
+
+const ServiceChild = ({ params }: { params: Promise<{ id: string }> }) => {
+  const resolvedParams = use(params);
+  const childId = resolvedParams.id;
 
   // Find the child service by ID from all services
   let childService = null;
   let parentService = null;
+  console.log(parentService);
 
-  for (const service of servicesData.services) {
+  for (const service of servicesData?.services) {
     if (service.children && service.children.length > 0) {
       const foundChild = service.children.find((child) => child.id === childId);
       if (foundChild) {
@@ -37,13 +45,15 @@ const ServiceChild = () => {
     id: childService.id,
     title: childService.title,
     subtitle:
-      childService.subtitle ||
+      (childService as any).subtitle ||
       `What You Will Get with Our ${childService.title} Services`,
     details:
       typeof childService.details === "string"
         ? childService.details
-        : childService.details?.title ||
-          `Professional ${childService.title} services tailored to your needs.`,
+        : "title" in (childService.details ?? {})
+          ? (childService.details as { title: string }).title
+          : (childService.details as { description: string }).description ||
+            `Professional ${childService.title} services tailored to your needs.`,
     features: childService.details?.points || [],
     sectionImages: childService.sectionImages || [],
     children: [],

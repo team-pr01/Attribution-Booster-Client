@@ -1,5 +1,4 @@
-"use client";
-import { useParams } from "next/navigation";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import servicesData from "../../../../../data/services.data.json";
 import HeroSection from "@/components/Reusable/HeroSection/HeroSection";
 import ServiceDetailsSection from "@/components/ServicePage/ServiceDetailsSection/ServiceDetailsSection";
@@ -7,45 +6,87 @@ import RecentProjects from "@/components/HomePage/RecentProjects/RecentProjects"
 import CTA from "@/components/Reusable/CTA/CTA";
 import { IMAGES } from "../../../../../../public/assets";
 import HowWeWork from "@/components/AboutUsPage/HowWeWork/HowWeWork";
+import { notFound } from "next/navigation";
 
-const ServiceChild = () => {
-  const params = useParams();
-  const parentSlug = params.slug;
-  const childSlug = params.child;
+export const dynamicParams = false;
 
-  // Find parent by slug
+export async function generateStaticParams() {
+  const params = [];
+  
+  for (const service of servicesData.services) {
+    if (service.children && Array.isArray(service.children)) {
+      for (const child of service.children) {
+        params.push({
+          slug: service.slug,
+          child: child.slug,
+        });
+      }
+    }
+  }
+  
+  return params;
+}
+
+// In Next.js 13+ App Router, params is a Promise
+type PageProps = {
+  params: Promise<{
+    slug: string;
+    child: string;
+  }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+const ServiceChild = async ({ params }: PageProps) => {
+  // IMPORTANT: Await the params Promise
+  const resolvedParams = await params;
+  const { slug: parentSlug, child: childSlug } = resolvedParams;
+  
+  // Debug logging
+  console.log("Parent Slug:", parentSlug);
+  console.log("Child Slug:", childSlug);
+  
+  // If parameters are not found, show 404
+  if (!parentSlug || !childSlug) {
+    console.error("Failed to extract slug parameters");
+    notFound();
+  }
+
+  // Find the parent service
   const parentService = servicesData.services.find(
     (service) => service.slug === parentSlug
   );
-  // Find child by slug
-  const childService =
-    parentService && parentService.children
-      ? parentService.children.find((child) => child.slug === childSlug)
-      : null;
 
-  // If child service not found, show error
-  if (!childService) {
-    return <div>Service not found</div>;
+  if (!parentService) {
+    console.error(`Parent service with slug "${parentSlug}" not found`);
+    notFound();
   }
 
-  // Transform child service data to match the expected format for ServiceeDetails
+  // Find the child service
+  const childService = parentService.children?.find(
+    (child) => child.slug === childSlug
+  );
+
+  if (!childService) {
+    console.error(`Child service with slug "${childSlug}" not found in parent "${parentSlug}"`);
+    notFound();
+  }
+
+  // Transform the service data for the component
   const transformedService = {
     id: childService.id,
     title: childService.title,
     subtitle:
-      childService.subtitle ||
+      (childService as any).subtitle ||
       `What You Will Get with Our ${childService.title} Services`,
     details:
       typeof childService.details === "string"
         ? childService.details
-        : childService.details?.title ||
+        : (childService.details as {title: string}).title ||
           `Professional ${childService.title} services tailored to your needs.`,
     features: childService.details?.points || [],
     sectionImages: childService.sectionImages || [],
     children: [],
   };
-
-  console.log("Transformed Service:", childService?.heroImage);
 
   return (
     <div>
@@ -56,16 +97,16 @@ const ServiceChild = () => {
         image={childService.heroImage}
         breadcrumbs={[{ label: "Our Expert Team" }]}
       />
+
       <ServiceDetailsSection service={transformedService} parentSlug={parentSlug} />
       <HowWeWork />
       <RecentProjects />
+
       <CTA
-        heading={"Need a tailored solution? Let's Talk"}
-        description={
-          "Every business is unique, and so are its challenges. We craft customized design solutions that align perfectly with your goals. Let’s discuss your vision and turn it into a seamless, user-friendly experience."
-        }
+        heading="Need a tailored solution? Let's Talk"
+        description="Every business is unique, and so are its challenges. We craft customized design solutions that align perfectly with your goals."
         image={IMAGES.ctaTeam}
-        buttonText={"Lets Talk"}
+        buttonText="Let's Talk"
       />
     </div>
   );
