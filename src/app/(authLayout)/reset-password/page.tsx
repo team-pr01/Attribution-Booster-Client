@@ -8,7 +8,7 @@ import { FiEye, FiEyeOff, FiLock } from "react-icons/fi";
 import { useForm } from "react-hook-form";
 import { useResetPasswordMutation } from "@/redux/features/Auth/authApi";
 import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 type TFormData = {
   newPassword: string;
@@ -17,7 +17,11 @@ type TFormData = {
 
 const ResetPassword = () => {
   const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
+  const searchParams = useSearchParams();
+
+  const email = searchParams.get('email');
+  const token = searchParams.get('token');
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const {
     register,
@@ -42,7 +46,8 @@ const ResetPassword = () => {
       }
 
       const payload = {
-        email: forgotPasswordEmail,
+        email,
+        token,
         newPassword: data.newPassword,
       };
 
@@ -91,12 +96,12 @@ const ResetPassword = () => {
             className="space-y-6"
           >
             {/* New Password */}
-            <div className="space-y-2">
+            <div className="space-y-3">
               <label className="text-sm font-medium text-gray-300">
                 New Password
               </label>
 
-              <div className="relative">
+              <div className="relative mt-1.5">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FiLock className="h-5 w-5 text-gray-400" />
                 </div>
@@ -140,7 +145,7 @@ const ResetPassword = () => {
                 Confirm New Password
               </label>
 
-              <div className="relative">
+              <div className="relative mt-1.5">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FiLock className="h-5 w-5 text-gray-400" />
                 </div>
@@ -168,7 +173,7 @@ const ResetPassword = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full inline-flex items-center justify-center rounded-xl bg-linear-to-r from-[#07f4fa] to-primary-20 py-3 font-semibold text-gray-900 transition hover:shadow-lg hover:shadow-[#07f4fa]/30 disabled:opacity-60"
+              className="w-full inline-flex items-center justify-center rounded-xl bg-linear-to-r from-[#07f4fa] to-primary-20 py-3 font-semibold text-gray-900 transition hover:shadow-lg hover:shadow-[#07f4fa]/30 disabled:opacity-60 cursor-pointer"
             >
               {isLoading ? "Resetting..." : "Reset Password"}
             </button>

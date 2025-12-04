@@ -1,3 +1,4 @@
+"use client";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import Link from "next/link";
@@ -59,7 +60,9 @@ const ForgotPassword = () => {
                 className="w-40 md:w-[200px]"
               />
             </Link>
-            <h1 className="text-2xl font-bold text-white my-2">Admin Login</h1>
+            <h1 className="text-2xl font-bold text-white my-2">
+              Forgot Password?
+            </h1>
           </div>
 
           {/* Login Form */}
