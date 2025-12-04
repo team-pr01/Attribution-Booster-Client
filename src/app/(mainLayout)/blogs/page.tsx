@@ -10,11 +10,11 @@ import { useGetAllBlogsQuery } from "@/redux/features/Blog/blogApi";
 import { TBlog } from "@/app/(adminLayout)/dashboard/blogs/page";
 
 const Blogs = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("All");
   const { data: blogs } = useGetAllBlogsQuery({ category: activeCategory });
 
   const filteredPosts =
-    activeCategory === "all"
+    activeCategory === "All"
       ? blogs?.data
       : blogs?.data?.filter((post: TBlog) => post?.category === activeCategory);
 
@@ -36,7 +36,7 @@ const Blogs = () => {
           </h2>
 
           {/* Desktop Category Filters - Horizontal Scroll on Mobile */}
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="hidden lg:flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
               <button
                 key={category}
@@ -60,7 +60,7 @@ const Blogs = () => {
               className="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-gray-600 text-white focus:border-[#07f4fa] focus:ring-2 focus:ring-[#07f4fa]/20 transition-all duration-300 appearance-none cursor-pointer"
             >
               {categories.map((category) => (
-                <option key={category} value={category} className="bg-gray-800">
+                <option key={category} value={category} className="bg-gray-800 capitalize">
                   {category}
                 </option>
               ))}

@@ -18,13 +18,13 @@ export type TBlog = {
 
 
 const AllBlogs = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("All");
   const { data: blogs, isLoading } = useGetAllBlogsQuery({
     category: activeCategory,
   });
 
   const filteredPosts =
-    activeCategory === "all"
+    activeCategory === "All"
       ? blogs?.data
       : blogs?.data?.filter((post: TBlog) => post.category === activeCategory);
   return (

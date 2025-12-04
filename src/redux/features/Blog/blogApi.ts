@@ -12,8 +12,12 @@ const blogApi = baseApi.injectEndpoints({
       }) => {
         const params = new URLSearchParams();
 
-        if (keyword) params.append("keyword", keyword);
-        if (category) params.append("category", category);
+        if (keyword && keyword.trim() !== "") {
+          params.append("keyword", keyword);
+        }
+        if (category && category !== "All") {
+          params.append("category", category);
+        }
 
         return {
           url: `/blog${params.toString() ? `?${params.toString()}` : ""}`,
