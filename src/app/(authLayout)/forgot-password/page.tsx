@@ -1,72 +1,41 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
-
-import { useForm } from "react-hook-form";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { IMAGES } from "../../../../../public/assets";
-import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
-import { useDispatch } from "react-redux";
-import { useRouter } from "next/navigation";
-import { useLoginMutation } from "@/redux/features/Auth/authApi";
-import Cookies from "js-cookie";
+import { IMAGES } from "../../../../public/assets";
+import { FiMail } from "react-icons/fi";
+import { useForm } from "react-hook-form";
+import { useForgotPasswordMutation } from "@/redux/features/Auth/authApi";
 import toast from "react-hot-toast";
-import { setUser } from "@/redux/features/Auth/authSlice";
+import { useRouter } from "next/navigation";
 
 type TFormData = {
   email: string;
-  password: string;
 };
 
-const AdminLogin = () => {
+const ForgotPassword = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<TFormData>();
 
-  const [showPassword, setShowPassword] = useState(false);
+  const [forgotPassword, { isLoading }] = useForgotPasswordMutation();
 
-  const dispatch = useDispatch();
-  const router = useRouter();
-  const [login, { isLoading }] = useLoginMutation();
-
-  const handleLogin = async (data: TFormData) => {
+  const handleForgotPassword = async (data: TFormData) => {
     try {
+      localStorage.setItem("forgotPasswordEmail", data.email);
       const payload = {
         ...data,
       };
-      const response = await login(payload).unwrap();
-      const user = response.data?.user;
-      const accessToken = response.data?.accessToken;
-
-      const userRole = response?.data?.user?.role;
-      if (accessToken) {
-        Cookies.set("accessToken", accessToken, {
-          expires: 7,
-          secure:
-            typeof window !== "undefined" &&
-            window.location.protocol === "https:",
-          sameSite: "strict",
-        });
-        Cookies.set("role", userRole, {
-          expires: 7,
-          secure: window.location.protocol === "https:",
-          sameSite: "strict",
-        });
-      }
-
+      const response = await forgotPassword(payload).unwrap();
       if (response?.success) {
-        dispatch(setUser({ user, token: response?.data?.accessToken }));
-        toast.success(response?.message);
-        router.push("/dashboard/blogs");
+        router.push("/reset-password");
       }
     } catch (err: any) {
       toast.error(err?.data?.message || "Something went wrong!");
     }
   };
-
   return (
     <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
       {/* Background Effects */}
@@ -94,7 +63,10 @@ const AdminLogin = () => {
           </div>
 
           {/* Login Form */}
-          <form onSubmit={handleSubmit(handleLogin)} className="space-y-6">
+          <form
+            onSubmit={handleSubmit(handleForgotPassword)}
+            className="space-y-6"
+          >
             {/* Email Field */}
             <div className="">
               <label className="text-sm font-medium text-gray-300">
@@ -124,54 +96,6 @@ const AdminLogin = () => {
               )}
             </div>
 
-            {/* Password Field */}
-            <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <label className="text-sm font-medium text-gray-300">
-                  Password
-                </label>
-                <Link
-                  href="/forgot-password"
-                  className="text-xs text-[#07f4fa] hover:text-primary-15 transition-colors"
-                >
-                  Forgot Password?
-                </Link>
-              </div>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FiLock className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Enter your password"
-                  {...register("password", {
-                    required: "Password is required",
-                    minLength: {
-                      value: 6,
-                      message: "Password must be at least 6 characters",
-                    },
-                  })}
-                  className="w-full pl-10 pr-12 py-3 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#07f4fa] focus:ring-2 focus:ring-[#07f4fa]/20 transition-all duration-300"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-[#07f4fa] transition-colors cursor-pointer"
-                >
-                  {showPassword ? (
-                    <FiEyeOff className="h-5 w-5" />
-                  ) : (
-                    <FiEye className="h-5 w-5" />
-                  )}
-                </button>
-              </div>
-              {errors.password && (
-                <p className="text-red-400 text-sm mt-1">
-                  {errors.password.message}
-                </p>
-              )}
-            </div>
-
             {/* Submit Button */}
             <button
               type="submit"
@@ -181,13 +105,6 @@ const AdminLogin = () => {
               {isLoading ? "Loading..." : "Login"}
             </button>
           </form>
-
-          {/* Footer */}
-          <div className="mt-6 text-center">
-            <p className="text-xs text-gray-500">
-              Secure admin access only. Unauthorized attempts are prohibited.
-            </p>
-          </div>
         </div>
 
         {/* Additional decorative elements */}
@@ -223,4 +140,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default ForgotPassword;
