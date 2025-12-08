@@ -24,16 +24,16 @@ const Team = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   // Animation variants
-  const containerVariants: any = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        duration: 0.8,
-      },
-    },
-  };
+  // const containerVariants: any = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.2,
+  //       duration: 0.8,
+  //     },
+  //   },
+  // };
 
   const headerVariants: any = {
     hidden: { opacity: 0, y: 60 },
@@ -49,18 +49,18 @@ const Team = () => {
     },
   };
 
-  const textVariants: any = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-        delay: 0.1,
-      },
-    },
-  };
+  // const textVariants: any = {
+  //   hidden: { opacity: 0, y: 40 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       duration: 0.6,
+  //       ease: "easeOut",
+  //       delay: 0.1,
+  //     },
+  //   },
+  // };
 
   const buttonAnimation: any = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -252,24 +252,15 @@ const Team = () => {
         ref={containerRef}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        variants={containerVariants}
-        className="mt-20 xl:mt-72"
+        // variants={containerVariants}
+        className="mt-20 xl:mt-40"
       >
         {/* Header */}
-        <motion.div
-          variants={containerVariants}
-          className="flex flex-col lg:flex-row items-center justify-between"
-        >
-          <motion.h1
-            variants={headerVariants}
-            className="font-MartianBThai text-white text-center lg:text-left text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] max-w-[666px]"
-          >
+        <motion.div className="flex flex-col lg:flex-row items-center justify-between">
+          <motion.h1 className="font-MartianBThai text-white text-center lg:text-left text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px] max-w-[666px]">
             Meet the Minds Behind Your Digital Growth
           </motion.h1>
-          <motion.p
-            variants={textVariants}
-            className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-3 lg:mt-0"
-          >
+          <motion.p className="text-neutral-300 text-sm text-center lg:text-left lg:text-lg leading-6 lg:leading-[30px] font-Poppins max-w-[600px] 2xl:max-w-[707px] mt-3 lg:mt-0">
             At Attribution Booster, we believe in your competitive edge. Each
             member brings their expertise to ensure every build is not just
             functional but transformative for your business growth
@@ -376,7 +367,7 @@ const Team = () => {
             </div>
           </motion.div>
         ) : (
-          <motion.div variants={headerVariants} className="mt-20 relative">
+          <motion.div className="mt-20 relative">
             <TeamGrid teamMembers={teamMembers} />
           </motion.div>
         )}
