@@ -2,6 +2,7 @@ import HeroSection from "@/components/Reusable/HeroSection/HeroSection";
 import { IMAGES } from "../../../../public/assets";
 import ContactUs from "@/components/HomePage/ContactUs/ContactUs";
 import Map from "@/components/ContactUsPage/Map/Map";
+import BookAppointment from "@/components/ContactUsPage/BookAppointment/BookAppointment";
 
 const ContactUsPage = () => {
   return (
@@ -14,6 +15,7 @@ const ContactUsPage = () => {
         breadcrumbs={[{ label: "Contact us" }]}
       />
       <ContactUs/>
+      <BookAppointment/>
       <Map/>
     </div>
   );

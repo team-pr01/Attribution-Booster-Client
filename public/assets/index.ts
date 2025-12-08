@@ -114,6 +114,7 @@ import teamHero from "./images/team-hero.webp";
 import contactUsHero from "./images/contact-us-hero.webp";
 import careerHero from "./images/career-hero.webp";
 import blogsHero from "./images/blogs-hero.webp";
+import privacyPolicyHero from "./images/privacy-policy.webp";
 
 // Icons
 import topRightArrow from "./icons/top-right-arrow.svg";
@@ -252,6 +253,7 @@ export const IMAGES = {
   contactUsHero,
   careerHero,
   blogsHero,
+  privacyPolicyHero,
 };
 
 export const ICONS = {

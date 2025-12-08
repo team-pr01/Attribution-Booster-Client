@@ -65,16 +65,16 @@ const Footer = () => {
   const companyLegalLinks = [
     {
       title: "Privacy Policy",
-      link: "/",
+      link: "/privacy-policy",
     },
-    {
-      title: "Cookies Policy",
-      link: "/",
-    },
-    {
-      title: "Terms & Agreement",
-      link: "/",
-    },
+    // {
+    //   title: "Cookies Policy",
+    //   link: "/",
+    // },
+    // {
+    //   title: "Terms & Agreement",
+    //   link: "/",
+    // },
   ];
 
   const socialMediaLinks = [
