@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Image from "next/image";
-import { IMAGES } from "../../../../public/assets";
+import { ICONS, IMAGES } from "../../../../public/assets";
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,7 +9,6 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Container from "@/components/Shared/Container/Container";
 import { usePathname } from "next/navigation";
-import { ICONS } from "../../../../out/assets";
 import Link from "next/link";
 
 const RecentProjects = () => {
