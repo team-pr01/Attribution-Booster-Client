@@ -6,7 +6,6 @@ import { FaPlay, FaQuoteLeft } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import Container from "../Shared/Container/Container";
 
-
 // Testimonial data type
 interface Testimonial {
   id: string;
@@ -30,8 +29,9 @@ const testimonials: Testimonial[] = [
     videoThumbnail: "/api/placeholder/400/250",
     videoUrl: "#",
     rating: 5,
-    quote: "This platform transformed our marketing strategy and increased our ROI by 300% in just 3 months!",
-    duration: "2:30"
+    quote:
+      "This platform transformed our marketing strategy and increased our ROI by 300% in just 3 months!",
+    duration: "2:30",
   },
   {
     id: "2",
@@ -41,8 +41,9 @@ const testimonials: Testimonial[] = [
     videoThumbnail: "/api/placeholder/400/250",
     videoUrl: "#",
     rating: 5,
-    quote: "The analytics and insights provided helped us make data-driven decisions that skyrocketed our growth.",
-    duration: "1:45"
+    quote:
+      "The analytics and insights provided helped us make data-driven decisions that skyrocketed our growth.",
+    duration: "1:45",
   },
   {
     id: "3",
@@ -52,8 +53,9 @@ const testimonials: Testimonial[] = [
     videoThumbnail: "/api/placeholder/400/250",
     videoUrl: "#",
     rating: 4,
-    quote: "Outstanding customer support and cutting-edge features. Our team couldn't be happier with the results.",
-    duration: "3:15"
+    quote:
+      "Outstanding customer support and cutting-edge features. Our team couldn't be happier with the results.",
+    duration: "3:15",
   },
   {
     id: "4",
@@ -63,8 +65,9 @@ const testimonials: Testimonial[] = [
     videoThumbnail: "/api/placeholder/400/250",
     videoUrl: "#",
     rating: 5,
-    quote: "The platform's scalability and reliability have been crucial for our expanding business needs.",
-    duration: "2:10"
+    quote:
+      "The platform's scalability and reliability have been crucial for our expanding business needs.",
+    duration: "2:10",
   },
   {
     id: "5",
@@ -74,8 +77,9 @@ const testimonials: Testimonial[] = [
     videoThumbnail: "/api/placeholder/400/250",
     videoUrl: "#",
     rating: 5,
-    quote: "Implementation was seamless and the results were immediate. Highly recommended for any business!",
-    duration: "4:05"
+    quote:
+      "Implementation was seamless and the results were immediate. Highly recommended for any business!",
+    duration: "4:05",
   },
   {
     id: "6",
@@ -85,27 +89,28 @@ const testimonials: Testimonial[] = [
     videoThumbnail: "/api/placeholder/400/250",
     videoUrl: "#",
     rating: 4,
-    quote: "The intuitive interface and powerful features make this an essential tool for modern marketers.",
-    duration: "2:50"
-  }
+    quote:
+      "The intuitive interface and powerful features make this an essential tool for modern marketers.",
+    duration: "2:50",
+  },
 ];
 
 const VideoTestimonial = () => {
-  const containerVariants:any = {
+  const containerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
-  const cardVariants:any = {
-    hidden: { 
-      opacity: 0, 
+  const cardVariants: any = {
+    hidden: {
+      opacity: 0,
       y: 50,
-      scale: 0.9
+      scale: 0.9,
     },
     visible: {
       opacity: 1,
@@ -114,21 +119,21 @@ const VideoTestimonial = () => {
       transition: {
         type: "spring",
         stiffness: 100,
-        damping: 15
-      }
-    }
+        damping: 15,
+      },
+    },
   };
 
-  const hoverVariants:any = {
+  const hoverVariants: any = {
     hover: {
       y: -8,
       scale: 1.02,
       transition: {
         type: "spring",
         stiffness: 400,
-        damping: 25
-      }
-    }
+        damping: 25,
+      },
+    },
   };
 
   const renderStars = (rating: number) => {
@@ -136,14 +141,16 @@ const VideoTestimonial = () => {
       <FaStar
         key={index}
         size={16}
-        className={index < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-600"}
+        className={
+          index < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-600"
+        }
       />
     ));
   };
 
   return (
     <Container>
-      <div className="">
+      <div className="mt-10 lg:mt-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -160,7 +167,8 @@ const VideoTestimonial = () => {
             Video Testimonials
           </h2>
           <p className="text-neutral-300 text-center text-sm lg:text-lg leading-6 lg:leading-[30px] max-w-[410px] font-Poppins mx-auto mt-5">
-            Hear directly from our satisfied clients about their experiences and success stories.
+            Hear directly from our satisfied clients about their experiences and
+            success stories.
           </p>
         </motion.div>
 
@@ -198,7 +206,7 @@ const VideoTestimonial = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Duration Badge */}
                   <div className="absolute bottom-3 right-3 px-2 py-1 bg-black/80 rounded-full text-xs text-white">
                     {testimonial.duration}
@@ -228,7 +236,7 @@ const VideoTestimonial = () => {
                           {testimonial.role}, {testimonial.company}
                         </p>
                       </div>
-                      
+
                       {/* Play Button */}
                       <motion.button
                         whileHover={{ scale: 1.05 }}

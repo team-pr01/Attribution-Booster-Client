@@ -255,7 +255,7 @@ const HeroSection = ({
               <Image
                 src={IMAGES.globeCircle}
                 alt=""
-                className="size-9 md:size-12 absolute -top-[100px] md:-top-32 right-24 md:right-32"
+                className="size-9 md:size-12 absolute -top-[100px] md:-top-32 right-24 md:right-32 opacity-30 lg:opacity-100"
               />
             </motion.div>
           </div>
@@ -271,11 +271,11 @@ const HeroSection = ({
                 absolute -top-14 lg:-top-20 -left-16 lg:-left-20
                 "
             />
-            <div className="relative max-w-[691px] md:h-[340px] lg:h-full xl:h-[280px] 2xl:h-[340px] rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
+            <div className="relative max-w-[691px] h-full md:h-[340px] lg:h-full xl:h-[280px] 2xl:h-[340px] rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
               <Image
                 src={image}
                 alt=""
-                fill
+                // fill
                 className="object-cover rounded-[10px]"
               />
             </div>
