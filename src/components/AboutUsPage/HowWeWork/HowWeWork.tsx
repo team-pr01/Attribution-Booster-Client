@@ -55,7 +55,7 @@ const HowWeWork = () => {
             <Image
               src={IMAGES.circle}
               alt=""
-              className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.03] z-999"
+              className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.03] "
             />
           </div>
 
@@ -63,11 +63,11 @@ const HowWeWork = () => {
             <Image
               src={IMAGES.circle}
               alt=""
-              className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.03] z-999"
+              className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.03] "
             />
           </div>
 
-          <div className="flex flex-col z-9999 relative w-full">
+          <div className="flex flex-col relative w-full">
             <div className="flex flex-col lg:flex-row items-center justify-between w-full">
               {/* Header Section */}
               <h1 className="font-MartianBThai text-white text-2xl sm:text-3xl xl:text-[56px] font-semibold md:leading-10 xl:leading-[61px]">

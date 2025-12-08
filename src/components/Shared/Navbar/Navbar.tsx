@@ -83,7 +83,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="rounded-[10px] bg-neutral-10 border border-neutral-20/10 backdrop-blur-[15px] w-full max-w-[320px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto">
+    <div className="rounded-[10px] bg-neutral-10 border border-neutral-20/10 backdrop-blur-[15px] w-full max-w-[320px] md:max-w-[680px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1420px] mx-auto z-9999">
       <div className="flex items-center justify-between px-3 lg:px-[29px] py-3">
         <Link href={"/"}>
           <Image

@@ -275,7 +275,7 @@ const HeroSection = ({
               <Image
                 src={image}
                 alt=""
-                // fill
+                fill
                 className="object-cover rounded-[10px]"
               />
             </div>

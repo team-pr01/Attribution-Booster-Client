@@ -18,9 +18,9 @@ const Map = () => {
           {/* Overlay with location info */}
           <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-xs">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center shrink-0">
                 <svg
-                  className="w-4 h-4 text-white"
+                  className="size-4 text-white"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -31,14 +31,15 @@ const Map = () => {
                   />
                 </svg>
               </div>
+
               <div>
                 <h3 className="text-slate-900 text-sm font-semibold">
                   Our Office
                 </h3>
                 <p className="text-slate-600 text-xs">
-                  123 Business Ave, Suite 100
+                  Suite A, 82 James Carter Road, Mildenhall, Bury St. Edmunds,
+                  United Kingdom, IP28 7DE
                 </p>
-                <p className="text-slate-600 text-xs">New York, NY 10001</p>
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ import { ICONS, IMAGES } from "../../../../public/assets";
 import { motion } from "framer-motion";
 import Container from "../Container/Container";
 import { FaStar } from "react-icons/fa";
+import { servicesData } from "@/components/HomePage/Services/Services";
 
 const Footer = () => {
   const contactInfo = [
@@ -29,19 +30,10 @@ const Footer = () => {
     },
   ];
 
-  const services = [
-    "Full Stack Web Development",
-    "WordPress",
-    "Shopify",
-    "Webflow",
-    "Mobile App Development",
-    "Video Editing",
-    "Analytics and Conversion Tracking",
-    "PPC Advertising",
-    "Google Ads",
-    "Social Media Marketing",
-    "Graphics Design",
-  ];
+  const servicesLinks = servicesData.map((service) => ({
+    title: service.name,
+    link: `/services/${service.slug}`,
+  }));
 
   const companyLinks = [
     {
@@ -169,23 +161,25 @@ const Footer = () => {
             </h2>
             <div className="flex flex-col md:flex-row gap-7 lg:gap-24 justify-between mt-5 2xl:mt-[30px]">
               <div className="flex flex-col gap-5">
-                {services?.slice(0, 6)?.map((item) => (
-                  <p
-                    key={item}
-                    className="text-sm lg:text-lg text-neutral-300 font-Poppins w-full lg:max-w-[143px]"
+                {servicesLinks?.slice(0, 6)?.map((item) => (
+                  <Link
+                    key={item?.title}
+                    href={item?.link}
+                    className="text-sm lg:text-lg text-neutral-300 font-Poppins w-full  hover:underline"
                   >
-                    {item}
-                  </p>
+                    {item?.title}
+                  </Link>
                 ))}
               </div>
               <div className="flex flex-col gap-5">
-                {services?.slice(6, 11)?.map((item) => (
-                  <p
-                    key={item}
-                    className="text-sm lg:text-lg text-neutral-300 font-Poppins w-full lg:max-w-[234px]"
+                {servicesLinks?.slice(6, 11)?.map((item) => (
+                  <Link
+                    key={item?.title}
+                    href={item?.link}
+                    className="text-sm lg:text-lg text-neutral-300 font-Poppins w-full hover:underline"
                   >
-                    {item}
-                  </p>
+                    {item?.title}
+                  </Link>
                 ))}
               </div>
             </div>
