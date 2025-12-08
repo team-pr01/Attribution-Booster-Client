@@ -8,8 +8,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import Container from "@/components/Shared/Container/Container";
+import { usePathname } from "next/navigation";
+import { ICONS } from "../../../../out/assets";
+import Link from "next/link";
 
 const RecentProjects = () => {
+  const pathname = usePathname();
   const [activeTab, setActiveTab] = useState("See All");
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
@@ -20,6 +24,8 @@ const RecentProjects = () => {
     "UI/UX Design",
     "Webflow",
     "Wordpress",
+    "Shopify",
+    "Framer",
   ];
 
   // Animation variants
@@ -119,11 +125,31 @@ const RecentProjects = () => {
       name: "Library Development",
       category: "Development",
     },
+    {
+      image: IMAGES.seoProject,
+      name: "Agency Website",
+      category: "Framer",
+    },
+    {
+      image: IMAGES.uiUx,
+      name: "Sports Website",
+      category: "Shopify",
+    },
+    {
+      image: IMAGES.development,
+      name: "AI Chatbot/Agent",
+      category: "Shopify",
+    },
   ];
 
   const filteredProjects = projects.filter(
     (project) => project.category === activeTab || activeTab === "See All"
   );
+
+  const projectsToShow =
+    pathname !== "/portfolio"
+      ? filteredProjects?.slice(0, 3)
+      : filteredProjects;
 
   return (
     <Container>
@@ -148,7 +174,7 @@ const RecentProjects = () => {
             <Image
               src={IMAGES.circle}
               alt=""
-              className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.03] z-999"
+              className="w-[300px] xl:w-[400px] 2xl:w-[643px] absolute -top-32 -right-44 opacity-[0.03] z-999"
             />
           </motion.div>
 
@@ -161,7 +187,7 @@ const RecentProjects = () => {
             <Image
               src={IMAGES.circle}
               alt=""
-              className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.03] z-999"
+              className="w-[300px] xl:w-[400px] 2xl:w-[643px] absolute -top-32 -left-44 opacity-[0.03] z-999"
             />
           </motion.div>
 
@@ -226,7 +252,7 @@ const RecentProjects = () => {
                 exit="exit"
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 mt-12"
               >
-                {filteredProjects?.map((project, index) => (
+                {projectsToShow?.map((project, index) => (
                   <motion.div
                     key={`${activeTab}-${index}`}
                     layout
@@ -241,6 +267,24 @@ const RecentProjects = () => {
                   </motion.div>
                 ))}
               </motion.div>
+              {pathname !== "/portfolio" && (
+                <Link href={"/portfolio"}>
+                  <motion.button
+                    whileHover="hover"
+                    whileTap="tap"
+                    className="pl-[30px] pr-1 py-1 bg-primary-5 font-Poppins text-neutral-5 rounded-[28px] font-medium text-base md:text-lg leading-5 cursor-pointer relative flex items-center gap-2.5 mt-8 mx-auto"
+                  >
+                    View All
+                    <div className="bg-neutral-5 size-10 md:size-12 rounded-full flex items-center justify-center">
+                      <Image
+                        src={ICONS.topRightArrow}
+                        alt=""
+                        className="size-6"
+                      />
+                    </div>
+                  </motion.button>
+                </Link>
+              )}
             </AnimatePresence>
           </div>
         </motion.div>

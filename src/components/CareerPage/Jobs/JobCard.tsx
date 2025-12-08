@@ -25,7 +25,7 @@ const JobCard = ({ job }: any) => {
       <div className="shine-border absolute inset-0 rounded-[10px] pointer-events-none opacity-0 group-hover:opacity-100 transition duration-300"></div>
 
       {/* Contents */}
-      <div className="relative overflow-hidden px-5 py-7 flex flex-col md:flex-row items-start md:items-center gap-7 md:gap-0 justify-between w-full">
+      <div className="relative overflow-hidden p-5 flex flex-col md:flex-row items-start md:items-center gap-7 md:gap-0 justify-between w-full">
         <div className=" flex flex-col gap-4">
           <p className="text-primary-5 text-sm lg:text-lg font-Poppins">
             {job?.category}
