@@ -71,7 +71,7 @@ const Results = () => {
             {/* Text Content */}
             <div className="absolute bottom-4 left-[30px] pointer-events-none">
               <h1 className="font-Poppins text-white text-4xl xl:text-[64px] font-semibold">
-                <Counter from={0} to={1500} duration={3} />+
+                <Counter from={0} to={1500} duration={3} startWhenVisible />+
               </h1>
               <p className="text-white text-xl mt-2 xl:mt-0">
                 Project Complete
@@ -96,7 +96,7 @@ const Results = () => {
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full font-Poppins pointer-events-none">
               <div>
                 <h1 className="text-white text-4xl xl:text-[64px] font-semibold">
-                  <Counter from={0} to={25} duration={3} />+
+                  <Counter from={0} to={25} duration={3} startWhenVisible />+
                 </h1>
                 <p className="text-white text-xl mt-2 xl:mt-0">
                   Years Of Experience
@@ -121,58 +121,58 @@ const Results = () => {
         {/* 2nd row */}
         <div className="flex flex-col md:flex-row items-center gap-5 mt-[30px]">
           {/* SERVICE CARD */}
-      <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        whileHover={{ y: -10 }}
-        onClick={handleLeftTap}
-        onTouchStart={handleLeftTap}
-        className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] p-[30px] flex flex-col items-center justify-center border border-transparent cursor-pointer h-[302px] 2xl:h-[440px] w-full md:w-[40%] relative overflow-hidden transition-all duration-300 hover:border hover:border-cyan-400/50"
-      >
-        <Image
-          src={IMAGES.services}
-          alt=""
-          className="w-fit lg:w-[70%] 2xl:w-fit"
-        />
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -10 }}
+            onClick={handleLeftTap}
+            onTouchStart={handleLeftTap}
+            className="bg-neutral-10 backdrop-blur-[15px] rounded-[10px] p-[30px] flex flex-col items-center justify-center border border-transparent cursor-pointer h-[302px] 2xl:h-[440px] w-full md:w-[40%] relative overflow-hidden transition-all duration-300 hover:border hover:border-cyan-400/50"
+          >
+            <Image
+              src={IMAGES.services}
+              alt=""
+              className="w-fit lg:w-[70%] 2xl:w-fit"
+            />
 
-        {/* Shine Effect */}
-        <div
-          className={`absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 rounded-[10px] pointer-events-none ${
-            leftActive ? "translate-x-full" : "-translate-x-full"
-          }`}
-        ></div>
-      </motion.div>
+            {/* Shine Effect */}
+            <div
+              className={`absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 rounded-[10px] pointer-events-none ${
+                leftActive ? "translate-x-full" : "-translate-x-full"
+              }`}
+            ></div>
+          </motion.div>
 
-      {/* AWARD CARD */}
-      <motion.div
-        whileHover={{ y: -10 }}
-        onClick={handleRightTap}
-        onTouchStart={handleRightTap}
-        className="w-full md:w-[60%] h-[302px] 2xl:h-[440px] rounded-xl relative overflow-hidden cursor-pointer transition-all duration-300 hover:border hover:border-cyan-400/50"
-      >
-        <Image
-          src={IMAGES.awards}
-          alt=""
-          className="w-full h-full rounded-xl object-cover"
-        />
-        <div className="bg-neutral-5 opacity-40 w-full h-full rounded-xl absolute top-0 left-0"></div>
+          {/* AWARD CARD */}
+          <motion.div
+            whileHover={{ y: -10 }}
+            onClick={handleRightTap}
+            onTouchStart={handleRightTap}
+            className="w-full md:w-[60%] h-[302px] 2xl:h-[440px] rounded-xl relative overflow-hidden cursor-pointer transition-all duration-300 hover:border hover:border-cyan-400/50"
+          >
+            <Image
+              src={IMAGES.awards}
+              alt=""
+              className="w-full h-full rounded-xl object-cover"
+            />
+            <div className="bg-neutral-5 opacity-40 w-full h-full rounded-xl absolute top-0 left-0"></div>
 
-        {/* Shine Effect */}
-        <div
-          className={`absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 rounded-[10px] pointer-events-none ${
-            rightActive ? "translate-x-full" : "-translate-x-full"
-          }`}
-        ></div>
+            {/* Shine Effect */}
+            <div
+              className={`absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 rounded-[10px] pointer-events-none ${
+                rightActive ? "translate-x-full" : "-translate-x-full"
+              }`}
+            ></div>
 
-        {/* Counter and Text */}
-        <div className="absolute bottom-4 left-[30px]">
-          <h1 className="font-Poppins text-white text-4xl xl:text-[64px] font-semibold leading-[70px]">
-            <Counter from={0} to={24} duration={3} />+
-          </h1>
-          <p className="text-white text-xl font-Poppins">Award Wining</p>
-        </div>
-      </motion.div>
+            {/* Counter and Text */}
+            <div className="absolute bottom-4 left-[30px]">
+              <h1 className="font-Poppins text-white text-4xl xl:text-[64px] font-semibold leading-[70px]">
+                <Counter from={0} to={24} duration={3} startWhenVisible />+
+              </h1>
+              <p className="text-white text-xl font-Poppins">Award Wining</p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </Container>

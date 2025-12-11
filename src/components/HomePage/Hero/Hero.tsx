@@ -346,7 +346,7 @@ const Hero = () => {
                     <motion.h1
                       className="font-Poppins text-white 
                      text-base sm:text-2xl md:text-[32px] 
-                     font-semibold leading-tight md:leading-[36px] text-center"
+                     font-semibold leading-tight md:leading-9 text-center"
                       initial={{ scale: 0.5, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ duration: 0.8, ease: "easeOut" }}

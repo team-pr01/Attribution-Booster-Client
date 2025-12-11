@@ -145,10 +145,11 @@ const RecentProjects = () => {
     (project) => project.category === activeTab || activeTab === "See All"
   );
 
-  const projectsToShow =
-    pathname !== "/portfolio"
-      ? filteredProjects?.slice(0, 3)
-      : filteredProjects;
+  const isFullPage = pathname === "/portfolio" || pathname === "/";
+
+  const projectsToShow = isFullPage
+    ? filteredProjects
+    : filteredProjects?.slice(0, 3);
 
   return (
     <Container>
