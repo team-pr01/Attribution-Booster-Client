@@ -55,7 +55,7 @@ const HowWeWork = () => {
             <Image
               src={IMAGES.circle}
               alt=""
-              className="w-[643px] h-[664px] absolute -top-64 -right-56 opacity-[0.03] "
+              className="w-[300px] xl:w-[400px] 2xl:w-[500px] absolute -top-32 -right-44 opacity-[0.03] "
             />
           </div>
 
@@ -63,7 +63,7 @@ const HowWeWork = () => {
             <Image
               src={IMAGES.circle}
               alt=""
-              className="w-[643px] h-[664px] absolute -top-64 -left-56 opacity-[0.03] "
+              className="w-[300px] xl:w-[400px] 2xl:w-[500px] absolute -top-32 -left-44 opacity-[0.03] "
             />
           </div>
 

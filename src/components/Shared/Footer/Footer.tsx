@@ -165,7 +165,7 @@ const Footer = () => {
                   <Link
                     key={item?.title}
                     href={item?.link}
-                    className="text-sm lg:text-lg text-neutral-300 font-Poppins w-full  hover:underline"
+                    className="text-sm lg:text-base text-neutral-300 font-Poppins w-full  hover:underline"
                   >
                     {item?.title}
                   </Link>
@@ -176,7 +176,7 @@ const Footer = () => {
                   <Link
                     key={item?.title}
                     href={item?.link}
-                    className="text-sm lg:text-lg text-neutral-300 font-Poppins w-full hover:underline"
+                    className="text-sm lg:text-base text-neutral-300 font-Poppins w-full hover:underline"
                   >
                     {item?.title}
                   </Link>
@@ -206,7 +206,7 @@ const Footer = () => {
 
         <div className="flex flex-col lg:flex-row justify-between gap-7 lg:gap-0 mt-[60px]">
           <div className="space-y-5">
-            <h2 className="text-lg font-medium text-white font-Poppins">
+            <h2 className="text-lg font-medium text-white font-Poppins leading-2">
               Social media:
             </h2>
             <div className="flex items-center gap-5">
@@ -215,12 +215,12 @@ const Footer = () => {
                   key={index}
                   href={item.link}
                   target="_blank"
-                  className="size-13 rounded-full bg-neutral-10 backdrop-blur-[15px] p-2 flex items-center justify-center text-white text-xl"
+                  className="size-13 rounded-full bg-neutral-10 hover:bg-primary-5/20 transition-all duration-300 backdrop-blur-[15px] p-2 flex items-center justify-center text-white text-xl hover:-translate-y-1"
                 >
                   <Image
                     src={item?.icon}
                     alt={item?.title}
-                    className={`${item.iconSize}`}
+                    className={item.iconSize}
                   />
                 </a>
               ))}

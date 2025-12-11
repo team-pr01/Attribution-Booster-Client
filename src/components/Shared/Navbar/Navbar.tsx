@@ -233,28 +233,28 @@ const Navbar = () => {
                               >
                                 <Link
                                   href={`/services/${service.slug}`}
-                                  className="block p-5 rounded-xl bg-slate-800/50 transition-all duration-300 group border border-transparent hover:border-[#22d3ee]/30 backdrop-blur-sm hover:bg-slate-700 h-full"
+                                  className="block p-3 rounded-xl bg-slate-800/50 transition-all duration-300 group border border-transparent hover:border-[#22d3ee]/30 backdrop-blur-sm hover:bg-slate-700 h-full"
                                   onClick={() => setIsServicesOpen(false)}
                                 >
-                                  <div className="flex">
-                                    <div className="w-16 h-16 shrink-0 bg-linear-to-br from-[#22d3ee]/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:from-[#22d3ee]/30 group-hover:to-blue-500/30 transition-all duration-300">
+                                  <div className="flex items-center">
+                                    <div className="size-10 shrink-0 bg-linear-to-br from-[#22d3ee]/20 to-blue-500/20 rounded-xl flex items-center justify-center group-hover:from-[#22d3ee]/30 group-hover:to-blue-500/30 transition-all duration-300">
                                       {service.icon ? (
                                         <Image
                                           src={service.icon}
                                           alt={service.name}
-                                          className="w-8 h-8 object-contain"
+                                          className="size-7 object-contain"
                                         />
                                       ) : (
-                                        <div className="w-8 h-8" />
+                                        <div className="size-7" />
                                       )}
                                     </div>
                                     <div className="ml-4">
-                                      <h4 className="text-white font-semibold text-sm mb-2 group-hover:text-[#22d3ee] transition-colors">
+                                      <h4 className="text-white font-semibold text-sm group-hover:text-[#22d3ee] transition-colors">
                                         {service.name}
                                       </h4>
-                                      <p className="text-white/60 text-xs leading-relaxed line-clamp-3">
+                                      {/* <p className="text-white/60 text-xs leading-relaxed line-clamp-3">
                                         {service.description}
-                                      </p>
+                                      </p> */}
                                     </div>
                                   </div>
                                 </Link>

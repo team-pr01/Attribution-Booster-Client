@@ -134,7 +134,7 @@ const StepCard = ({index, icon, title, description} : {index:number; icon: any; 
 
         {/* Title */}
         <motion.h1
-          className="font-MartianBThai text-white text-2xl font-semibold mt-[30px]"
+          className="font-MartianBThai text-white text-xl font-semibold mt-[30px]"
           variants={textVariants}
           transition={{ delay: 0.1 }}
         >
@@ -143,7 +143,7 @@ const StepCard = ({index, icon, title, description} : {index:number; icon: any; 
 
         {/* Description */}
         <motion.p
-          className="text-neutral-300 text-sm lg:text-base mt-2 font-Poppins"
+          className="text-neutral-300 text-sm mt-2 font-Poppins"
           variants={textVariants}
           transition={{ delay: 0.2 }}
         >

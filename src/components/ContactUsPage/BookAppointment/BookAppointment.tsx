@@ -4,7 +4,10 @@ import Script from "next/script";
 
 const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ||
-  "https://calendly.com/rahulchandrasutradhar3/30min?background_color=07f4fa";
+  "https://calendly.com/mdnurullah288/30min?background_color=07f4fa";
+// const CALENDLY_URL =
+//   process.env.NEXT_PUBLIC_CALENDLY_URL ||
+//   "https://calendly.com/rahulchandrasutradhar3/30min?background_color=07f4fa";
 
 const BookAppointment = () => {
   return (
