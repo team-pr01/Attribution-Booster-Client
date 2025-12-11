@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Image from "next/image";
@@ -272,10 +273,9 @@ const HeroSection = ({
                 "
             />
             <div className="relative max-w-[691px] h-full md:h-[340px] lg:h-full xl:h-[280px] 2xl:h-[340px] rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
-              <Image
+              <img
                 src={image}
                 alt=""
-                fill
                 className="object-cover rounded-[10px]"
               />
             </div>
@@ -290,7 +290,7 @@ const HeroSection = ({
             gradient={false}
             className="flex gap-5 lg:gap-[30px] overflow-hidden text-[50px] lg:text-[100px] text-primary-5/20 font-MartianBThai font-semibold z-0"
           >
-            Digital Agency * Creative Soluation *
+            Digital Agency * Creative Solution *
           </Marquee>
         </div>
       </motion.div>

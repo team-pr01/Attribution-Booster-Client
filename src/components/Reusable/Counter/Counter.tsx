@@ -7,7 +7,7 @@ type FormatFn = (n: number) => string | number;
 interface CounterProps {
   from?: number;
   to?: number;
-  duration?: number; // seconds
+  duration?: number;
   easing?: EasingFn;
   format?: FormatFn;
   startWhenVisible?: boolean;
@@ -26,14 +26,17 @@ export default function Counter({
   const startRef = useRef<number | null>(null);
   const nodeRef = useRef<HTMLSpanElement | null>(null);
 
-  useEffect(() => {
+  const startAnimation = () => {
+    startRef.current = performance.now();
+
     const tick = (now?: number) => {
-      if (!startRef.current) startRef.current = now ?? performance.now();
-      const elapsed = (now ?? performance.now()) - startRef.current;
+      const elapsed = (now ?? performance.now()) - startRef.current!;
       const t = Math.min(1, elapsed / (duration * 1000));
       const eased = easing(t);
       const current = from + (to - from) * eased;
+
       setValue(current);
+
       if (t < 1) {
         rafRef.current = requestAnimationFrame(tick);
       } else {
@@ -41,40 +44,47 @@ export default function Counter({
       }
     };
 
-    if (startWhenVisible && typeof IntersectionObserver !== "undefined") {
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              obs.disconnect();
-              startRef.current = performance.now();
-              rafRef.current = requestAnimationFrame(tick);
-            }
-          });
-        },
-        { threshold: 0.25 }
-      );
-      if (nodeRef.current) obs.observe(nodeRef.current);
-      return () => {
-        obs.disconnect();
-        if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-      };
-    } else {
-      // start immediately
-      startRef.current = performance.now();
-      rafRef.current = requestAnimationFrame(tick);
-      return () => {
-        if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-      };
-    }
-  }, [from, to, duration, startWhenVisible, easing,]);
+    rafRef.current = requestAnimationFrame(tick);
+  };
 
-  // cleanup on unmount
+  // START-WHEN-VISIBLE MODE
   useEffect(() => {
+    if (!startWhenVisible) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      startAnimation();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            observer.disconnect();
+            startAnimation();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    if (nodeRef.current) observer.observe(nodeRef.current);
+
     return () => {
-      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      observer.disconnect();
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, []);
+  }, [startWhenVisible]);
+
+  // AUTO-START MODE
+  useEffect(() => {
+    if (!startWhenVisible) {
+      startAnimation();
+    }
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [startWhenVisible]);
 
   return <span ref={nodeRef}>{format(value)}</span>;
 }
