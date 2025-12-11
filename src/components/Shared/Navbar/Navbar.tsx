@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { IMAGES } from "../../../../public/assets";
+import { ICONS, IMAGES } from "../../../../public/assets";
 import Link from "next/link";
 import { FaAlignRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,7 +10,6 @@ import { useEffect, useRef, useState } from "react";
 import { useScrollNavigation } from "@/hooks/useScrollNavigation";
 import { servicesData } from "@/components/HomePage/Services/Services";
 import { BiChevronDown } from "react-icons/bi";
-import { ICONS } from "../../../../out/assets";
 
 const Navbar = () => {
   const { navigateAndScroll } = useScrollNavigation();
