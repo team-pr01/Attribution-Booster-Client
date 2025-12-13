@@ -8,10 +8,13 @@ import Container from "@/components/Shared/Container/Container";
 import { categories } from "@/data/blogcategory";
 import { useGetAllBlogsQuery } from "@/redux/features/Blog/blogApi";
 import { TBlog } from "@/app/(adminLayout)/dashboard/blogs/page";
+import SpinnerLoader from "@/components/Reusable/SpinnerLoader/SpinnerLoader";
 
 const Blogs = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  const { data: blogs } = useGetAllBlogsQuery({ category: activeCategory });
+  const { data: blogs, isLoading, isFetching } = useGetAllBlogsQuery({
+    category: activeCategory,
+  });
 
   const filteredPosts =
     activeCategory === "All"
@@ -61,7 +64,11 @@ const Blogs = () => {
               className="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-gray-600 text-white focus:border-[#07f4fa] focus:ring-2 focus:ring-[#07f4fa]/20 transition-all duration-300 appearance-none cursor-pointer"
             >
               {categories.map((category) => (
-                <option key={category} value={category} className="bg-gray-800 capitalize">
+                <option
+                  key={category}
+                  value={category}
+                  className="bg-gray-800 capitalize"
+                >
                   {category}
                 </option>
               ))}
@@ -77,9 +84,12 @@ const Blogs = () => {
         </div>
 
         {/* Blog Posts Grid */}
-        {filteredPosts?.length > 0 ? (
+        {/* Blog Posts Grid */}
+        {(isLoading || isFetching) ? (
+          <SpinnerLoader />
+        ) : filteredPosts?.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts?.map((post: TBlog) => (
+            {filteredPosts.map((post: TBlog) => (
               <BlogCard key={post._id} {...post} />
             ))}
           </div>
@@ -95,7 +105,7 @@ const Blogs = () => {
               content.
             </p>
             <button
-              onClick={() => setActiveCategory("all")}
+              onClick={() => setActiveCategory("All")}
               className="mt-6 px-6 py-3 bg-[#07f4fa] text-gray-900 rounded-full font-semibold hover:bg-primary-15 transition-colors duration-300 cursor-pointer"
             >
               View All Posts
