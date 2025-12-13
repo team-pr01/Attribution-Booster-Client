@@ -272,10 +272,11 @@ const HeroSection = ({
                 absolute -top-14 lg:-top-20 -left-16 lg:-left-20
                 "
             />
-            <div className="relative max-w-[691px] h-full md:h-[340px] lg:h-full xl:h-[280px] 2xl:h-[340px] rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
-              <img
+            <div className="relative max-w-[691px] h-[290px] lg:h-[300px] xl:h-[280px] 2xl:h-[340px] rounded-[10px] backdrop-blur-[15px] bg-neutral-10 p-2">
+              <Image
                 src={image}
                 alt=""
+                fill
                 className="object-cover rounded-[10px]"
               />
             </div>

@@ -13,6 +13,7 @@ const Portfolio = () => {
         btnText="Explore Our Services"
         image={IMAGES.portfolioHero}
         breadcrumbs={[{ label: "Portfolio" }]}
+        sectionHeight="h-[800px] md:h-[820px] lg:h-[720px]"
       />
       <RecentProjects />
       <VideoTestimonial/>

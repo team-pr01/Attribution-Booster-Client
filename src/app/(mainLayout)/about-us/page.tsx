@@ -14,6 +14,7 @@ const AboutUs = () => {
         btnText="Explore Our Services"
         image={IMAGES.aboutUsHero}
         breadcrumbs={[{ label: "About Us" }]}
+        sectionHeight="h-[930px] md:h-[990px] lg:h-[800px] xl:h-[800px]"
       />
       <MissionAndVision />
       <HowWeWork />

@@ -12,6 +12,7 @@ const OurTeam = () => {
         btnText="Explore Our Services"
         image={IMAGES.teamHero}
         breadcrumbs={[{ label: "Our Expert Team" }]}
+        sectionHeight="h-[930px] md:h-[960px] lg:h-[850px] xl:h-[780px]"
       />
       <Team />
       <CTA

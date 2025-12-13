@@ -26,6 +26,7 @@ const Blogs = () => {
         btnText="Explore Our Services"
         image={IMAGES.blogsHero}
         breadcrumbs={[{ label: "Blogs" }]}
+        sectionHeight="h-[900px] md:h-[890px] lg:h-[850px] xl:h-[780px]"
       />
 
       <Container>

@@ -13,6 +13,7 @@ const ContactUsPage = () => {
         btnText="Explore Our Services"
         image={IMAGES.contactUsHero}
         breadcrumbs={[{ label: "Contact us" }]}
+        sectionHeight="h-[800px] md:h-[830px] lg:h-[780px] xl:h-[760px]"
       />
       <ContactUs/>
       <BookAppointment/>

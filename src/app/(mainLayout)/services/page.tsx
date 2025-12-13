@@ -15,6 +15,7 @@ const Services = () => {
         btnText="Explore Our Services"
         image={IMAGES.serviceHero}
         breadcrumbs={[{ label: "Services" }]}
+        sectionHeight="h-[970px] md:h-[990px] lg:h-[890px] xl:h-[800px]"
       />
       
       <OurServices />
